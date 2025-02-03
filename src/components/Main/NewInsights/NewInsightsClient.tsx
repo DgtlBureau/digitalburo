@@ -1,25 +1,25 @@
-'use client';
+'use client'
 
-import { NextPrevBtn } from '@/src/ui-kit/NextPrevBtn/NextPrevBtn';
-import { Post } from '@/src/utils/types';
-import useMediaQuery from '@/src/utils/useMediaQuery';
-import { useState } from 'react';
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
-import { Container } from '../../shared/Container/Container';
-import { Section } from '../../shared/Section/Section';
-import { NewInsightsCard } from './NewInsightsCard/NewInsightsCard';
+import { NextPrevBtn } from '@/src/ui-kit/NextPrevBtn/NextPrevBtn'
+import { Post } from '@/src/utils/types'
+import useMediaQuery from '@/src/utils/useMediaQuery'
+import { useState } from 'react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { Container } from '../../shared/Container/Container'
+import { Section } from '../../shared/Section/Section'
+import { NewInsightsCard } from './NewInsightsCard/NewInsightsCard'
 
 interface Props {
-  posts: Post[];
+  posts: Post[]
 }
 
 export const NewInsightsClient = ({ posts }: Props) => {
-  const [swiper, setSwiper] = useState<SwiperClass | null>(null);
+  const [swiper, setSwiper] = useState<SwiperClass | null>(null)
 
-  const mobile = useMediaQuery('<tablet');
-  const tablet = useMediaQuery('<laptop');
-  const isStilTablet = useMediaQuery('>mobile');
-  const isTablet = tablet === isStilTablet;
+  const mobile = useMediaQuery('<tablet')
+  const tablet = useMediaQuery('<laptop')
+  const isStilTablet = useMediaQuery('>mobile')
+  const isTablet = tablet === isStilTablet
 
   return (
     <Section light>
@@ -28,11 +28,11 @@ export const NewInsightsClient = ({ posts }: Props) => {
           <div className='flex items-start justify-between desktop:items-center'>
             <div className='flex flex-col gap-[15px]'>
               <h2 className='desktop-light::text-[50px] font-unbound text-[28px] font-bold uppercase text-main-bg tablet:text-[40px]'>
-                Insights
+                Инсайты
               </h2>
               <p className='font-proxima text-[18px] font-bold leading-[1.1] text-light-gray tablet:text-[20px] desktop:leading-[1]'>
-                The latest research and articles on information technology in
-                the field of sports and business
+                Последние исследования и статьи по информационным технологиям в
+                сфере спорта и бизнеса
               </p>
             </div>
             <div className=''>
@@ -68,5 +68,5 @@ export const NewInsightsClient = ({ posts }: Props) => {
         </Container>
       </div>
     </Section>
-  );
-};
+  )
+}

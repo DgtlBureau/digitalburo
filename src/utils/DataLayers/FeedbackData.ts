@@ -1,119 +1,119 @@
-import anotherDmitry from '@/public/assets/images/expertise/another_Dmitry.webp';
-import alexeyPhoto from '@/public/assets/images/main/feedbacks/alexey.webp';
-import dmitryPhoto from '@/public/assets/images/main/feedbacks/dmitriy.webp';
-import elenaPhoto from '@/public/assets/images/main/feedbacks/elena.webp';
-import johnPhoto from '@/public/assets/images/main/feedbacks/john.webp';
-import konstantinPhoto from '@/public/assets/images/main/feedbacks/konstantin.webp';
-import sergeyPhoto from '@/public/assets/images/main/feedbacks/sergey.webp';
-import vasiliyPhoto from '@/public/assets/images/main/feedbacks/vasiliy.webp';
-import vitaliyPhoto from '@/public/assets/images/main/feedbacks/vitaliy.webp';
+import anotherDmitry from '@/public/assets/images/expertise/another_Dmitry.webp'
+import alexeyPhoto from '@/public/assets/images/main/feedbacks/alexey.webp'
+import dmitryPhoto from '@/public/assets/images/main/feedbacks/dmitriy.webp'
+import elenaPhoto from '@/public/assets/images/main/feedbacks/elena.webp'
+import johnPhoto from '@/public/assets/images/main/feedbacks/john.webp'
+import konstantinPhoto from '@/public/assets/images/main/feedbacks/konstantin.webp'
+import sergeyPhoto from '@/public/assets/images/main/feedbacks/sergey.webp'
+import vasiliyPhoto from '@/public/assets/images/main/feedbacks/vasiliy.webp'
+import vitaliyPhoto from '@/public/assets/images/main/feedbacks/vitaliy.webp'
 
-import avangard from '@/public/assets/images/clients/avangard.png';
-import dinamo from '@/public/assets/images/clients/dinamo.png';
-import gc from '@/public/assets/images/clients/gc.png';
-import oazis from '@/public/assets/images/clients/oazis.png';
-import orbita from '@/public/assets/images/clients/orbita-dark.png';
-import sports from '@/public/assets/images/clients/sports.png';
-import tractor from '@/public/assets/images/clients/tractor.png';
+import avangard from '@/public/assets/images/clients/avangard.png'
+import dinamo from '@/public/assets/images/clients/dinamo.png'
+import gc from '@/public/assets/images/clients/gc.png'
+import oazis from '@/public/assets/images/clients/oazis.png'
+import orbita from '@/public/assets/images/clients/orbita-dark.png'
+import sports from '@/public/assets/images/clients/sports.png'
+import tractor from '@/public/assets/images/clients/tractor.png'
 
 export const FeedbackDataMain = [
   {
     id: 1,
-    name: 'Dmitriy',
-    job: 'Co-Founder Orbita.vc',
+    name: 'Дмитрий',
+    job: 'Соучредитель Orbita.vc',
     image: dmitryPhoto,
     logo: orbita,
     date: '12.10.2022',
     feedback:
-      'Vitaly is a very motivated entrepreneur and technical director. He has the vision necessary for startups to make the most effective and quick decisions.',
+      'Виталий - очень целеустремленный предприниматель и технический директор. У него есть видение, необходимое стартапам для принятия наиболее эффективных и быстрых решений.',
   },
   {
     id: 2,
-    name: 'Alexey',
-    job: 'Founder Grid Capital',
+    name: 'Алексей',
+    job: 'Основатель Grid Capital',
     image: alexeyPhoto,
     date: '12.10.2022',
     logo: gc,
     feedback:
-      'Vitaly and his team found us a technical director and conducted an audit of the project in 3 weeks. Quick response and fast decision-making are very important for startups!',
+      'Виталий и его команда нашли нам технического директора и провели аудит проекта за 3 недели. Быстрая реакция и быстрое принятие решений очень важны для стартапов!',
   },
   {
     id: 3,
-    name: 'Sergey',
-    job: 'Commercial Director of HC Tractor',
+    name: 'Сергей',
+    job: 'Коммерческий директор ХК “Tractor”',
     image: sergeyPhoto,
     logo: tractor,
     date: '12.10.2022',
     feedback:
-      "We have a very conservative market. It's cool when such young and energetic guys like Vitaly and his team show up. Just rocked it!",
+      'У нас очень консервативный рынок. Здорово, когда появляются такие молодые и энергичные ребята, как Виталий и его команда. Это просто потрясающе!',
   },
   {
     id: 4,
-    name: 'Elena',
+    name: 'Елена',
     job: 'General Product Manager Go',
     image: elenaPhoto,
     logo: dinamo,
     date: '12.10.2022',
     feedback:
-      'The guys from Bright Byte helped to pack the idea into the final product. They provided professional assistance at all stages and were all about achieving results!',
+      'Ребята из Bright Byte помогли упаковать идею в конечный продукт. Они оказывали профессиональную помощь на всех этапах и были нацелены на результат!',
   },
   {
     id: 5,
-    name: 'Konstantin',
-    job: 'Commercial Director of HC Avangard',
+    name: 'Константин',
+    job: 'Коммерческий директор ХК “Авангард”',
     image: konstantinPhoto,
     logo: avangard,
     date: '12.10.2022',
     feedback:
-      'Vitaly always takes a proactive position, he really helped the company to move from offline to online. He brought expertise from other industries to the sport and perfected it!',
+      'Виталий всегда занимает активную позицию, он действительно помог компании перейти из офлайна в онлайн. Он привнес в спорт опыт из других отраслей и довел его до совершенства!',
   },
   {
     id: 6,
-    name: 'Vasiliy',
-    job: 'CEO IGFT',
+    name: 'Василий',
+    job: 'Генеральный директор IGFT',
     image: vasiliyPhoto,
     logo: oazis,
     date: '12.10.2022',
     feedback:
-      "We have been working with Vitaliy for two years, during which time we have actively developed our project. The team is always results-driven and takes a proactive approach, anticipating potential challenges and addressing them promptly. Since we work with a complex IT system, it's crucial for us that all components are perfectly fine-tuned. Bright Byte impresses with their attention to detail: the team provides comprehensive API documentation, every new feature is meticulously described in a dedicated document, and they constantly offer suggestions for improvement. At the same time, they help us avoid unnecessary actions if our plans go beyond what is required.",
+      'Мы работаем с Виталием уже два года, за это время мы активно развивали наш проект. Команда всегда нацелена на результат и занимает проактивную позицию, предвосхищая потенциальные проблемы и оперативно их решая. Поскольку мы работаем со сложной ИТ-системой, для нас важно, чтобы все компоненты были идеально настроены. Bright Byte впечатляет своим вниманием к деталям: команда предоставляет исчерпывающую документацию по API, каждая новая функция подробно описывается в специальном документе, и они постоянно предлагают предложения по улучшению. В то же время они помогают нам избегать ненужных действий, если наши планы выходят за рамки требуемого.',
   },
   {
     id: 7,
     name: 'John Cushma',
-    job: 'Entrepreneur, 21sports',
+    job: 'Предприниматель, 21sports',
     image: johnPhoto,
     logo: sports,
     date: '12.10.2022',
     feedback:
-      "We are working on a sports publication website with a relatively simple tech stack that involves integrations. Previous developers consistently delivered an incomplete product full of bugs and were unresponsive when issues were pointed out. Vitaliy's team has shown a high level of professionalism, adhering to a clear business process and a systematic approach at every stage. I highly recommend working with them.",
+      'Мы работаем над сайтом спортивного издания с относительно простым техническим стеком, включающим интеграции. Предыдущие разработчики постоянно поставляли неполный продукт, полный ошибок, и не реагировали, когда указывали на проблемы. Команда Виталия продемонстрировала высокий уровень профессионализма, придерживаясь четкого бизнес-процесса и системного подхода на каждом этапе. Я настоятельно рекомендую работать с ними.',
   },
   {
     id: 8,
-    name: 'Vitaliy',
-    job: 'CTO, Hockey Club Avangard',
+    name: 'Виталий',
+    job: 'Технический директор, Хоккейный клуб Авангард',
     image: vitaliyPhoto,
     logo: avangard,
     date: '12.10.2022',
     feedback:
-      'We are working on the hockey club project, focusing on design and support. I am fully confident that when I hand over my project to Vitaliy, the result is guaranteed. He and his team are genuinely invested and bring their own perspective to the work. Unlike companies that require a detailed technical specification, Vitaliy and his team are more comfortable independently leading the project and defining its boundaries.',
+      'Мы работаем над проектом хоккейного клуба, уделяя особое внимание дизайну и поддержке. Я полностью уверен, что когда я передам свой проект Виталию, результат будет гарантирован. Он и его команда искренне вкладывают силы и привносят в работу свой взгляд. В отличие от компаний, которым требуется подробное техническое задание, Виталий и его команда чувствуют себя более комфортно, самостоятельно руководя проектом и определяя его границы.',
   },
-];
+]
 
 export const FeedbackDataExtertise = [
   {
     id: 1,
-    name: 'Dmitriy',
-    job: 'Co-Founder Orbita.vc',
+    name: 'Дмитрий',
+    job: 'Соучредитель Orbita.vc',
     image: anotherDmitry,
     feedback:
-      'Vitaly is a very motivated entrepreneur and technical director. He has the vision necessary for startups to make the most effective and quick decisions.',
+      'Виталий — очень мотивированный предприниматель и технический директор. У него есть видение, необходимое стартапам для принятия максимально эффективных и быстрых решений.',
   },
   {
     id: 2,
-    name: 'Alexey',
-    job: 'Founder Grid Capital',
+    name: 'Алексей',
+    job: 'Основатель Grid Capital',
     image: alexeyPhoto,
     feedback:
-      'Vitaly and his team found us a technical director and conducted an audit of the project in 3 weeks. Quick response and fast decision-making are very important for startups!',
+      'Виталий и его команда нашли нам технического директора и провели аудит проекта за 3 недели. Быстрое реагирование и быстрое принятие решений очень важны для стартапов!',
   },
-];
+]

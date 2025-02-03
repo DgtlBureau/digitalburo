@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { Container } from '../shared/Container/Container';
-import { FooterLinksInfo } from './FooterLinksInfo/FooterLinksInfo';
+import Link from 'next/link'
+import { Container } from '../shared/Container/Container'
+import { FooterLinksInfo } from './FooterLinksInfo/FooterLinksInfo'
 
 export const Footer = () => {
   return (
@@ -17,17 +17,17 @@ export const Footer = () => {
                 href='/policy'
                 className='font-proxima text-[16px] leading-[1.1] text-white opacity-50 desktop:text-[18px]'
               >
-                Privacy Policy
+                Политика конфиденциальности
               </Link>
             </li>
             <li>
               <span className='font-proxima text-[16px] leading-[1.1] text-white opacity-50 desktop:text-[18px]'>
-                &copy; Bright Byte
+                &copy; The Bright Byte
               </span>
             </li>
           </ul>
         </div>
       </Container>
     </footer>
-  );
-};
+  )
+}
