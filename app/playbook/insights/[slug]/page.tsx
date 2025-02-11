@@ -1,94 +1,94 @@
-import { Featured } from '@/src/components/Featured/Featured';
-import { SocialFollow } from '@/src/components/SocialFollow/SocialFollow';
-import { AuthorInfo } from '@/src/ui-kit/AuthorInfo/AuthorInfo';
-import { DownloadLink } from '@/src/ui-kit/DownloadLink/DownloadLink';
-import { GoBackLink } from '@/src/ui-kit/GoBackLink/GoBackLink';
-import { BASE_URL } from '@/src/utils/alias';
-import { cleanMetaTitle } from '@/src/utils/cleanMetaTitle';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { formattedDate } from '@/src/utils/formattedDate';
-import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata';
-import { ideaMarking } from '@/src/utils/IdeaMarking/ideaMarking';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { postsSorting } from '@/src/utils/postsSorting';
-import fs from 'fs';
-import matter from 'gray-matter';
-import { DateTime } from 'luxon';
-import Markdown from 'markdown-to-jsx';
-import path from 'path';
-import styles from './Post.module.css';
+import { Featured } from '@/src/components/Featured/Featured'
+import { SocialFollow } from '@/src/components/SocialFollow/SocialFollow'
+import { AuthorInfo } from '@/src/ui-kit/AuthorInfo/AuthorInfo'
+import { DownloadLink } from '@/src/ui-kit/DownloadLink/DownloadLink'
+import { GoBackLink } from '@/src/ui-kit/GoBackLink/GoBackLink'
+import { BASE_URL } from '@/src/utils/alias'
+import { cleanMetaTitle } from '@/src/utils/cleanMetaTitle'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { formattedDate } from '@/src/utils/formattedDate'
+import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata'
+import { ideaMarking } from '@/src/utils/IdeaMarking/ideaMarking'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { postsSorting } from '@/src/utils/postsSorting'
+import fs from 'fs'
+import matter from 'gray-matter'
+import { DateTime } from 'luxon'
+import Markdown from 'markdown-to-jsx'
+import path from 'path'
+import styles from './Post.module.css'
 
-const URL = process.env.NODE_ENV === 'production' ? BASE_URL : '';
+const URL = process.env.NODE_ENV === 'production' ? BASE_URL : ''
 
 const findMarkdownFile = (dir: string, slug: string): string | null => {
-  const files = fs.readdirSync(dir);
+  const files = fs.readdirSync(dir)
   for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const filePath = path.join(dir, file)
+    const stat = fs.statSync(filePath)
     if (stat.isDirectory()) {
-      const result = findMarkdownFile(filePath, slug);
-      if (result) return result;
+      const result = findMarkdownFile(filePath, slug)
+      if (result) return result
     } else if (file.endsWith('.md') && file.replace('.md', '') === slug) {
-      return filePath;
+      return filePath
     }
   }
-  return null;
-};
+  return null
+}
 
 const getPostContent = (slug: string) => {
-  const folder = 'src/playbook/insights/';
-  const file = findMarkdownFile(folder, slug);
+  const folder = 'src/playbook/insights/'
+  const file = findMarkdownFile(folder, slug)
 
   if (file) {
     try {
-      const content = fs.readFileSync(file, 'utf8');
-      const matterResult = matter(content);
-      return matterResult;
+      const content = fs.readFileSync(file, 'utf8')
+      const matterResult = matter(content)
+      return matterResult
     } catch (error) {
-      console.error('Error reading file:', error);
-      return null;
+      console.error('Error reading file:', error)
+      return null
     }
   } else {
-    console.error('File not found');
-    return null;
+    console.error('File not found')
+    return null
   }
-};
+}
 
 const getAllPosts = () => {
-  const postMetadata = getInsightsMetadata();
-  return postsSorting(postMetadata);
-};
+  const postMetadata = getInsightsMetadata()
+  return postsSorting(postMetadata)
+}
 
 export const generateStaticParams = async () => {
-  const posts = getInsightsMetadata();
-  return posts.map((post) => ({ slug: post.slug }));
-};
+  const posts = getInsightsMetadata()
+  return posts.map((post) => ({ slug: post.slug }))
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) {
-  const post = getPostContent(params.slug);
+  const post = getPostContent(params.slug)
 
   if (!post) {
     return {
       title: 'Post Not Found',
       description: 'This post does not exist',
-    };
+    }
   }
 
-  const cleanTitle = cleanMetaTitle(post.data.title);
-  const { tag } = post.data;
-  const keywords = tag.split(',');
+  const cleanTitle = cleanMetaTitle(post.data.title)
+  const { tag } = post.data
+  const keywords = tag.split(',')
 
-  const title = contentTrimming(cleanTitle, 105);
-  const description = contentTrimming(post.data.description, 155);
+  const title = contentTrimming(cleanTitle, 105)
+  const description = contentTrimming(post.data.description, 155)
 
   const publishedDateISO = DateTime.fromFormat(
     post.data.date,
-    'dd-MM-yyyy',
-  ).toISO();
+    'dd-MM-yyyy'
+  ).toISO()
 
   return {
     title,
@@ -99,7 +99,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       locale: 'en_US',
-      siteName: 'BrightByte.com',
+      siteName: 'digitalburo.tech',
       ...openGraphImage,
       title,
       description,
@@ -111,59 +111,59 @@ export async function generateMetadata({
       },
     },
     keywords,
-  };
+  }
 }
 
 export default function InsightsPostPage(props: { params: { slug: string } }) {
-  const slug = props.params.slug;
-  const post = getPostContent(slug);
+  const slug = props.params.slug
+  const post = getPostContent(slug)
 
   if (!post) {
-    return null;
+    return null
   }
 
-  const date = formattedDate(post.data.date);
+  const date = formattedDate(post.data.date)
 
   const { tag, title, authorName, authorImage, downloadLink, readingTime } =
-    post.data;
+    post.data
   const image = post.data.image
     ? post.data.image
-    : '/assets/images/banner/default_img.webp';
+    : '/assets/images/banner/default_img.webp'
 
-  const hashtagRegex = /#[A-Za-z_]+/g;
-  const regexFont = /<font color='(.+?)'>(.+?)<\/font>/g;
+  const hashtagRegex = /#[A-Za-z_]+/g
+  const regexFont = /<font color='(.+?)'>(.+?)<\/font>/g
 
-  const ideaRegx = /\[\[(.*?)\]\]/g;
-  const ideaMatches = post.content.match(ideaRegx);
+  const ideaRegx = /\[\[(.*?)\]\]/g
+  const ideaMatches = post.content.match(ideaRegx)
 
-  const extractedHashtags = post.content.match(hashtagRegex) ?? [];
+  const extractedHashtags = post.content.match(hashtagRegex) ?? []
 
   const allPosts = post.content
     .replace(regexFont, () => {
       const tags = extractedHashtags
         .map((hashtag) => {
-          const tag = hashtag.split('#');
+          const tag = hashtag.split('#')
           return `<li class="${styles.tagItem}">
       <span class="${styles.tag}">${tag[1]}</span>
-    </li>`;
+    </li>`
         })
-        .join('');
+        .join('')
 
-      return `<ul class="${styles.tagList}">${tags}</ul>`;
+      return `<ul class="${styles.tagList}">${tags}</ul>`
     })
 
     .replace(ideaRegx, () => {
       if (!ideaMatches) {
-        return '';
+        return ''
       }
-      let matches;
+      let matches
       while ((matches = ideaRegx.exec(post.content)) !== null) {
-        const content = matches[1];
-        return ideaMarking(content);
+        const content = matches[1]
+        return ideaMarking(content)
       }
 
-      return '';
-    });
+      return ''
+    })
 
   return (
     <div className='mainContainer w-full px-[10px] pb-[30px] tablet:px-[40px] tablet:pb-[40px] desktop:pb-[60px]'>
@@ -212,5 +212,5 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

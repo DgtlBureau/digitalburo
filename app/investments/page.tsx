@@ -1,18 +1,18 @@
-import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm';
-import { Products } from '@/src/components/NewProducts/Products/Products';
-import { Container } from '@/src/components/shared/Container/Container';
-import { Section } from '@/src/components/shared/Section/Section';
-import { BASE_URL } from '@/src/utils/alias';
-import { getProductsMetadata } from '@/src/utils/getProductsMetadata';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import { Metadata } from 'next';
+import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
+import { Products } from '@/src/components/NewProducts/Products/Products'
+import { Container } from '@/src/components/shared/Container/Container'
+import { Section } from '@/src/components/shared/Section/Section'
+import { BASE_URL } from '@/src/utils/alias'
+import { getProductsMetadata } from '@/src/utils/getProductsMetadata'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import { Metadata } from 'next'
 
-const products = getProductsMetadata();
+const products = getProductsMetadata()
 
-const title = pageMetadata.investments.title;
-const description = pageMetadata.investments.title;
-const keywords = pageMetadata.investments.keywords;
+const title = pageMetadata.investments.title
+const description = pageMetadata.investments.title
+const keywords = pageMetadata.investments.keywords
 
 export const metadata: Metadata = {
   title,
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
     url: `${BASE_URL}/investments`,
   },
   keywords,
-};
+}
 
 export default function NewProductsPage() {
   return (
@@ -54,5 +54,5 @@ export default function NewProductsPage() {
         </Container>
       </Section>
     </div>
-  );
+  )
 }

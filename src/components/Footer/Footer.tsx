@@ -22,7 +22,7 @@ export const Footer = () => {
             </li>
             <li>
               <span className='font-proxima text-[16px] leading-[1.1] text-white opacity-50 desktop:text-[18px]'>
-                &copy; The Bright Byte
+                &copy; digitalburo
               </span>
             </li>
           </ul>

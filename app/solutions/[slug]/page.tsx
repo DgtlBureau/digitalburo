@@ -1,58 +1,58 @@
-import { Hero } from '@/src/components/BusinessObjectives/SingleCasePage/Hero/Hero';
-import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm';
-import { Insights } from '@/src/components/Main/Insights/Insights';
-import { Container } from '@/src/components/shared/Container/Container';
-import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper';
-import { Section } from '@/src/components/shared/Section/Section';
-import { BASE_URL } from '@/src/utils/alias';
-import { contentTrimming } from '@/src/utils/contentTrimming';
+import { Hero } from '@/src/components/BusinessObjectives/SingleCasePage/Hero/Hero'
+import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
+import { Insights } from '@/src/components/Main/Insights/Insights'
+import { Container } from '@/src/components/shared/Container/Container'
+import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper'
+import { Section } from '@/src/components/shared/Section/Section'
+import { BASE_URL } from '@/src/utils/alias'
+import { contentTrimming } from '@/src/utils/contentTrimming'
 import {
-    InstrumentIcons,
-    InstrumentIconsType
-} from '@/src/utils/DataLayers/InstrumentsIcon';
-import { getCaseMetadata } from '@/src/utils/getCaseMetadata';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import fs from 'fs';
-import matter from 'gray-matter';
-import Markdown from 'markdown-to-jsx';
-import Image from 'next/image';
-import NotFoundPage from '../not-found';
-import styles from './Case.module.css';
+  InstrumentIcons,
+  InstrumentIconsType,
+} from '@/src/utils/DataLayers/InstrumentsIcon'
+import { getCaseMetadata } from '@/src/utils/getCaseMetadata'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import fs from 'fs'
+import matter from 'gray-matter'
+import Markdown from 'markdown-to-jsx'
+import Image from 'next/image'
+import NotFoundPage from '../not-found'
+import styles from './Case.module.css'
 
 const getCaseContent = (slug: string) => {
-  const folder = 'src/cases/';
-  const file = folder + `${slug}.md`;
+  const folder = 'src/cases/'
+  const file = folder + `${slug}.md`
 
   try {
-    const content = fs.readFileSync(file, 'utf8');
-    const matterResult = matter(content);
-    return matterResult;
+    const content = fs.readFileSync(file, 'utf8')
+    const matterResult = matter(content)
+    return matterResult
   } catch (error) {
-    return null;
+    return null
   }
-};
+}
 
 export const generateStaticParams = async () => {
-  const posts = getCaseMetadata('src/cases');
-  return posts.map((post) => ({ slug: post.slug }));
-};
+  const posts = getCaseMetadata('src/cases')
+  return posts.map((post) => ({ slug: post.slug }))
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) {
-  const post = getCaseContent(params.slug);
+  const post = getCaseContent(params.slug)
 
   if (!post) {
     return {
       title: 'Page Not Found',
       description: 'This page does not exist',
-    };
+    }
   }
-  const title = contentTrimming(post.data.title, 85);
-  const description = contentTrimming(post.data.description, 155);
-  const slug = params.slug;
+  const title = contentTrimming(post.data.title, 85)
+  const description = contentTrimming(post.data.description, 155)
+  const slug = params.slug
 
   return {
     title,
@@ -63,61 +63,61 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      siteName: 'BrightByte.com',
+      siteName: 'digitalburo.tech',
       ...openGraphImage,
       title,
       description,
       url: `${BASE_URL}/solutions/${slug}`,
     },
-  };
+  }
 }
 
 export default async function CasePage(props: { params: { slug: string } }) {
-  const slug = props.params.slug;
-  const post = getCaseContent(slug);
+  const slug = props.params.slug
+  const post = getCaseContent(slug)
 
   if (!post) {
-    return <NotFoundPage slug={slug} />;
+    return <NotFoundPage slug={slug} />
   }
 
-  const { industries, title, tag, images, instruments } = post.data;
+  const { industries, title, tag, images, instruments } = post.data
 
   const Instruments = ({
     instruments,
   }: {
-    instruments: (keyof InstrumentIconsType)[];
+    instruments: (keyof InstrumentIconsType)[]
   }) => {
     return (
       <div className='flex gap-4'>
         {instruments.map((item) => {
-          const IconComponent = InstrumentIcons[item];
+          const IconComponent = InstrumentIcons[item]
           if (!IconComponent) {
-            return null;
+            return null
           }
-          return <IconComponent key={item} width={60} height={60} />;
+          return <IconComponent key={item} width={60} height={60} />
         })}
       </div>
-    );
-  };
+    )
+  }
 
-  const hashtagRegex = /#[A-Za-z_]+/g;
-  const regexFont = /<font color='(.+?)'>(.+?)<\/font>/g;
-  const regexImage = /!\[[^\]]*\]\((.*?)\s*("(?:.*[^"])")?\s*\)/g;
+  const hashtagRegex = /#[A-Za-z_]+/g
+  const regexFont = /<font color='(.+?)'>(.+?)<\/font>/g
+  const regexImage = /!\[[^\]]*\]\((.*?)\s*("(?:.*[^"])")?\s*\)/g
 
-  const extractedHashtags = post.content.match(hashtagRegex) ?? [];
+  const extractedHashtags = post.content.match(hashtagRegex) ?? []
 
   const allPosts = post.content.replace(regexFont, () => {
     const tags = extractedHashtags
       .map((hashtag) => {
-        const tag = hashtag.split('#');
+        const tag = hashtag.split('#')
         return `<li class="${styles.tagItem}">
                   <span class="${styles.tag}">${tag[1]}</span>
-                </li>`;
+                </li>`
       })
-      .join('');
+      .join('')
 
-    return `<ul class="${styles.tagList}">${tags}</ul>`;
-  });
+    return `<ul class="${styles.tagList}">${tags}</ul>`
+  })
 
   const paragraphs = allPosts
     .split('## ')
@@ -126,7 +126,7 @@ export default async function CasePage(props: { params: { slug: string } }) {
       index,
       images: p.match(regexImage)?.join() || '',
       content: '## ' + p.replace(regexImage, '').replace(/(^[ \t]*\n)/gm, ''),
-    }));
+    }))
 
   return (
     <>
@@ -183,5 +183,5 @@ export default async function CasePage(props: { params: { slug: string } }) {
         </Container>
       </Section>
     </>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import { PlaybookClient } from '@/src/components/PlaybookClient/PlaybookClient';
-import { BASE_URL } from '@/src/utils/alias';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import { postsSorting } from '@/src/utils/postsSorting';
-import { Metadata } from 'next';
-import { Suspense } from 'react';
+import { PlaybookClient } from '@/src/components/PlaybookClient/PlaybookClient'
+import { BASE_URL } from '@/src/utils/alias'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import { postsSorting } from '@/src/utils/postsSorting'
+import { Metadata } from 'next'
+import { Suspense } from 'react'
 
-const title = pageMetadata.insights.title;
-const description = contentTrimming(pageMetadata.insights.description, 155);
-const keywords = pageMetadata.insights.keywords;
+const title = pageMetadata.insights.title
+const description = contentTrimming(pageMetadata.insights.description, 155)
+const keywords = pageMetadata.insights.keywords
 
 export const metadata: Metadata = {
   title,
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
     url: `${BASE_URL}/playbook/insights`,
   },
   keywords,
-};
+}
 
-const insightsArticles = getInsightsMetadata();
-const sortedInsightsArticles = postsSorting(insightsArticles);
+const insightsArticles = getInsightsMetadata()
+const sortedInsightsArticles = postsSorting(insightsArticles)
 
 export default function InsightsPage() {
   return (
@@ -52,5 +52,5 @@ export default function InsightsPage() {
         <PlaybookClient data={sortedInsightsArticles} />
       </Suspense>
     </div>
-  );
+  )
 }

@@ -1,32 +1,32 @@
-import HeroBg from '@/public/assets/images/career/hero_banner.png';
-import { ContactForm } from '@/src/components/Career/ContactForm/ContactForm';
-import { Hero } from '@/src/components/Career/Hero/Hero';
-import { Internship } from '@/src/components/Career/Internship/Internship';
-import { Team } from '@/src/components/Career/Team/Team';
-import { Container } from '@/src/components/shared/Container/Container';
-import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper';
-import { Section } from '@/src/components/shared/Section/Section';
-import { BASE_URL } from '@/src/utils/alias';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import styles from './Career.module.css';
+import HeroBg from '@/public/assets/images/career/hero_banner.png'
+import { ContactForm } from '@/src/components/Career/ContactForm/ContactForm'
+import { Hero } from '@/src/components/Career/Hero/Hero'
+import { Internship } from '@/src/components/Career/Internship/Internship'
+import { Team } from '@/src/components/Career/Team/Team'
+import { Container } from '@/src/components/shared/Container/Container'
+import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper'
+import { Section } from '@/src/components/shared/Section/Section'
+import { BASE_URL } from '@/src/utils/alias'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import styles from './Career.module.css'
 
 const DynamicValues = dynamic(() =>
-  import('@/src/components/Career/Values/Values').then((mod) => mod.Values),
-);
+  import('@/src/components/Career/Values/Values').then((mod) => mod.Values)
+)
 const DynamicVacancies = dynamic(() =>
   import('@/src/components/Career/Vacanices/Vacancies').then(
-    (mod) => mod.Vacancies,
-  ),
-);
+    (mod) => mod.Vacancies
+  )
+)
 
-const title = pageMetadata.career.title;
-const description = contentTrimming(pageMetadata.career.description, 155);
-const keywords = pageMetadata.career.keywords;
+const title = pageMetadata.career.title
+const description = contentTrimming(pageMetadata.career.description, 155)
+const keywords = pageMetadata.career.keywords
 
 export const metadata: Metadata = {
   title,
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
     url: `${BASE_URL}/career`,
   },
   keywords,
-};
+}
 
 export default async function CareerPage() {
   return (
@@ -116,5 +116,5 @@ export default async function CareerPage() {
         </Container>
       </Section>
     </>
-  );
+  )
 }

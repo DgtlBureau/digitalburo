@@ -1,5 +1,5 @@
-import avatar from '@/public/assets/images/brief/ceo_founder.webp';
-import Image from 'next/image';
+import avatar from '@/public/assets/images/brief/ceo_founder.webp'
+import Image from 'next/image'
 
 export const CalendarContent = () => {
   return (
@@ -28,9 +28,9 @@ export const CalendarContent = () => {
           Vitaly Z.
         </p>
         <span className='mt-[4px] text-center text-[16px] leading-[1.2]'>
-          CEO The Bright Byte
+          CEO digitalburo
         </span>
       </div>
     </div>
-  );
-};
+  )
+}

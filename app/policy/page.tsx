@@ -1,16 +1,13 @@
-import { Privacy } from '@/src/components/Privacy/Privacy';
-import { BASE_URL } from '@/src/utils/alias';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import { Metadata } from 'next';
+import { Privacy } from '@/src/components/Privacy/Privacy'
+import { BASE_URL } from '@/src/utils/alias'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import { Metadata } from 'next'
 
-const title = pageMetadata.privacyPolicy.title;
-const description = contentTrimming(
-  pageMetadata.privacyPolicy.description,
-  155,
-);
-const keywords = pageMetadata.privacyPolicy.keywords;
+const title = pageMetadata.privacyPolicy.title
+const description = contentTrimming(pageMetadata.privacyPolicy.description, 155)
+const keywords = pageMetadata.privacyPolicy.keywords
 
 export const metadata: Metadata = {
   title,
@@ -25,15 +22,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
     url: `${BASE_URL}/policy`,
   },
   keywords,
-};
+}
 
 export default function PrivacyPage() {
-  return <Privacy />;
+  return <Privacy />
 }
