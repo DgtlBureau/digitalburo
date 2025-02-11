@@ -20,7 +20,7 @@ export const NewExpertise = ({ data }: IData) => {
     <Section light>
       <Container>
         <NextLinePreposition
-          text={'Области нашей компетенции'}
+          text={'Kомпетенции'}
           tag={'h2'}
           className={
             'z-50 font-unbound text-[28px] font-bold uppercase leading-[1.25] text-main-bg tablet:text-[40px] desktop-light:text-[50px]'

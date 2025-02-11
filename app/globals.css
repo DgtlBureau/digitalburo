@@ -273,6 +273,8 @@ input:-webkit-autofill:active {
     --light-blue: #00248b;
     --blue-hover: #1858fd;
     --pagination-col: #eceffa;
+    --main-orange: #F8AE3C;
+    --main-orange-hover: #FF884D;
   }
 
   .backImage {

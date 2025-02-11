@@ -16,7 +16,6 @@
 .description {
   font-size: 16px;
   line-height: 1.25;
-  color: var(--text-dark);
 }
 
 @media (min-width: 768px) {

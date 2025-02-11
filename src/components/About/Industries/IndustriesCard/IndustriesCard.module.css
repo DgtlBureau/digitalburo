@@ -4,14 +4,14 @@
   position: absolute;
   left: 0;
   border: 1px solid var(--main-white);
-  background-color: var(--dark-blue);
+  background-color: var(--primary);
   cursor: pointer;
   overflow: hidden;
   transition: z-index 0.3s ease-in-out;
 }
 
 .mainContainer:hover {
-  border: 2px solid var(--main-blue);
+  border: 2px solid var(--main-orange);
 }
 
 .mainContainer.active {

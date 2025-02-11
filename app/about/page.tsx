@@ -1,48 +1,46 @@
-import { Hero } from '@/src/components/About/Hero/Hero';
-import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm';
-import { Container } from '@/src/components/shared/Container/Container';
-import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper';
-import { Section } from '@/src/components/shared/Section/Section';
-import { BASE_URL } from '@/src/utils/alias';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
+import { Hero } from '@/src/components/About/Hero/Hero'
+import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
+import { Container } from '@/src/components/shared/Container/Container'
+import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper'
+import { Section } from '@/src/components/shared/Section/Section'
+import { BASE_URL } from '@/src/utils/alias'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
 const DynamicInsights = dynamic(() =>
-  import('@/src/components/About/Insights/Insights').then(
-    (mod) => mod.Insights,
-  ),
-);
+  import('@/src/components/About/Insights/Insights').then((mod) => mod.Insights)
+)
 const DynamicIndustries = dynamic(() =>
   import('@/src/components/About/Industries/Industries').then(
-    (mod) => mod.Industries,
-  ),
-);
+    (mod) => mod.Industries
+  )
+)
 const DynamicTeam = dynamic(() =>
-  import('@/src/components/About/Team/Team').then((mod) => mod.Team),
-);
+  import('@/src/components/About/Team/Team').then((mod) => mod.Team)
+)
 const DynamicCards = dynamic(() =>
-  import('@/src/components/About/Cards/Cards').then((mod) => mod.Cards),
-);
+  import('@/src/components/About/Cards/Cards').then((mod) => mod.Cards)
+)
 const DynamicTechnology = dynamic(() =>
   import('@/src/components/About/Technology/Technology').then(
-    (mod) => mod.Technology,
-  ),
-);
+    (mod) => mod.Technology
+  )
+)
 const DynamicDirection = dynamic(() =>
   import('@/src/components/About/Vacancy/Direction/Direction').then(
-    (mod) => mod.Direction,
-  ),
-);
+    (mod) => mod.Direction
+  )
+)
 const DynamicVacancy = dynamic(() =>
-  import('@/src/components/About/Vacancy/Vacancy').then((mod) => mod.Vacancy),
-);
+  import('@/src/components/About/Vacancy/Vacancy').then((mod) => mod.Vacancy)
+)
 
-const title = pageMetadata.about.title;
-const description = contentTrimming(pageMetadata.about.description, 155);
-const keywords = pageMetadata.about.keywords;
+const title = pageMetadata.about.title
+const description = contentTrimming(pageMetadata.about.description, 155)
+const keywords = pageMetadata.about.keywords
 
 export const metadata: Metadata = {
   title,
@@ -64,25 +62,22 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/about`,
   },
   keywords,
-};
+}
 
 export default function About() {
   return (
     <>
-      <Section
-        id='hero'
-        className='mt-[60px] px-0  py-0  tablet:py-0 desktop:py-0'
-      >
+      <Section light id='hero' className='px-0  py-0  tablet:py-0 desktop:py-0'>
         <Container className='tablet:px-0 desktop:px-0 desktop:py-0'>
           <Hero />
         </Container>
       </Section>
-      <Section id='insights' className='py-0 tablet:py-0 desktop:py-0'>
-        <Container className='tablet:px-[40px] desktop:px-0'>
-          <DynamicInsights />
-        </Container>
+      <Section light id='insights' className='py-0 tablet:py-0 desktop:py-0'>
+        {/* <Container className='tablet:px-[40px] desktop:px-0'> */}
+        <DynamicInsights />
+        {/* </Container> */}
       </Section>
-      <Section id='industries' className='py-0 tablet:py-0 desktop:py-0'>
+      <Section light id='industries' className='py-0 tablet:py-0 desktop:py-0'>
         <ScrollAnimationWrapper>
           <Container className='tablet:px-[40px] desktop:px-0'>
             <DynamicIndustries />
@@ -139,5 +134,5 @@ export default function About() {
         </Section>
       </div>
     </>
-  );
+  )
 }

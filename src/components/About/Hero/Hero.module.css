@@ -3,7 +3,7 @@
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  background: url('/assets/images/about/bg_hero.webp');
+  /* background: url('/assets/images/about/bg_hero.webp'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

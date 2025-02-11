@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import Arrow from '@/public/assets/images/icons/link_arrow.svg';
-import useMediaQuery from '@/src/utils/useMediaQuery';
-import classNames from 'classnames';
-import Image from 'next/image';
-import Link from 'next/link';
-import { IIndustries } from '../Industries';
-import styles from './IndustriesCard.module.css';
+import Arrow from '@/public/assets/images/icons/link_arrow.svg'
+import useMediaQuery from '@/src/utils/useMediaQuery'
+import classNames from 'classnames'
+import Image from 'next/image'
+import Link from 'next/link'
+import { IIndustries } from '../Industries'
+import styles from './IndustriesCard.module.css'
 
 interface Data {
-  data: IIndustries;
-  activeId: number | null;
-  setActiveId: (id: number | null) => void;
+  data: IIndustries
+  activeId: number | null
+  setActiveId: (id: number | null) => void
 }
 
 export const IndustriesCard = ({ data, activeId, setActiveId }: Data) => {
-  const { description, title, link, id, image, activeImage } = data;
-  const topValue = id === 1 ? 0 : (id - 1) * 60;
-  const isDesktop = useMediaQuery('>=desktop');
+  const { description, title, link, id, image, activeImage } = data
+  const topValue = id === 1 ? 0 : (id - 1) * 60
+  const isDesktop = useMediaQuery('>=desktop')
 
   const handleClick = () => {
-    setActiveId(activeId === id ? null : id);
-  };
+    setActiveId(activeId === id ? null : id)
+  }
 
   return (
     <div
@@ -37,14 +37,14 @@ export const IndustriesCard = ({ data, activeId, setActiveId }: Data) => {
     >
       <div className={styles.contentWrapper}>
         <div className='flex justify-between'>
-          <p className='font-unbound text-[18px] font-bold uppercase leading-[1.1] tablet:text-[24px]'>
+          <p className='font-unbound text-[18px] text-white font-bold uppercase leading-[1.1] tablet:text-[24px]'>
             {description}
           </p>
           <Link href={link}>
             <Arrow className='h-[32px] w-[32px]' />
           </Link>
         </div>
-        <h2 className='z-10 font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] desktop:text-[80px] desktop-hard:text-[100px]'>
+        <h2 className='z-10 font-unbound text-[45px] text-white font-bold uppercase leading-[1] tablet:text-[50px] desktop:text-[80px] desktop-hard:text-[100px]'>
           {title}
         </h2>
         <div className='absolute bottom-0 right-0 z-0 h-3/4 w-[70%] opacity-[80%] tablet:block desktop:right-[-20%] desktop:w-[90%] desktop:max-w-[900px]'>
@@ -58,5 +58,5 @@ export const IndustriesCard = ({ data, activeId, setActiveId }: Data) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
