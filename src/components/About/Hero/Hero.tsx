@@ -1,24 +1,32 @@
+'use client'
 import { LinkArrow } from '@/src/ui-kit/LinkArrow/LinkArrow'
 import { Breadcrumb, Breadcrumbs } from '../../shared/Breadcrumbs/Breadcrumbs'
+import heroBg from '@/public/assets/images/about/about-hero-bg.webp'
 import styles from './Hero.module.css'
+import Image from 'next/image'
+import useMediaQuery from '@/src/utils/useMediaQuery'
 
 const BREADCRUMBS: Breadcrumb[] = [
   { title: 'Main', link: '/' },
   { title: 'About' },
 ]
 export const Hero = () => {
+  const isMobile = useMediaQuery('<laptop')
+
   return (
-    <div className={styles.mainContainer}>
+    <div className={`${styles.mainContainer} relative bg-ligth-bg`}>
       <div className='z-[5]'>
-        <Breadcrumbs breadcrumbs={BREADCRUMBS} />
-        <h1 className={styles.title}>О нас</h1>
+        <Breadcrumbs breadcrumbs={BREADCRUMBS} light />
+        <h1 className={`${styles.title} text-text-dark`}>О нас</h1>
       </div>
-      <div className={styles.handbookWrapper}>
-        <h2 className={`${styles.handbookTitle} text-white`}>Руководство</h2>
-        <p className={`${styles.handbookDescr} text-white`}>
+      <div className={`${styles.handbookWrapper} handbook-item`}>
+        <h2 className={`${styles.handbookTitle} text-white z-10 relative`}>
+          Руководство
+        </h2>
+        <p className={`${styles.handbookDescr} text-white z-10 relative`}>
           Руководство, которое поможет вам разобраться в тонкостях нашей работы
         </p>
-        <div className={styles.linkBox}>
+        <div className={`${styles.linkBox} z-10 relative`}>
           <LinkArrow
             target='_blank'
             title='Перейти к руководству'
@@ -26,6 +34,15 @@ export const Hero = () => {
           />
         </div>
       </div>
+      {!isMobile && (
+        <Image
+          src={heroBg}
+          width={200}
+          height={100}
+          alt='background-gradient'
+          className='absolute h-full w-[75%] right-0 top-0'
+        />
+      )}
     </div>
   )
 }

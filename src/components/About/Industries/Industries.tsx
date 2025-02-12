@@ -82,14 +82,6 @@ export const Industries = () => {
             Наш опыт охватывает все отрасли. Мы имеем наибольший опыт в спорте,
             FMCG, электронной коммерции.
           </p>
-          <Link
-            href='/expertise'
-            className={`${styles.allIndustries} mt-[156px] hidden w-[240px] p-[54px_0_29px_27px] desktop:block`}
-          >
-            <p className='font-unbound text-[24px] font-bold uppercase leading-[1.16] '>
-              All industries
-            </p>
-          </Link>
         </div>
         <div
           className={`relative mb-[500px] mt-[40px] h-fit laptop:mb-[650px] desktop:mt-[60px] desktop:w-fit desktop-hard:mb-[900px]`}
@@ -104,7 +96,6 @@ export const Industries = () => {
           ))}
         </div>
       </div>
-      <Welcome />
     </div>
   )
 }

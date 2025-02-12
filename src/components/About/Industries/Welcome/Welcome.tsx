@@ -13,7 +13,7 @@ export const Welcome = () => {
   const isDesktop = useMediaQuery('>=desktop')
 
   return (
-    <div className='relative mt-[46px] flex h-[316px] bg-main-bg p-[20px_12px] tablet:mt-[88px] tablet:h-fit tablet:p-[74px_14px] laptop:p-[74px_180px_74px_0] desktop:p-[120px_238px_120px_0]   desktop-big:p-[168px_238px_139px_0]'>
+    <div className='relative flex h-[316px] bg-main-bg p-[20px_12px] tablet:h-fit tablet:p-[74px_14px] laptop:p-[74px_120px_74px_0] desktop:p-[120px_120px_120px_0] desktop-big:p-[168px_238px_139px_0]'>
       <Image
         src={
           isDesktop

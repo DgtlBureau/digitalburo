@@ -1,4 +1,5 @@
 import { Hero } from '@/src/components/About/Hero/Hero'
+import { Welcome } from '@/src/components/About/Industries/Welcome/Welcome'
 import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
 import { Container } from '@/src/components/shared/Container/Container'
 import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper'
@@ -66,9 +67,9 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <>
-      <Section light id='hero' className='px-0  py-0  tablet:py-0 desktop:py-0'>
-        <Container className='tablet:px-0 desktop:px-0 desktop:py-0'>
+    <div className='w-full bg-white flex flex-col gap-[40px] tablet:gap-[60px]'>
+      <Section light id='hero' className='px-0  py-[40px]  tablet:py-[60px]'>
+        <Container className='tablet:px-0 desktop:py-0'>
           <Hero />
         </Container>
       </Section>
@@ -84,7 +85,12 @@ export default function About() {
           </Container>
         </ScrollAnimationWrapper>
       </Section>
-      <Section id='team'>
+      <Section className='p-0 tablet:p-0 desktop:p-0 bg-main-bg'>
+        <Container>
+          <Welcome />
+        </Container>
+      </Section>
+      <Section id='team' light>
         <ScrollAnimationWrapper>
           <Container>
             <DynamicTeam />
@@ -98,7 +104,10 @@ export default function About() {
           </Container>
         </ScrollAnimationWrapper>
       </Section>
-      <Section id='technologies' className='py-0 tablet:py-0 desktop:py-0'>
+      <Section
+        id='technologies'
+        className='py-0 tablet:py-0 desktop:py-[60px] bg-main-bg'
+      >
         <ScrollAnimationWrapper>
           <Container>
             <DynamicTechnology />
@@ -133,6 +142,6 @@ export default function About() {
           </Container>
         </Section>
       </div>
-    </>
+    </div>
   )
 }

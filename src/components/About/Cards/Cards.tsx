@@ -1,7 +1,7 @@
-import { CardsData } from '@/src/utils/DataLayers/CardsData';
-import classNames from 'classnames';
-import Image from 'next/image';
-import styles from './Cards.module.css';
+import { CardsData } from '@/src/utils/DataLayers/CardsData'
+import classNames from 'classnames'
+import Image from 'next/image'
+import styles from './Cards.module.css'
 
 export const Cards = () => {
   return (
@@ -22,11 +22,11 @@ export const Cards = () => {
             quality={80}
             className={classNames(
               styles.image,
-              item.id % 2 == 0 ? styles.teamImage : styles.tvImage,
+              item.id % 2 == 0 ? styles.teamImage : styles.tvImage
             )}
           />
         </div>
       ))}
     </div>
-  );
-};
+  )
+}

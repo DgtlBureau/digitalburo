@@ -220,6 +220,36 @@ input:-webkit-autofill:active {
     z-index: 1;
   }
 
+  .about-cont {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-cont::before {
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left, rgba(248, 174, 60, 1), rgba(211, 25, 0, 1), rgba(151, 71, 255, 1));
+  }
+
+  .handbook-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .handbook-item::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 200px, #9747ff 80%);
+  }
+
   .video-container {
     position: relative;
     overflow: hidden;
@@ -275,6 +305,7 @@ input:-webkit-autofill:active {
     --pagination-col: #eceffa;
     --main-orange: #F8AE3C;
     --main-orange-hover: #FF884D;
+    --bg-team-card: #090909;
   }
 
   .backImage {

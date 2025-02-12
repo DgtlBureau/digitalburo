@@ -1,25 +1,25 @@
-import { Footer } from '@/src/components/Footer/Footer';
-import { Header } from '@/src/components/Header/Header';
-import { BASE_URL } from '@/src/utils/alias';
-import { getArticlesList } from '@/src/utils/articlesMenu';
-import { contentTrimming } from '@/src/utils/contentTrimming';
-import { getAllArticles } from '@/src/utils/getAllArticles';
-import { openGraphImage } from '@/src/utils/openGraphParams';
-import { pageMetadata } from '@/src/utils/pageMetadata';
-import classNames from 'classnames';
-import { Metadata } from 'next';
-import localFont from 'next/font/local';
-import Script from 'next/script';
-import React from 'react';
-import 'swiper/css';
-import './globals.css';
+import { Footer } from '@/src/components/Footer/Footer'
+import { Header } from '@/src/components/Header/Header'
+import { BASE_URL } from '@/src/utils/alias'
+import { getArticlesList } from '@/src/utils/articlesMenu'
+import { contentTrimming } from '@/src/utils/contentTrimming'
+import { getAllArticles } from '@/src/utils/getAllArticles'
+import { openGraphImage } from '@/src/utils/openGraphParams'
+import { pageMetadata } from '@/src/utils/pageMetadata'
+import classNames from 'classnames'
+import { Metadata } from 'next'
+import localFont from 'next/font/local'
+import Script from 'next/script'
+import React from 'react'
+import 'swiper/css'
+import './globals.css'
 
-const expertiseSubMenu = getArticlesList('expertise');
-const playbookMetaData = getAllArticles();
+const expertiseSubMenu = getArticlesList('expertise')
+const playbookMetaData = getAllArticles()
 
-const title = pageMetadata.main.title;
-const description = contentTrimming(pageMetadata.main.description, 155);
-const keywords = pageMetadata.main.keywords;
+const title = pageMetadata.main.title
+const description = contentTrimming(pageMetadata.main.description, 155)
+const keywords = pageMetadata.main.keywords
 
 export const metadata: Metadata = {
   title,
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
     url: BASE_URL,
   },
   keywords,
-};
+}
 
 const Unbound = localFont({
   src: [
@@ -71,7 +71,7 @@ const Unbound = localFont({
   ],
   variable: '--font-unbound',
   adjustFontFallback: false,
-});
+})
 
 const Proxima = localFont({
   src: [
@@ -88,14 +88,14 @@ const Proxima = localFont({
   ],
   variable: '--font-proxima',
   adjustFontFallback: false,
-});
+})
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const bodyClassname = classNames(Unbound.variable, Proxima.variable);
+  const bodyClassname = classNames(Unbound.variable, Proxima.variable)
   return (
     <html lang='en'>
       <head>
@@ -149,5 +149,5 @@ export default function RootLayout({
         </Script>
       </body>
     </html>
-  );
+  )
 }

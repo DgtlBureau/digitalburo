@@ -1,48 +1,46 @@
-'use client';
+'use client'
 
-import { NextPrevBtn } from '@/src/ui-kit/NextPrevBtn/NextPrevBtn';
-import useMediaQuery from '@/src/utils/useMediaQuery';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import { Container } from '../../shared/Container/Container';
-import styles from './Team.module.css';
+import { NextPrevBtn } from '@/src/ui-kit/NextPrevBtn/NextPrevBtn'
+import useMediaQuery from '@/src/utils/useMediaQuery'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import 'swiper/swiper-bundle.css'
+import { Container } from '../../shared/Container/Container'
+import styles from './Team.module.css'
 
 interface ITeam {
-  name: string;
-  job: string;
-  image: string;
+  name: string
+  job: string
+  image: string
 }
 
 interface ITeamProps {
-  team: ITeam[];
+  team: ITeam[]
 }
 
 export const TeamClient = ({ team }: ITeamProps) => {
-  const [swiper, setSwiper] = useState<SwiperClass | null>(null);
-  const mediaQuery = useMediaQuery('<desktop');
+  const [swiper, setSwiper] = useState<SwiperClass | null>(null)
+  const mediaQuery = useMediaQuery('<desktop')
   return (
     <div className='flex flex-col gap-[40px] desktop:flex-row desktop:justify-between desktop:gap-[auto]'>
       <div className='flex items-center justify-between desktop:flex-col desktop:items-start'>
         <div className='flex flex-col gap-[4px] desktop:gap-[32px]'>
-          <h2 className='font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
-            Team
+          <h2 className='font-unbound text-[45px] font-bold text-text-dark uppercase leading-[1] tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
+            Команда
           </h2>
-          <p className='text-stroke flex gap-[10px] whitespace-nowrap font-unbound text-[40px] font-bold uppercase leading-[1.1] desktop:text-[50px]'>
-            20+ <span className='hidden tablet:block'>PEOPLE</span>
-          </p>
         </div>
         <Link href='#contacts' className={styles.joinWrapper}>
-          <span className='font-unbound text-[18px] font-bold uppercase leading-[1.1]'>
-            Join our team
+          <span className='font-unbound text-[18px] text-text-dark font-bold uppercase leading-[1.1] z-20 relative'>
+            Присоединяйтесь к нашей команде
           </span>
         </Link>
       </div>
       <div className='flex flex-col gap-[60px] desktop:w-[900px] desktop-light:w-[1100px] desktop-big:w-[1200px]'>
         <div className='hidden items-end justify-end desktop:flex'>
           <NextPrevBtn
+            bg='light'
             nextPage={() => swiper?.slideNext()}
             prevPage={() => swiper?.slidePrev()}
           />
@@ -78,5 +76,5 @@ export const TeamClient = ({ team }: ITeamProps) => {
         </Container>
       </div>
     </div>
-  );
-};
+  )
+}
