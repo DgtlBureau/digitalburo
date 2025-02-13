@@ -8,10 +8,10 @@ export const Cards = () => {
     <div className='flex w-full flex-col gap-[20px] desktop:flex-row desktop:gap-[40px]'>
       {CardsData.map((item) => (
         <div key={item.id} className={styles.cardWrapper}>
-          <h3 className='z-[5] w-fit rounded-[2px] bg-white p-[10px] font-unbound text-[22px] font-bold uppercase leading-[1] text-text-dark'>
+          <h3 className='z-[5] w-fit rounded-[2px] bg-white tablet:text-[28px] p-[10px] font-unbound text-[16px] font-bold uppercase leading-[1] text-text-dark'>
             {item.tag}
           </h3>
-          <p className='z-[5] mt-[8px] font-proxima text-[20px] leading-[1.2]'>
+          <p className='z-[5] mt-[8px] font-proxima text-[12px] tablet:text-[24px] leading-[1.2]'>
             {item.title}
           </p>
           <Image

@@ -1,14 +1,14 @@
-import Arrow from '@/public/assets/images/icons/arrow.svg';
+import Arrow from '@/public/assets/images/icons/arrow.svg'
 
 const BG = {
   DEFAULT: 'default',
   LIGHT: 'light',
   DARK: 'dark',
-};
+}
 interface Props {
-  prevPage: () => void;
-  nextPage: () => void;
-  bg?: string;
+  prevPage: () => void
+  nextPage: () => void
+  bg?: string
 }
 
 export const NextPrevBtn = ({ prevPage, nextPage, bg = BG.DEFAULT }: Props) => {
@@ -41,15 +41,9 @@ export const NextPrevBtn = ({ prevPage, nextPage, bg = BG.DEFAULT }: Props) => {
         onClick={nextPage}
       >
         <Arrow
-          className={`group-hover:fill-main-bg ${
-            bg === BG.LIGHT
-              ? 'fill-main-bg'
-              : bg === BG.DARK
-                ? 'fill-white'
-                : 'fill-white'
-          }`}
+          className={`rotate-[360deg] group-hover:fill-main-bg ${bg === BG.LIGHT ? 'fill-main-bg' : bg === BG.DARK ? 'fill-white' : 'fill-white'}`}
         />
       </button>
     </div>
-  );
-};
+  )
+}

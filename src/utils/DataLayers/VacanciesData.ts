@@ -3,40 +3,40 @@ export const VacanciesData = [
     id: 1,
     title: 'Middle+ Project Manager',
     description: `
-• Be ready to negotiate with clients who refuse to negotiate with you \n
-• Find a common language with the team, set a positive mood
+• Будьте готовы к переговорам с клиентами, которые отказываются вести переговоры с вами\n
+• Найдите общий язык с командой, создайте позитивный настрой
     `,
-    tags: ['Management'],
+    tags: ['Менеджмент'],
     link: '#',
   },
   {
     id: 2,
     title: 'B2B Sales Manager',
     description: `
-• To attract and develop new clients of Medium and Large Businesses \n
-• Identify customer needs in digital communications
+• Привлечение и развитие новых клиентов среднего и крупного бизнеса \n
+• Выявление потребностей клиентов в цифровых коммуникациях
     `,
-    tags: ['Management'],
+    tags: ['Менеджмент'],
     link: '#',
   },
   {
     id: 3,
     title: 'Middle PHP Laravel Web Developer',
     description: `
-• Be ready to negotiate with clients who refuse to negotiate with you \n
-• Find a common language with the team, set a positive mood
+• Будьте готовы к переговорам с клиентами, которые отказываются вести переговоры с вами \n
+• Найдите общий язык с командой, создайте позитивный настрой
         `,
-    tags: ['Development'],
+    tags: ['Разработка'],
     link: '#',
   },
   {
     id: 4,
     title: 'Flutter-developer',
     description: `
-• Participation in the team development of the project \n
-• Participation in writing the code and designing the solution
+• Участие в командной разработке проекта \n
+• Участие в написании кода и проектировании решения
     `,
-    tags: ['Development'],
+    tags: ['Разработка'],
     link: '#',
   },
-];
+]

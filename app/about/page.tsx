@@ -1,6 +1,8 @@
 import { Hero } from '@/src/components/About/Hero/Hero'
 import { Welcome } from '@/src/components/About/Industries/Welcome/Welcome'
+import { InsightsData } from '@/src/components/About/Insights/InsightsData'
 import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
+import { NewContactForm } from '@/src/components/Main/NewContactForm/NewContactForm'
 import { Container } from '@/src/components/shared/Container/Container'
 import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper'
 import { Section } from '@/src/components/shared/Section/Section'
@@ -74,9 +76,14 @@ export default function About() {
         </Container>
       </Section>
       <Section light id='insights' className='py-0 tablet:py-0 desktop:py-0'>
-        {/* <Container className='tablet:px-[40px] desktop:px-0'> */}
-        <DynamicInsights />
-        {/* </Container> */}
+        <Container className='tablet:px-[40px] desktop:px-0'>
+          <DynamicInsights />
+        </Container>
+      </Section>
+      <Section className='laptop:bg-main-bg py-0 tablet:py-0 desktop:py-0'>
+        <Container>
+          <InsightsData />
+        </Container>
       </Section>
       <Section light id='industries' className='py-0 tablet:py-0 desktop:py-0'>
         <ScrollAnimationWrapper>
@@ -85,7 +92,7 @@ export default function About() {
           </Container>
         </ScrollAnimationWrapper>
       </Section>
-      <Section className='p-0 tablet:p-0 desktop:p-0 bg-main-bg'>
+      <Section className='p-0 tablet:p-0 desktop:p-0 desktop:bg-main-bg'>
         <Container>
           <Welcome />
         </Container>
@@ -106,7 +113,7 @@ export default function About() {
       </Section>
       <Section
         id='technologies'
-        className='py-0 tablet:py-0 desktop:py-[60px] bg-main-bg'
+        className='py-[20px] desktop:py-[60px] bg-main-bg'
       >
         <ScrollAnimationWrapper>
           <Container>
@@ -124,7 +131,7 @@ export default function About() {
         </Section>
         <Section
           id='vacancy'
-          className='bg-gradient-to-r from-dark-blue to-main-blue'
+          className='bg-gradient-to-r from-[#9747FF] to-[#F8AE3C] section-black-gradient'
         >
           <ScrollAnimationWrapper>
             <Container>
@@ -133,13 +140,11 @@ export default function About() {
           </ScrollAnimationWrapper>
         </Section>
         <Section
-          id='contacts'
-          className='py-[80px] tablet:py-[80px] desktop:py-[80px]'
           light
+          className='px-0 tablet:px-0 desktop:px-0 desktop:py-0'
+          id='form'
         >
-          <Container>
-            <ContactForm />
-          </Container>
+          <NewContactForm />
         </Section>
       </div>
     </div>

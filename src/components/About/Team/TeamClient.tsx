@@ -27,12 +27,12 @@ export const TeamClient = ({ team }: ITeamProps) => {
     <div className='flex flex-col gap-[40px] desktop:flex-row desktop:justify-between desktop:gap-[auto]'>
       <div className='flex items-center justify-between desktop:flex-col desktop:items-start'>
         <div className='flex flex-col gap-[4px] desktop:gap-[32px]'>
-          <h2 className='font-unbound text-[45px] font-bold text-text-dark uppercase leading-[1] tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
+          <h2 className='font-unbound text-[32px] font-bold text-text-dark uppercase leading-[1] tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
             Команда
           </h2>
         </div>
         <Link href='#contacts' className={styles.joinWrapper}>
-          <span className='font-unbound text-[18px] text-text-dark font-bold uppercase leading-[1.1] z-20 relative'>
+          <span className='font-unbound text-[8px] text-text-dark tablet:text-[20px] font-bold uppercase leading-[1.1] z-20 relative'>
             Присоединяйтесь к нашей команде
           </span>
         </Link>
