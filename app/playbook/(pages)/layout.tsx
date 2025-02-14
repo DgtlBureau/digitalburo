@@ -1,15 +1,15 @@
-import { CategoryComponent } from '@/src/components/PlaybookClient/CategoryComponent/CategoryComponent';
-import { PlaybookHeading } from '@/src/components/PlaybookClient/PlaybookHeading/PlaybookHeading';
-import { Section } from '@/src/components/shared/Section/Section';
-import { getAllArticles } from '@/src/utils/getAllArticles';
-import { Suspense } from 'react';
+import { CategoryComponent } from '@/src/components/PlaybookClient/CategoryComponent/CategoryComponent'
+import { PlaybookHeading } from '@/src/components/PlaybookClient/PlaybookHeading/PlaybookHeading'
+import { Section } from '@/src/components/shared/Section/Section'
+import { getAllArticles } from '@/src/utils/getAllArticles'
+import { Suspense } from 'react'
 
 export default function PlaybookLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  const data = getAllArticles();
+  const data = getAllArticles()
 
   return (
     <Section
@@ -29,5 +29,5 @@ export default function PlaybookLayout({
         </div>
       </div>
     </Section>
-  );
+  )
 }

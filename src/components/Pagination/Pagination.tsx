@@ -1,12 +1,12 @@
-import Arrow from '@/public/assets/images/icons/arrow.svg';
+import Arrow from '@/public/assets/images/icons/arrow.svg'
 
 interface Props {
-  currentPage: number;
-  postsPerPage: number;
-  postLength: number;
-  paginate: (arg: number) => void;
-  prevPage: () => void;
-  nextPage: () => void;
+  currentPage: number
+  postsPerPage: number
+  postLength: number
+  paginate: (arg: number) => void
+  prevPage: () => void
+  nextPage: () => void
 }
 
 export const Pagination = ({
@@ -17,15 +17,15 @@ export const Pagination = ({
   prevPage,
   nextPage,
 }: Props) => {
-  const postNumbers = [];
-  const buttons = Math.ceil(postLength / postsPerPage);
+  const postNumbers = []
+  const buttons = Math.ceil(postLength / postsPerPage)
 
   for (let i = 1; i <= buttons; i++) {
-    postNumbers.push(i);
+    postNumbers.push(i)
   }
 
-  const isNextDisable = currentPage < postLength / postsPerPage;
-  const isPrevtDisable = currentPage !== 1;
+  const isNextDisable = currentPage < postLength / postsPerPage
+  const isPrevtDisable = currentPage !== 1
 
   return (
     <div className='flex w-full items-center justify-center gap-[4px] laptop-big:ml-[calc(50%_-_30%_-_30px)] laptop-big:justify-normal'>
@@ -41,7 +41,7 @@ export const Pagination = ({
         <span
           className={`text-[14px] leading-[1.3] tablet:text-[18px] ${isPrevtDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}
         >
-          Back
+          Назад
         </span>
       </button>
       {
@@ -68,12 +68,12 @@ export const Pagination = ({
         <span
           className={`text-[14px] leading-[1.3] tablet:text-[18px] ${isNextDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}
         >
-          Next
+          Далее
         </span>
         <Arrow
           className={`w-[20px] fill-text-dark ${isNextDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}
         />
       </button>
     </div>
-  );
-};
+  )
+}

@@ -31,7 +31,7 @@ export const Vacancies = ({
     <div className='flex flex-col gap-[30px]'>
       <div className='flex items-start justify-between'>
         <h2 className='font-unbound text-[40px] relative z-20 font-bold uppercase leading-[1] tablet:text-[50px] tablet:leading-[1.3] desktop:text-[70px] desktop:leading-[1.1]'>
-          Active vacancies
+          Активные вакансии
         </h2>
         {withRowsBtn && (
           <div className='hidden items-center gap-[16px] tablet:flex'>

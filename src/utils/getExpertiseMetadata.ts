@@ -1,43 +1,44 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
-import { Post } from './types';
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import { Post } from './types'
 
 export interface Case {
-  title: string;
-  description: string;
-  readingTime: string | null | undefined;
-  date: string | null | undefined;
-  category: string;
-  subCategory: string | undefined | null;
-  tag: string;
-  slug: string;
-  image: string;
-  authorName: string;
-  authorImage: string;
+  title: string
+  description: string
+  readingTime: string | null | undefined
+  date: string | null | undefined
+  category: string
+  subCategory: string | undefined | null
+  tag: string
+  slug: string
+  image: string
+  authorName: string
+  authorImage: string
+  categotyRu?: string
 }
 
 const getMarkdownFiles = (dir: string): string[] => {
-  let results: string[] = [];
-  const list = fs.readdirSync(dir);
+  let results: string[] = []
+  const list = fs.readdirSync(dir)
   list.forEach((file) => {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const filePath = path.join(dir, file)
+    const stat = fs.statSync(filePath)
     if (stat && stat.isDirectory()) {
-      results = results.concat(getMarkdownFiles(filePath));
+      results = results.concat(getMarkdownFiles(filePath))
     } else if (file.endsWith('.md')) {
-      results.push(filePath);
+      results.push(filePath)
     }
-  });
-  return results;
-};
+  })
+  return results
+}
 
 export const getExpertiseMetadata = (): Post[] => {
-  const markdownFiles = getMarkdownFiles('src/playbook/expertise');
+  const markdownFiles = getMarkdownFiles('src/playbook/expertise')
 
   const posts = markdownFiles.map((filePath: string): Post => {
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const matterResult = matter(fileContent);
+    const fileContent = fs.readFileSync(filePath, 'utf8')
+    const matterResult = matter(fileContent)
     return {
       title: matterResult.data.title,
       description: matterResult.data.description,
@@ -50,8 +51,9 @@ export const getExpertiseMetadata = (): Post[] => {
       image: matterResult.data.image,
       authorName: matterResult.data.authorName,
       authorImage: matterResult.data.authorImage,
-    };
-  });
+      categotyRu: 'категория',
+    }
+  })
 
-  return posts;
-};
+  return posts
+}

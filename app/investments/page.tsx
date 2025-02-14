@@ -1,4 +1,5 @@
 import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm'
+import { NewContactForm } from '@/src/components/Main/NewContactForm/NewContactForm'
 import { Products } from '@/src/components/NewProducts/Products/Products'
 import { Container } from '@/src/components/shared/Container/Container'
 import { Section } from '@/src/components/shared/Section/Section'
@@ -44,14 +45,8 @@ export default function NewProductsPage() {
           <Products products={products} />
         </Container>
       </Section>
-      <Section
-        id='contacts'
-        className='py-[80px] tablet:py-[80px] desktop:py-[80px]'
-        light
-      >
-        <Container>
-          <ContactForm />
-        </Container>
+      <Section id='contacts' className='py-0 tablet:py-0 desktop:py-0' light>
+        <NewContactForm />
       </Section>
     </div>
   )

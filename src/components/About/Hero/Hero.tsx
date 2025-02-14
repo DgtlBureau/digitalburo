@@ -7,8 +7,8 @@ import Image from 'next/image'
 import useMediaQuery from '@/src/utils/useMediaQuery'
 
 const BREADCRUMBS: Breadcrumb[] = [
-  { title: 'Main', link: '/' },
-  { title: 'About' },
+  { title: 'Главная', link: '/' },
+  { title: 'О нас' },
 ]
 export const Hero = () => {
   const isMobile = useMediaQuery('<laptop')

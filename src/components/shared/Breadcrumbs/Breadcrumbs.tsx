@@ -1,14 +1,14 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 interface IBreadProps {
-  breadcrumbs: Breadcrumb[];
-  light?: boolean;
+  breadcrumbs: Breadcrumb[]
+  light?: boolean
 }
 
 export type Breadcrumb = {
-  title: string;
-  link?: string;
-};
+  title: string
+  link?: string
+}
 
 export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
   return (
@@ -24,7 +24,7 @@ export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
             </Link>
           ) : (
             <div
-              className={` opacity-80 ${light ? 'text-[var(--blue-hover)]' : 'text-[var(--main-gray)]'}`}
+              className={` opacity-80 ${light ? 'text-[var(--main-orange)]' : 'text-[var(--main-gray)]'}`}
               key={title}
             >
               {title}
@@ -33,5 +33,5 @@ export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
         </>
       ))}
     </div>
-  );
-};
+  )
+}
