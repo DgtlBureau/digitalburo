@@ -50,16 +50,16 @@ export const Team = () => {
             wrapperClass='items-stretch'
           >
             {TEAM_CARDS.map((teamCard) => (
-              <SwiperSlide>
-                <TeamCard key={teamCard.title} data={teamCard} />
+              <SwiperSlide key={teamCard.title}>
+                <TeamCard data={teamCard} />
               </SwiperSlide>
             ))}
           </Swiper>
         )}
         {(isMobile || isDesktop) &&
           TEAM_CARDS.map((teamCard) => (
-            <SwiperSlide>
-              <TeamCard key={teamCard.title} data={teamCard} />
+            <SwiperSlide key={teamCard.title}>
+              <TeamCard data={teamCard} />
             </SwiperSlide>
           ))}
       </div>

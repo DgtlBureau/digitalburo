@@ -7,8 +7,6 @@ import Image from 'next/image';
 import styles from './Welcome.module.css';
 
 export const Welcome = () => {
-  const isMobile = useMediaQuery('<tablet');
-  const isTablet = useMediaQuery('<desktop');
   const isDesktop = useMediaQuery('>=laptop');
 
   return (
