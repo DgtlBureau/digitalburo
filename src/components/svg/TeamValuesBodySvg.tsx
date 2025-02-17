@@ -87,7 +87,7 @@ const ValuesBody = () => (
     <path
       d='M13 316L267 316L13 540L13 316Z'
       fill='url(#pattern0_4376_11119)'
-      fill-opacity='0.2'
+      fillOpacity='0.2'
     />
     <defs>
       <pattern
