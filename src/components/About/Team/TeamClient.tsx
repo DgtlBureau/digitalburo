@@ -27,22 +27,20 @@ export const TeamClient = ({ team }: ITeamProps) => {
     <div className='flex flex-col gap-[40px] desktop:flex-row desktop:justify-between desktop:gap-[auto]'>
       <div className='flex items-center justify-between desktop:flex-col desktop:items-start'>
         <div className='flex flex-col gap-[4px] desktop:gap-[32px]'>
-          <h2 className='font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
-            Team
+          <h2 className='font-unbound text-[32px] font-bold uppercase leading-[1] text-text-dark tablet:text-[50px] desktop:text-[70px] desktop:leading-[1.1]'>
+            Команда
           </h2>
-          <p className='text-stroke flex gap-[10px] whitespace-nowrap font-unbound text-[40px] font-bold uppercase leading-[1.1] desktop:text-[50px]'>
-            20+ <span className='hidden tablet:block'>PEOPLE</span>
-          </p>
         </div>
         <Link href='#contacts' className={styles.joinWrapper}>
-          <span className='font-unbound text-[18px] font-bold uppercase leading-[1.1]'>
-            Join our team
+          <span className='relative z-20 font-unbound text-[8px] font-bold uppercase leading-[1.1] text-text-dark tablet:text-[20px]'>
+            Присоединяйтесь к нашей команде
           </span>
         </Link>
       </div>
       <div className='flex flex-col gap-[60px] desktop:w-[900px] desktop-light:w-[1100px] desktop-big:w-[1200px]'>
         <div className='hidden items-end justify-end desktop:flex'>
           <NextPrevBtn
+            bg='light'
             nextPage={() => swiper?.slideNext()}
             prevPage={() => swiper?.slidePrev()}
           />

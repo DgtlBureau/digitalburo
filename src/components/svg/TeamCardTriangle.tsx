@@ -7,6 +7,6 @@ export const TeamCardTriangle = ({ ...props }) => (
     viewBox='0 0 160 181'
     {...props}
   >
-    <path fill='#001450' d='M160 181V0L0 181h160Z' />
+    <path fill='#F8AE3C' d='M160 181V0L0 181h160Z' />
   </svg>
 );

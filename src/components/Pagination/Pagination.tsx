@@ -41,7 +41,7 @@ export const Pagination = ({
         <span
           className={`text-[14px] leading-[1.3] tablet:text-[18px] ${isPrevtDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}
         >
-          Back
+          Назад
         </span>
       </button>
       {
@@ -68,7 +68,7 @@ export const Pagination = ({
         <span
           className={`text-[14px] leading-[1.3] tablet:text-[18px] ${isNextDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}
         >
-          Next
+          Далее
         </span>
         <Arrow
           className={`w-[20px] fill-text-dark ${isNextDisable ? 'opacity-[100%]' : 'opacity-[40%]'}`}

@@ -1,4 +1,4 @@
-import { NextLinePreposition } from '../../NextLinePreposition/NextLinePreposition';
+import Link from 'next/link';
 import { Breadcrumb, Breadcrumbs } from '../../shared/Breadcrumbs/Breadcrumbs';
 
 const BREADCRUMBS: Breadcrumb[] = [
@@ -8,15 +8,19 @@ const BREADCRUMBS: Breadcrumb[] = [
 
 export const Hero = () => {
   return (
-    <div className={`flex flex-col gap-[20px] break-words pb-[60px]`}>
-      <Breadcrumbs breadcrumbs={BREADCRUMBS} />
-      <h1 className='z-[5] font-unbound text-[32px] font-bold uppercase leading-[1.14] mobile-big:text-[45px] tablet:text-[60px] desktop:text-[80px] desktop:font-black desktop-hard:text-[100px]'>
-        <NextLinePreposition tag='span' text='Become a part' className='' />
-        <br />
-        <span className='text-stroke desktop:leading-[1.22] desktop-hard:text-[100px]'>
-          of the research team
-        </span>
+    <div
+      className={`flex flex-col gap-[24px] break-words bg-ligth-gray-bg p-[40px_20px] pb-[60px] tablet:p-[40px] desktop:gap-[20px] desktop:p-[40px_60px]`}
+    >
+      <Breadcrumbs breadcrumbs={BREADCRUMBS} light />
+      <h1 className='z-[5] font-unbound text-[40px] font-bold uppercase leading-[1.1] tablet:text-[44px] desktop:text-[70px]'>
+        Станьте частью команды
       </h1>
+      <Link
+        href='#form'
+        className={`leading-1 w-fit rounded-[6px] bg-main-orange p-[14px_32px] font-proxima text-[20px] font-bold duration-300 hover:bg-main-orange-hover desktop:p-[13px_27px] desktop:text-[36px]`}
+      >
+        Отправить резюме
+      </Link>
     </div>
   );
 };

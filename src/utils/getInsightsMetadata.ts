@@ -50,6 +50,7 @@ export const getInsightsMetadata = (): Post[] => {
       image: matterResult.data.image,
       authorName: matterResult.data.authorName,
       authorImage: matterResult.data.authorImage,
+      categotyRu: 'Кфтеггоррияя',
     };
   });
 

@@ -10,7 +10,7 @@ import { getMainBannerMetadata } from '@/src/utils/getMainBannerMetadata';
 const data = getExpertiseAreasMetadata();
 const slideData = getMainBannerMetadata();
 
-export default function MainPage() {
+export const MainPage = () => {
   return (
     <div className='flex flex-col'>
       <NewHero slideData={slideData} />
@@ -19,9 +19,13 @@ export default function MainPage() {
       <Section>
         <NewFeedback />
       </Section>
-      <Section light className='px-0 tablet:px-0 desktop:px-0 desktop:py-0'>
+      <Section
+        light
+        className='px-0 tablet:px-0 desktop:px-0 desktop:py-0'
+        id='form'
+      >
         <NewContactForm />
       </Section>
     </div>
   );
-}
+};

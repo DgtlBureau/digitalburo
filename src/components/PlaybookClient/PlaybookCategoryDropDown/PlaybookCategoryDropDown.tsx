@@ -4,6 +4,7 @@ import {
     underscopeFormatter,
     underscopeReverter
 } from '@/src/utils/formatter/underscopeFormatter';
+import { subCategoryRu } from '@/src/utils/ruData/ruCategories';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -15,6 +16,7 @@ interface ICategoryProps {
 interface ICategory {
   category: string;
   subCategory: (string | null | undefined)[];
+  categotyRu: string;
 }
 
 export const PlaybookCategoryDropDown = ({ categories }: ICategoryProps) => {
@@ -57,15 +59,15 @@ export const PlaybookCategoryDropDown = ({ categories }: ICategoryProps) => {
       >
         Categories:{' '}
         {pathname && pathnameArr.length === 1 ? (
-          <span className='font-bold capitalize leading-[1.3] text-main-blue'>
-            playbook
+          <span className='font-bold capitalize leading-[1.3] text-main-orange'>
+            все
           </span>
         ) : pathnameArr.length === 2 && !subCategory ? (
-          <span className='font-bold capitalize leading-[1.3] text-main-blue'>
+          <span className='font-bold capitalize leading-[1.3] text-main-orange'>
             {pathnameArr[1]}
           </span>
         ) : (
-          <span className='font-bold capitalize leading-[1.3] text-main-blue'>
+          <span className='font-bold capitalize leading-[1.3] text-main-orange'>
             {underscopeReverter(subCategory)}
           </span>
         )}
@@ -86,7 +88,7 @@ export const PlaybookCategoryDropDown = ({ categories }: ICategoryProps) => {
               href='/playbook'
               className={`block w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${pathnameArr.length === 1 ? 'bg-[#f5f5f6] font-bold' : ''}`}
             >
-              playbook
+              все
             </Link>
             <span className='absolute bottom-[-5px] block h-[2px] w-full translate-y-[50%] bg-main-disabled' />
           </li>
@@ -99,7 +101,7 @@ export const PlaybookCategoryDropDown = ({ categories }: ICategoryProps) => {
                 href={`/playbook/${item.category}${item.subCategory.length > 1 ? '' : `?sub-category=${underscopeFormatter(item.subCategory[0]).toLowerCase()}`}`}
                 className={`relative w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${pathnameArr.includes(item.category.trim().toLowerCase()) ? 'bg-[#f5f5f6] font-bold' : ''} `}
               >
-                {item.category}
+                {item.categotyRu}
               </Link>
               <ul>
                 {item.subCategory.map((el) => (
@@ -108,7 +110,11 @@ export const PlaybookCategoryDropDown = ({ categories }: ICategoryProps) => {
                       href={`/playbook/${item.category}?sub-category=${underscopeFormatter(el).toLowerCase()}`}
                       className={`w-full rounded-[8px] p-[12px_26px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${el && subCategory && underscopeReverter(subCategory).toLowerCase() === el.trim().toLowerCase() ? 'bg-[#f5f5f6] font-bold' : ''}`}
                     >
-                      {el}
+                      {subCategoryRu[
+                        underscopeFormatter(
+                          el?.toLowerCase(),
+                        ) as keyof typeof subCategoryRu
+                      ] ?? el}
                     </Link>
                   </li>
                 ))}

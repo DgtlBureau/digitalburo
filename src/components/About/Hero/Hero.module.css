@@ -3,7 +3,6 @@
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  background: url('/assets/images/about/bg_hero.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,12 +21,12 @@
 }
 
 .title {
+  position: relative;
   margin-top: 21px;
   font-family: 'Unbounded', sans-serif;
-  font-size: 50px;
+  font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
-  z-index: 10;
 }
 
 .titleSpan {
@@ -41,7 +40,7 @@
   position: relative;
   width: 100%;
   max-width: 652px;
-  height: 222px;
+  height: 230px;
   border-radius: 5px;
   overflow: hidden;
   background: url('/assets/images/main/hero-solutions-bg.webp');
@@ -53,22 +52,23 @@
 
 .handbookTitle {
   font-family: 'Unbounded', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .handbookDescr {
-  margin: 12px 0 40px 0;
+  margin-top: 12px;
   display: block;
   font-family: 'Proxima Nova', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
 }
 
 .linkBox {
+  margin-top: 42px;
   width: fit-content;
   height: 26px;
 }
@@ -87,25 +87,30 @@
     margin-top: 60px;
   }
 
+  .handbookTitle {
+    font-size: 20px;
+  }
+
   .handbookDescr {
     width: 422px;
+    font-size: 20px;
   }
 
   .linkBox {
     margin-top: auto;
-    height: auto;
   }
 }
 
 @media (min-width: 1440px) {
   .mainContainer {
-    padding: 138px 60px;
+    padding: 70px 60px;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .title {
     font-size: 100px;
+    font-weight: 900;
   }
 
   .handbookWrapper {

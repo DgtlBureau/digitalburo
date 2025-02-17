@@ -11,17 +11,17 @@ interface ICard {
 }
 
 export const CardsData: ICard[] = [
-  { id: 1, tag: 'Mission', title: 'Only cool projects', image: missionImg },
+  { id: 1, tag: 'Миссия', title: 'Только крутые проекты', image: missionImg },
   {
     id: 2,
-    tag: 'Remote',
-    title: 'We work completely remotely',
+    tag: 'удаленный формат',
+    title: 'Мы работаем полностью удаленно',
     image: remoteImg,
   },
   {
     id: 3,
-    tag: 'No nonsense',
-    title: 'Only full transparency in reporting and git-е',
+    tag: 'Идем до конца',
+    title: 'Завершаем проекты при любых обстоятельствах',
     image: nonesenseImg,
   },
 ];

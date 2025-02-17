@@ -1,6 +1,6 @@
 ---
-title: 'Create your history'
+title: 'Создай свою историю'
 image: '/assets/images/main/heroSlide/hockey.webp'
-link: '/playbook/solutions'
-linkName: 'solutions'
+link: ''
+linkName: 'Оставить заявку'
 ---

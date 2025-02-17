@@ -4,40 +4,40 @@ import { ValueItemMobile } from './ValueItemMobile/ValueItemMobile';
 
 const VALUES_ITEMS = [
   {
-    title: 'Openness',
+    title: 'Открытость',
     description:
-      'Got a question? Ask away. Facing challenges with a project? Let us know immediately. This principle is at the heart of our business processes: we value openness and transparency.',
+      'Есть вопрос? Задавайте. Столкнулись с трудностями при работе над проектом? Сообщите нам об этом немедленно. Этот принцип лежит в основе наших бизнес-процессов: мы ценим открытость и прозрачность.',
   },
   {
-    title: 'freedom',
+    title: 'Свобода',
     description:
-      'Our ideal team member voices their opinions, shares ideas on projects, and looks for ways to improve work outcomes. We support freedom of choice, career goals, and new initiatives.',
+      'Идеальный член нашей команды высказывает свое мнение, делится идеями по проектам и ищет способы улучшить результаты работы. Мы поддерживаем свободу выбора, карьерные цели и новые инициативы.',
   },
   {
-    title: 'Growth',
+    title: 'Развитие',
     description:
-      "We're constantly evolving and we appreciate the desire for professional growth in our team. We're focused on both professional and personal development. We take part in international projects and dive into interesting challenges.",
+      'Мы постоянно развиваемся и ценим стремление к профессиональному росту в нашей команде. Мы нацелены как на профессиональное, так и на личностное развитие. Мы участвуем в международных проектах и погружаемся в интересные задачи.',
   },
   {
-    title: 'Adaptation',
+    title: 'Адаптация',
     description:
-      "We're constantly evolving and we appreciate the desire for professional growth in our team. We're focused on both professional and personal development. We take part in international projects and dive into interesting challenges.",
+      'Понимание ценностей и идей компании и каждого проекта - ключ к успешному решению задач, предотвращению стресса и поддержанию позитивной атмосферы в коллективе. В компании Zarubin&Co существует четко выстроенная система подготовки к работе.',
   },
   {
-    title: 'Always in touch',
-    description: 'Our energized leadership is just a call away.',
+    title: 'Всегда на связи',
+    description: 'Наше энергичное руководство - всего лишь звонок.',
   },
   {
-    title: 'Care',
+    title: 'Забота',
     description:
-      "We care about what's happening on the project and with our clients. We always think about how to make the world around us better. At Bright Byte, we encourage initiative.",
+      'Нам небезразлично, что происходит на проекте и с нашими клиентами. Мы всегда думаем о том, как сделать мир вокруг нас лучше. В The Bright Byte мы поощряем инициативу.',
   },
 ];
 export const Values = () => {
   return (
     <div className='flex flex-col gap-[40px] tablet:gap-[98px]'>
-      <h2 className='font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] tablet:leading-[1.3] desktop:text-[70px] desktop:leading-[1.1]'>
-        values that help achieve results
+      <h2 className='font-unbound text-[32px] font-bold uppercase leading-[1] tablet:text-[38px] tablet:leading-[1.3] desktop:text-[50px] desktop:leading-[1.1]'>
+        Ценности, которые помогают добиваться результатов
       </h2>
       <div className='hidden h-auto desktop:block'>
         <ValuesBody />

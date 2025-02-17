@@ -24,7 +24,7 @@ export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
             </Link>
           ) : (
             <div
-              className={` opacity-80 ${light ? 'text-[var(--blue-hover)]' : 'text-[var(--main-gray)]'}`}
+              className={` opacity-80 ${light ? 'text-[var(--main-orange)]' : 'text-[var(--main-gray)]'}`}
               key={title}
             >
               {title}

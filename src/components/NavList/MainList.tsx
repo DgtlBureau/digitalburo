@@ -44,14 +44,14 @@ export const MainList = ({
                 ? 'text-[16px] text-white desktop:text-[16px]'
                 : 'text-[16px] text-[black]',
               {
-                'border-b-[2px] !border-main-blue': pathname.startsWith(
+                'border-b-[2px] !border-main-orange': pathname.startsWith(
                   item.link,
                 ),
               },
             )}
           >
             {item.name}
-            <div className='absolute h-[2px] w-0 bg-main-blue transition-all duration-200 group-hover:w-full' />
+            <div className='absolute h-[2px] w-0 bg-main-orange transition-all duration-200 group-hover:w-full' />
           </Link>
 
           {item.name.toLowerCase() === 'expertise' && (

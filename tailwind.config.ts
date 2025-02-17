@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
-import { PluginAPI } from 'tailwindcss/types/config';
+import type { Config } from 'tailwindcss'
+import { PluginAPI } from 'tailwindcss/types/config'
 
 const config: Config = {
   content: [
@@ -102,7 +102,8 @@ const config: Config = {
         'card-bg-deep': '#F6F6F6',
         'second-gray': '#494949',
         'light-gray': '#AEAEAE',
-        'gray-placeholder': 'A5A5A5',
+        'gray-placeholder': '#A5A5A5',
+        'ligth-gray-bg': '#f3f3f4',
       },
     },
     screens: {
@@ -136,5 +137,5 @@ const config: Config = {
     require('@tailwindcss/typography'),
     require('tw-elements-react/dist/plugin.cjs'),
   ],
-};
-export default config;
+}
+export default config

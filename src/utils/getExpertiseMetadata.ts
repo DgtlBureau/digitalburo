@@ -15,6 +15,7 @@ export interface Case {
   image: string;
   authorName: string;
   authorImage: string;
+  categotyRu?: string;
 }
 
 const getMarkdownFiles = (dir: string): string[] => {
@@ -50,6 +51,7 @@ export const getExpertiseMetadata = (): Post[] => {
       image: matterResult.data.image,
       authorName: matterResult.data.authorName,
       authorImage: matterResult.data.authorImage,
+      categotyRu: 'категория',
     };
   });
 

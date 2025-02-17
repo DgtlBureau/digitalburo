@@ -11,6 +11,7 @@ export interface Post {
   authorName: string;
   authorImage: string;
   downloadLink?: string | undefined;
+  categotyRu?: string;
 }
 
 export interface IImage {

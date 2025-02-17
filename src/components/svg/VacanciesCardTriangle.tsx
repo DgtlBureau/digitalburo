@@ -5,6 +5,6 @@ export const VacanciesCardTriangle = () => (
     height='100%'
     viewBox='0 0 291 256'
   >
-    <path fill='#001450' d='M291 0H0l291 256V0Z' />
+    <path fill='#F8AE3C' d='M291 0H0l291 256V0Z' />
   </svg>
 );

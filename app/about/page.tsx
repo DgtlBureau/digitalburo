@@ -1,5 +1,7 @@
 import { Hero } from '@/src/components/About/Hero/Hero';
-import { ContactForm } from '@/src/components/Main/ContactForm/ContactForm';
+import { Welcome } from '@/src/components/About/Industries/Welcome/Welcome';
+import { InsightsData } from '@/src/components/About/Insights/InsightsData';
+import { NewContactForm } from '@/src/components/Main/NewContactForm/NewContactForm';
 import { Container } from '@/src/components/shared/Container/Container';
 import { ScrollAnimationWrapper } from '@/src/components/shared/ScrollAminationWrapper/ScrollAnimationWrapper';
 import { Section } from '@/src/components/shared/Section/Section';
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
@@ -68,28 +70,35 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <>
-      <Section
-        id='hero'
-        className='mt-[60px] px-0  py-0  tablet:py-0 desktop:py-0'
-      >
-        <Container className='tablet:px-0 desktop:px-0 desktop:py-0'>
+    <div className='flex w-full flex-col gap-[40px] bg-white tablet:gap-[60px]'>
+      <Section light id='hero' className='px-0  py-[40px]  tablet:py-[60px]'>
+        <Container className='tablet:px-0 desktop:py-0'>
           <Hero />
         </Container>
       </Section>
-      <Section id='insights' className='py-0 tablet:py-0 desktop:py-0'>
+      <Section light id='insights' className='py-0 tablet:py-0 desktop:py-0'>
         <Container className='tablet:px-[40px] desktop:px-0'>
           <DynamicInsights />
         </Container>
       </Section>
-      <Section id='industries' className='py-0 tablet:py-0 desktop:py-0'>
+      <Section className='py-0 tablet:py-0 laptop:bg-main-bg desktop:py-0'>
+        <Container>
+          <InsightsData />
+        </Container>
+      </Section>
+      <Section light id='industries' className='py-0 tablet:py-0 desktop:py-0'>
         <ScrollAnimationWrapper>
           <Container className='tablet:px-[40px] desktop:px-0'>
             <DynamicIndustries />
           </Container>
         </ScrollAnimationWrapper>
       </Section>
-      <Section id='team'>
+      <Section className='p-0 tablet:p-0 desktop:bg-main-bg desktop:p-0'>
+        <Container>
+          <Welcome />
+        </Container>
+      </Section>
+      <Section id='team' light>
         <ScrollAnimationWrapper>
           <Container>
             <DynamicTeam />
@@ -103,7 +112,10 @@ export default function About() {
           </Container>
         </ScrollAnimationWrapper>
       </Section>
-      <Section id='technologies' className='py-0 tablet:py-0 desktop:py-0'>
+      <Section
+        id='technologies'
+        className='bg-main-bg py-[20px] desktop:py-[60px]'
+      >
         <ScrollAnimationWrapper>
           <Container>
             <DynamicTechnology />
@@ -120,7 +132,7 @@ export default function About() {
         </Section>
         <Section
           id='vacancy'
-          className='bg-gradient-to-r from-dark-blue to-main-blue'
+          className='section-black-gradient bg-gradient-to-r from-[#9747FF] to-[#F8AE3C]'
         >
           <ScrollAnimationWrapper>
             <Container>
@@ -129,15 +141,13 @@ export default function About() {
           </ScrollAnimationWrapper>
         </Section>
         <Section
-          id='contacts'
-          className='py-[80px] tablet:py-[80px] desktop:py-[80px]'
           light
+          className='px-0 tablet:px-0 desktop:px-0 desktop:py-0'
+          id='form'
         >
-          <Container>
-            <ContactForm />
-          </Container>
+          <NewContactForm />
         </Section>
       </div>
-    </>
+    </div>
   );
 }

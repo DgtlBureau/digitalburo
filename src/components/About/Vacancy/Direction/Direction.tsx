@@ -18,24 +18,25 @@ export const Direction = () => {
       <ul className={styles.directionWrapper}>
         <li onClick={scrollToContacts} className='cursor-pointer'>
           <div className={classNames(styles.directionBox, styles.partner)}>
-            <h3 className={`${styles.tag} font-proxima`}>To the Partner</h3>
-            <p className={`${styles.description} font-proxima`}>
-              Do you want to work with us? Leave a request or send an e-mail{' '}
+            <h3 className={`${styles.tag} z-20 font-proxima`}>Партнерам</h3>
+            <p className={`${styles.description} z-20 font-proxima`}>
+              Хотите работать с нами? Оставьте заявку или отправьте письмо по
+              электронной почте
             </p>
-            <p className='mt-[32px] hidden w-fit'>
-              <LinkArrow title='More' link='#' />
+            <p className='z-20 mt-[32px] hidden w-fit'>
+              <LinkArrow title='Подробнее' link='#' />
             </p>
           </div>
         </li>
         <li onClick={scrollToContacts} className='cursor-pointer'>
           <div className={classNames(styles.directionBox, styles.expert)}>
-            <h3 className={`${styles.tag} font-proxima`}>To the expert</h3>
-            <p className={`${styles.description} font-proxima`}>
-              {`Read about how to get to us and what jobs are available on the
-              'Careers' link`}
+            <h3 className={`${styles.tag} z-20 font-proxima`}>Экспертам</h3>
+            <p className={`${styles.description} z-20 font-proxima`}>
+              О том, как к нам попасть и какие вакансии есть, читайте в разделе
+              «Карьера».
             </p>
-            <p className='mt-[32px] hidden w-fit'>
-              <LinkArrow title='More' link='#' />
+            <p className='z-20 mt-[32px] hidden w-fit'>
+              <LinkArrow title='Подробнее' link='#' />
             </p>
           </div>
         </li>

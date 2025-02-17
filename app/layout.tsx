@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         {
-          title: 'Bright Byte Expertise and Insights',
+          title: 'Digital Buro Expertise and Insights',
           url: `${BASE_URL}/rss`,
         },
       ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BrightByte.com',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
@@ -119,18 +119,6 @@ export default function RootLayout({
               padding: 0;
         }`}
         </style>
-        <Script
-          async
-          src='https://www.googletagmanager.com/gtag/js?id=G-FXGP2J4QFD'
-        ></Script>
-        <Script id='google-analytics' strategy='afterInteractive'>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FXGP2J4QFD');
-          `}
-        </Script>
       </head>
       <body className={`flex flex-col bg-main-bg text-white ${bodyClassname}`}>
         <Header

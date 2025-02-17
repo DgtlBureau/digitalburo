@@ -30,21 +30,31 @@ export const Vacancies = ({
   return (
     <div className='flex flex-col gap-[30px]'>
       <div className='flex items-start justify-between'>
-        <h2 className='font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] tablet:leading-[1.3] desktop:text-[70px] desktop:leading-[1.1]'>
-          Active vacancies
-        </h2>
+        <div className='z-20 flex flex-col gap-[30px]'>
+          <h2 className='relative z-20 font-unbound text-[32px] font-bold uppercase leading-[1] tablet:text-[38px] tablet:leading-[1.3] desktop:text-[50px] desktop:leading-[1.1]'>
+            Активные вакансии
+          </h2>
+          {withFilter && (
+            <p className='hidden max-w-[904px] font-proxima text-[20px] text-white laptop-big:block'>
+              Мы разрабатываем и внедряем цифровые продукты, которые помогают
+              компаниям стать лидерами в своих отраслях, увеличить продажи и
+              привлечь новых клиентов.
+            </p>
+          )}
+        </div>
         {withRowsBtn && (
           <div className='hidden items-center gap-[16px] tablet:flex'>
             <NextPrevBtn
               nextPage={() => swiper?.slideNext()}
               prevPage={() => swiper?.slidePrev()}
+              bg='dark'
             />
           </div>
         )}
       </div>
       <div>
         {withFilter && (
-          <div className='flex gap-[14px]'>
+          <div className='relative z-30 flex gap-[14px]'>
             <Tag selected={selectedTag === 'All'} onClick={setSelectedTag}>
               All
             </Tag>

@@ -28,11 +28,11 @@ export const NewInsightsClient = ({ posts }: Props) => {
           <div className='flex items-start justify-between desktop:items-center'>
             <div className='flex flex-col gap-[15px]'>
               <h2 className='desktop-light::text-[50px] font-unbound text-[28px] font-bold uppercase text-main-bg tablet:text-[40px]'>
-                Insights
+                Инсайты
               </h2>
               <p className='font-proxima text-[18px] font-bold leading-[1.1] text-light-gray tablet:text-[20px] desktop:leading-[1]'>
-                The latest research and articles on information technology in
-                the field of sports and business
+                Последние исследования и статьи по информационным технологиям в
+                сфере спорта и бизнеса
               </p>
             </div>
             <div className=''>

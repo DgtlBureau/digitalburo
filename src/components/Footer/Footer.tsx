@@ -17,12 +17,12 @@ export const Footer = () => {
                 href='/policy'
                 className='font-proxima text-[16px] leading-[1.1] text-white opacity-50 desktop:text-[18px]'
               >
-                Privacy Policy
+                Политика конфиденциальности
               </Link>
             </li>
             <li>
               <span className='font-proxima text-[16px] leading-[1.1] text-white opacity-50 desktop:text-[18px]'>
-                &copy; Bright Byte
+                &copy; digitalburo
               </span>
             </li>
           </ul>

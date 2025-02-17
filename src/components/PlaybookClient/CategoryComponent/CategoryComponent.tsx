@@ -8,7 +8,11 @@ import { Suspense, useEffect, useMemo, useState } from 'react';
 import { PlaybookCategory } from '../PlaybookCategory/PlaybookCategory';
 import { PlaybookCategoryDropDown } from '../PlaybookCategoryDropDown/PlaybookCategoryDropDown';
 
-const getUniqueArticlesSubCategory = (array: Post[], word: string) => {
+const getUniqueArticlesSubCategory = (
+  array: Post[],
+  word: string,
+  translate: string,
+) => {
   const category = array.filter((item) => item.category.toLowerCase() === word);
   const subCategory = category.map((item) => item.subCategory);
   const uniqueSubCategory = subCategory.filter(
@@ -18,6 +22,7 @@ const getUniqueArticlesSubCategory = (array: Post[], word: string) => {
   return {
     category: word,
     subCategory: uniqueSubCategory,
+    categotyRu: translate,
   };
 };
 
@@ -34,11 +39,11 @@ export const CategoryComponent = ({ category }: ICategory) => {
   const searchQuery = searchParams.get('search-query');
 
   const expertiseCategory = useMemo(
-    () => getUniqueArticlesSubCategory(category, 'expertise'),
+    () => getUniqueArticlesSubCategory(category, 'expertise', 'Экспертиза'),
     [category],
   );
   const insightsCategory = useMemo(
-    () => getUniqueArticlesSubCategory(category, 'insights'),
+    () => getUniqueArticlesSubCategory(category, 'insights', 'Инсайты'),
     [category],
   );
 
@@ -66,12 +71,12 @@ export const CategoryComponent = ({ category }: ICategory) => {
     <div className='flex w-full flex-col gap-[12px] tablet:flex-row tablet:items-end tablet:gap-[64px] laptop-big:w-[30%] laptop-big:flex-col laptop-big:items-start laptop-big:gap-[10px]'>
       <div className='relative w-full laptop-big:w-full'>
         <input
-          placeholder='Search article'
+          placeholder='Поиск по статьям'
           value={inputValue}
-          className='w-full border-b-[1px] border-main-blue py-[10px] text-[12px] outline-none tablet:text-[16px]'
+          className='w-full border-b-[1px] border-[#252525] py-[10px] text-[12px] outline-none tablet:text-[16px]'
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <SearchImage className='absolute right-0 top-[50%] w-[16px] translate-y-[-50%] fill-main-blue' />
+        <SearchImage className='absolute right-0 top-[50%] w-[16px] translate-y-[-50%] fill-[#252525]' />
       </div>
       <div className='flex flex-col items-start'>
         {articlesCategory && articlesCategory.length !== 0 && (

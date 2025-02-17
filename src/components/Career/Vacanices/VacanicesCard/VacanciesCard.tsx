@@ -16,13 +16,13 @@ export const VacanciesCard = ({
   cardLink = true,
 }: Props) => {
   return (
-    <div className='relative flex h-full w-full flex-col rounded-[6px] bg-dark-blue p-[40px_20px] tablet:p-[40px_40px]'>
+    <div className='relative flex h-full w-full flex-col rounded-[6px] bg-main-bg p-[40px_20px] tablet:p-[40px_40px]'>
       <div className='z-10 flex h-full w-full flex-col justify-between'>
         <div className='flex items-center gap-[8px]'>
           {tags.map((tag, idx) => (
             <span
               key={idx}
-              className={`flex h-[38px] items-center justify-center rounded-[5px] bg-white px-[10px] font-proxima text-[21px] font-bold uppercase leading-[0.8] text-text-dark [&:nth-child(even)]:bg-main-gray [&:nth-child(even)]:text-white `}
+              className={`flex h-[38px] items-center justify-center rounded-[5px] bg-white px-[10px] font-proxima text-[12px] font-bold uppercase leading-[0.8] text-text-dark tablet:text-[21px] [&:nth-child(even)]:bg-main-gray [&:nth-child(even)]:text-white `}
             >
               {tag}
             </span>

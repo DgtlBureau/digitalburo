@@ -37,14 +37,14 @@ export const IndustriesCard = ({ data, activeId, setActiveId }: Data) => {
     >
       <div className={styles.contentWrapper}>
         <div className='flex justify-between'>
-          <p className='font-unbound text-[18px] font-bold uppercase leading-[1.1] tablet:text-[24px]'>
+          <p className='font-unbound text-[18px] font-bold uppercase leading-[1.1] text-white tablet:text-[24px]'>
             {description}
           </p>
           <Link href={link}>
             <Arrow className='h-[32px] w-[32px]' />
           </Link>
         </div>
-        <h2 className='z-10 font-unbound text-[45px] font-bold uppercase leading-[1] tablet:text-[50px] desktop:text-[80px] desktop-hard:text-[100px]'>
+        <h2 className='z-10 font-unbound text-[45px] font-bold uppercase leading-[1] text-white tablet:text-[50px] desktop:text-[80px] desktop-hard:text-[100px]'>
           {title}
         </h2>
         <div className='absolute bottom-0 right-0 z-0 h-3/4 w-[70%] opacity-[80%] tablet:block desktop:right-[-20%] desktop:w-[90%] desktop:max-w-[900px]'>
