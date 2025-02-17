@@ -17,7 +17,7 @@
 
 .research.markdown h2::before {
   margin-right: 12px;
-  content: '';
+  content: "";
   width: 24px;
   height: 1px;
   background-color: var(--text-dark);
@@ -63,7 +63,7 @@
 }
 
 .tag::before {
-  content: '#';
+  content: "#";
 }
 
 @media (min-width: 768px) {

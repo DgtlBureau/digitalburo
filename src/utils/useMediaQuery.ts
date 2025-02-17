@@ -1,33 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 type Conditions = string | string[];
 
 export const breakpoints = {
   mobile: 320,
-  'mobile-big': 375,
+  "mobile-big": 375,
   tablet: 768,
   laptop: 1200,
-  'laptop-big': 1280,
+  "laptop-big": 1280,
   desktop: 1440,
-  'desktop-big': 1800,
-  'desktop-hard': 1920,
+  "desktop-big": 1800,
+  "desktop-hard": 1920,
 };
 
 const getOperator = (condition: string) =>
-  ['>=', '>', '<=', '<'].find((operator) =>
+  [">=", ">", "<=", "<"].find((operator) =>
     condition.startsWith(operator),
   ) as string;
 
 const getPrefix = (operator: string) =>
-  ['<', '<='].includes(operator) ? 'max' : 'min';
+  ["<", "<="].includes(operator) ? "max" : "min";
 
 const getValue = (condition: string, operator: string) => {
-  const rawValue = condition.replace(operator, '');
+  const rawValue = condition.replace(operator, "");
   let value =
     breakpoints[rawValue as keyof typeof breakpoints] || Number(rawValue);
-  if (operator === '>') {
+  if (operator === ">") {
     value += 1;
-  } else if (operator === '<') {
+  } else if (operator === "<") {
     value -= 1;
   }
   return value;
@@ -43,7 +43,7 @@ const parse = (conditions: Conditions) =>
 
 const useMediaQuery = (
   conditions: Conditions,
-  joinOperator: 'and' | 'or' = 'and',
+  joinOperator: "and" | "or" = "and",
 ) => {
   const [matches, setMatches] = useState<boolean>(false);
 
@@ -53,9 +53,9 @@ const useMediaQuery = (
     setMatches(mkl.matches);
     const updateMatches = (e: MediaQueryListEvent) => setMatches(e.matches);
 
-    mkl.addEventListener('change', updateMatches);
+    mkl.addEventListener("change", updateMatches);
 
-    return () => mkl.removeEventListener('change', updateMatches);
+    return () => mkl.removeEventListener("change", updateMatches);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [conditions.toString(), joinOperator]);
 

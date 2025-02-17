@@ -1,4 +1,4 @@
-import { GenerateIcon } from '@/src/utils/generateIcon/GenerateIgon';
+import { GenerateIcon } from "@/src/utils/generateIcon/GenerateIgon";
 
 interface IExpertiseCard {
   data: {
@@ -14,13 +14,13 @@ export const ExpertiseCard = ({ data, idx }: IExpertiseCard) => {
 
   return (
     <div
-      className={`flex flex-col items-start gap-[48px] rounded-[5px] bg-main-beige p-[30px] ${idx % 2 === 0 ? 'gradientR' : 'gradientL'}`}
+      className={`flex flex-col items-start gap-[48px] rounded-[5px] bg-main-beige p-[30px] ${idx % 2 === 0 ? "gradientR" : "gradientL"}`}
     >
-      <div className='mr-auto flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-main-orange'>
-        <GenerateIcon path={logo} color='white' />
+      <div className="mr-auto flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-main-orange">
+        <GenerateIcon path={logo} color="white" />
       </div>
-      <div className='mt-auto flex flex-col gap-[24px]'>
-        <h3 className='font-unbound text-[20px] font-bold uppercase leading-[1.1] text-main-bg desktop:text-[28px]'>
+      <div className="mt-auto flex flex-col gap-[24px]">
+        <h3 className="font-unbound text-[20px] font-bold uppercase leading-[1.1] text-main-bg desktop:text-[28px]">
           {title}
         </h3>
       </div>

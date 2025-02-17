@@ -1,4 +1,4 @@
-import styles from './VirtualTable.module.css';
+import styles from "./VirtualTable.module.css";
 
 interface Data {
   id: number;

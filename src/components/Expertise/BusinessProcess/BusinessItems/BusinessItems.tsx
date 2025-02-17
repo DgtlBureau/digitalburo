@@ -1,11 +1,11 @@
-import styles from './BusinessItems.module.css';
+import styles from "./BusinessItems.module.css";
 
 const businessItems = [
-  'Marketing',
-  'Development',
-  'Сonsistency',
-  'Digital',
-  'Business',
+  "Marketing",
+  "Development",
+  "Сonsistency",
+  "Digital",
+  "Business",
 ];
 
 export const BusinessItems = () => {

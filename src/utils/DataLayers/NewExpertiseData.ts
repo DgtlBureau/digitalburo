@@ -1,23 +1,23 @@
 export const areasData = [
   {
     id: 0,
-    title: 'Portfolio Investments',
+    title: "Portfolio Investments",
     description:
-      'Digital business transformation Digital business transformation',
-    logo: '/assets/images/case/svg/avangard.svg',
+      "Digital business transformation Digital business transformation",
+    logo: "/assets/images/case/svg/avangard.svg",
   },
   {
     id: 1,
-    title: 'Marketing & Administrative',
+    title: "Marketing & Administrative",
     description:
-      'Digital business transformation Digital business transformation',
-    logo: '/assets/images/case/svg/avangard.svg',
+      "Digital business transformation Digital business transformation",
+    logo: "/assets/images/case/svg/avangard.svg",
   },
   {
     id: 2,
-    title: 'Business Consulting',
+    title: "Business Consulting",
     description:
-      'Digital business transformation Digital business transformation',
-    logo: '/assets/images/case/svg/avangard.svg',
+      "Digital business transformation Digital business transformation",
+    logo: "/assets/images/case/svg/avangard.svg",
   },
 ];

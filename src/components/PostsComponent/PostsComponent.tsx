@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
-import { Pagination } from '../Pagination/Pagination';
+import dynamic from "next/dynamic";
+import { useState } from "react";
+import { Pagination } from "../Pagination/Pagination";
 
 const DynamicBlogCard = dynamic(() =>
-  import('../BlogCard/BlogCard').then((mod) => mod.BlogCard),
+  import("../BlogCard/BlogCard").then((mod) => mod.BlogCard),
 );
 
 export interface Posts {
@@ -46,7 +46,7 @@ export const PostsComponent = ({ posts }: Props) => {
   };
 
   return (
-    <div className='mx-auto flex max-w-[876px] flex-col items-center gap-[40px] pb-[24px] pt-[30px] tablet:pb-[40px] tablet:pt-[60px] desktop:pb-[60px]'>
+    <div className="mx-auto flex max-w-[876px] flex-col items-center gap-[40px] pb-[24px] pt-[30px] tablet:pb-[40px] tablet:pt-[60px] desktop:pb-[60px]">
       {currentPosts.map((post, idx) => (
         <DynamicBlogCard key={idx} post={post} />
       ))}

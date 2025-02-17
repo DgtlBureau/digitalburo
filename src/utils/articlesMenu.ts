@@ -1,17 +1,17 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
 export const formatMenuItem = (menuItem: string) => {
   const newMenuItem = menuItem
-    .split('-')
+    .split("-")
     .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
-    .join(' ');
+    .join(" ");
   return newMenuItem;
 };
 
 export const finalLink = (str: string) => {
-  const splitStr = str.split('.');
+  const splitStr = str.split(".");
   return splitStr[0];
 };
 
@@ -25,10 +25,10 @@ export const getArticlesList = (articlePath: string) => {
   const articleList = directories.map((directory) => {
     const files = fs
       .readdirSync(path.join(folder, directory))
-      .filter((file) => file.endsWith('.md'))
+      .filter((file) => file.endsWith(".md"))
       .map((file) => {
         const filePath = path.join(folder, directory, file);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const fileContent = fs.readFileSync(filePath, "utf-8");
         const { data } = matter(fileContent);
         return {
           nameItem: file,

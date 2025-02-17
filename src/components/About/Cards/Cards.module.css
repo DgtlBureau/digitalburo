@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: end;
-  background: url('/assets/images/about/card-bg.webp');
+  background: url("/assets/images/about/card-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,25 +17,31 @@
 
 .cardWrapper::before {
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 80%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 1) 80%
+  );
   z-index: 4;
 }
 
 .cardWrapper::after {
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top,
-      var(--primary) 10%,
-      rgba(0, 0, 255, 0) 60%);
+  background: linear-gradient(
+    to top,
+    var(--primary) 10%,
+    rgba(0, 0, 255, 0) 60%
+  );
   z-index: 3;
 }
 

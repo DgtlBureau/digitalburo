@@ -1,5 +1,5 @@
-import classNames from 'classnames';
-import styles from './TechnologyCard.module.css';
+import classNames from "classnames";
+import styles from "./TechnologyCard.module.css";
 
 interface IData {
   id: number;

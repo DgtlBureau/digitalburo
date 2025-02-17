@@ -1,22 +1,22 @@
-import teamImage from '@/public/assets/images/about/card/card_remote.webp';
-import { LinkArrow } from '@/src/ui-kit/LinkArrow/LinkArrow';
-import classNames from 'classnames';
-import Image from 'next/image';
-import styles from './Internship.module.css';
+import teamImage from "@/public/assets/images/about/card/card_remote.webp";
+import { LinkArrow } from "@/src/ui-kit/LinkArrow/LinkArrow";
+import classNames from "classnames";
+import Image from "next/image";
+import styles from "./Internship.module.css";
 
 export const Internship = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.InternContainer}>
-        <h3 className={styles.title}>internship for students</h3>
-        <p className='mt-[19px] font-proxima text-[20px] leading-[1.2]'>
-          We are looking for motivated and ambitious students or graduates who
-          are passionate about IT development and strive to develop their
-          skills. Regardless of your level of experience, we welcome everyone
-          who is ready to take on the challenge and move forward with us.
+        <h3 className={styles.title}>Стажировка для студентов</h3>
+        <p className="mt-[19px] font-proxima text-[12px] tablet:text-[20px] leading-[1.2] ">
+          Мы ищем целеустремленных и амбициозных студентов или выпускников,
+          которые увлечены разработкой ИТ и стремятся развивать свои навыки.
+          Независимо от уровня вашего опыта, мы приветствуем всех, кто готов
+          принять вызов и двигаться вперед вместе с нами.
         </p>
-        <div className='mt-[auto] w-fit'>
-          <LinkArrow title='Submit an Application' link='#' />
+        <div className="mt-[auto] w-fit">
+          <LinkArrow title="Подать заявку" link="#" />
         </div>
       </div>
       <div className={styles.listContainer}>
@@ -25,10 +25,10 @@ export const Internship = () => {
             <span className={styles.num}>1</span>
             <div className={styles.numContent}>
               <h3 className={classNames(styles.title, styles.blackTitle)}>
-                Look at the vacancies
+                Посмотрите на вакансии
               </h3>
               <span className={`${styles.tag} font-proxima`}>
-                #WeAreAlwaysInSearch
+                #МыВсегдаВПоиске
               </span>
             </div>
           </li>
@@ -36,10 +36,10 @@ export const Internship = () => {
             <span className={styles.num}>2</span>
             <div className={styles.numContent}>
               <h3 className={classNames(styles.title, styles.blackTitle)}>
-                Read our articles
+                Прочитайте наши статьи
               </h3>
               <span className={`${styles.tag} font-proxima`}>
-                #DevelopingSportsEntertainment
+                #РазвитиеСпортивногоИнтертейнмента
               </span>
             </div>
           </li>
@@ -47,24 +47,22 @@ export const Internship = () => {
             <span className={styles.num}>3</span>
             <div className={styles.numContent}>
               <h3 className={classNames(styles.title, styles.blackTitle)}>
-                Send a CV
+                Отправьте резюме
               </h3>
               <span className={`${styles.tag} font-proxima`}>
-                #EveryGoldPiece
+                #КаждыйЗолотойКусочек
               </span>
             </div>
           </li>
         </ul>
       </div>
       <div className={styles.finalContainer}>
-        <h3 className={styles.title}>
-          We are looking for motivated and loving people
-        </h3>
+        <h3 className={styles.title}>Мы ищем амбициозных и горящих людей</h3>
         <Image
           src={teamImage}
           width={150}
           height={120}
-          alt='team'
+          alt="team"
           quality={100}
           className={styles.teamImage}
         />

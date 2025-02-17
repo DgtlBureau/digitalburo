@@ -17,9 +17,11 @@
 }
 
 .card:hover {
-  background: linear-gradient(182deg,
-      rgba(255, 204, 71, 1),
-      rgba(255, 204, 71, 0));
+  background: linear-gradient(
+    182deg,
+    rgba(255, 204, 71, 1),
+    rgba(255, 204, 71, 0)
+  );
   backdrop-filter: blur(10px);
 }
 
@@ -34,7 +36,7 @@
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Unbounded';
+  font-family: "Unbounded";
   font-size: 22px;
   font-weight: 700;
   line-height: 1.1;

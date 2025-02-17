@@ -10,7 +10,7 @@
 
 .joinWrapper::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   right: 0;
   width: 80px;
@@ -34,7 +34,7 @@
   position: relative;
   width: 306px;
   height: 370px;
-  background: linear-gradient(to right, #FFCC47, #D31900, #9747FF);
+  background: linear-gradient(to right, #ffcc47, #d31900, #9747ff);
   z-index: 1;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
@@ -42,27 +42,31 @@
 
 .imageBox::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top,
-      rgba(9, 9, 9, 1) 0%,
-      rgba(0, 0, 255, 0) 60%);
+  background: linear-gradient(
+    to top,
+    rgba(9, 9, 9, 1) 0%,
+    rgba(0, 0, 255, 0) 60%
+  );
   z-index: 4;
 }
 
 .imageBox::after {
   position: absolute;
-  content: '';
+  content: "";
   right: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top,
-      var(--bg-team-card) 40%,
-      rgba(0, 0, 255, 0) 60%);
+  background: linear-gradient(
+    to top,
+    var(--bg-team-card) 40%,
+    rgba(0, 0, 255, 0) 60%
+  );
   z-index: 2;
 }
 
@@ -102,7 +106,6 @@
     width: 109px;
     height: 96px;
   }
-
 }
 
 @media (min-width: 1440px) {

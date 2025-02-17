@@ -1,5 +1,5 @@
 .list {
-  font-family: 'Proxima nova';
+  font-family: "Proxima nova";
 }
 
 .item {
@@ -42,7 +42,7 @@
 }
 
 .subItem::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   top: 0;

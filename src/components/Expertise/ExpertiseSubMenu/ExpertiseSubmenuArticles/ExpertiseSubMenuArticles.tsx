@@ -1,8 +1,8 @@
-import { Post } from '@/src/utils/types';
-import useMediaQuery from '@/src/utils/useMediaQuery';
-import { DateTime } from 'luxon';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { ExpertiseMenuCard } from '../../ExpertiseMenuCard/ExpertiseMenuCard';
+import { Post } from "@/src/utils/types";
+import useMediaQuery from "@/src/utils/useMediaQuery";
+import { DateTime } from "luxon";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ExpertiseMenuCard } from "../../ExpertiseMenuCard/ExpertiseMenuCard";
 
 interface IData {
   data: Post[];
@@ -10,29 +10,29 @@ interface IData {
 }
 
 export const ExpertiseSubmenuArticles = ({ data, onClick }: IData) => {
-  const isMobile = useMediaQuery('<tablet');
-  const isTablen = useMediaQuery('<laptop');
+  const isMobile = useMediaQuery("<tablet");
+  const isTablen = useMediaQuery("<laptop");
 
   const sortedData = data.sort(
     (a, b) =>
-      DateTime.fromFormat(b.date, 'dd-MM-yyyy').toMillis() -
-      DateTime.fromFormat(a.date, 'dd-MM-yyyy').toMillis(),
+      DateTime.fromFormat(b.date, "dd-MM-yyyy").toMillis() -
+      DateTime.fromFormat(a.date, "dd-MM-yyyy").toMillis(),
   );
 
   return (
-    <div className='flex w-full flex-col gap-[20px]'>
-      <div className='group flex items-center justify-between'>
-        <p className='font-unbound text-[20px] font-bold uppercase leading-[1.4] text-white'>
+    <div className="flex w-full flex-col gap-[20px]">
+      <div className="group flex items-center justify-between">
+        <p className="font-unbound text-[20px] font-bold uppercase leading-[1.4] text-white">
           The latest in Playbook
         </p>
       </div>
-      <div className='mx-0 flex w-full px-0'>
+      <div className="mx-0 flex w-full px-0">
         <Swiper
           spaceBetween={isMobile ? 20 : 40}
           slidesPerView={isMobile ? 1.2 : isTablen && !isMobile ? 1.5 : 2}
         >
           {sortedData.slice(0, 2).map((post, idx) => (
-            <SwiperSlide key={idx} className='w-full'>
+            <SwiperSlide key={idx} className="w-full">
               <ExpertiseMenuCard
                 title={post.title}
                 description={post.description}

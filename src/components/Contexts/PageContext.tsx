@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface IPageContext {
   page: number;
@@ -19,11 +19,11 @@ export const PageProvoder = ({ children }: { children: React.ReactNode }) => {
 
   const handleSetPage = (value: number) => {
     setPage(value);
-    localStorage.setItem('pageInfo', JSON.stringify(value));
+    localStorage.setItem("pageInfo", JSON.stringify(value));
   };
 
   useEffect(() => {
-    const storageState = localStorage.getItem('pageInfo');
+    const storageState = localStorage.getItem("pageInfo");
     if (storageState) {
       const pageInfo = JSON.parse(storageState);
       setPage(pageInfo);

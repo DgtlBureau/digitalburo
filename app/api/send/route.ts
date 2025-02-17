@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -7,22 +7,22 @@ export async function POST(req: Request) {
 
   try {
     const { data } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
-      to: ['access@thebrightbyte.com'],
-      subject: 'New Request',
+      from: "Acme <onboarding@resend.dev>",
+      to: ["access@thebrightbyte.com"],
+      subject: "Digitalburo",
       html:
-        '<h1>Name: ' +
+        "<h1>Name: " +
         response.name +
-        '</h1>' +
-        '<span>From: ' +
+        "</h1>" +
+        "<span>From: " +
         response.email +
-        '</span>' +
-        '<span>Phone: ' +
+        "</span>" +
+        "<span>Phone: " +
         response.phone +
-        '</span>' +
+        "</span>" +
         response.description
-          ? '<p>' + response.description + '</p>'
-          : '',
+          ? "<p>" + response.description + "</p>"
+          : "",
 
       ...(response.cv ? { attachments: [response.cv] } : {}),
     });

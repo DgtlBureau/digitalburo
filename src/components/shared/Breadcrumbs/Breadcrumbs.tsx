@@ -1,19 +1,19 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 interface IBreadProps {
-  breadcrumbs: Breadcrumb[]
-  light?: boolean
+  breadcrumbs: Breadcrumb[];
+  light?: boolean;
 }
 
 export type Breadcrumb = {
-  title: string
-  link?: string
-}
+  title: string;
+  link?: string;
+};
 
 export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
   return (
     <div
-      className={`z-10 flex flex-wrap items-center gap-x-[20px] gap-y-[10px] font-proxima text-[20px]  ${light ? 'text-text-dark' : 'text-white'}`}
+      className={`z-10 flex flex-wrap items-center gap-x-[20px] gap-y-[10px] font-proxima text-[20px]  ${light ? "text-text-dark" : "text-white"}`}
     >
       {breadcrumbs.map(({ title, link }, index) => (
         <>
@@ -24,7 +24,7 @@ export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
             </Link>
           ) : (
             <div
-              className={` opacity-80 ${light ? 'text-[var(--main-orange)]' : 'text-[var(--main-gray)]'}`}
+              className={` opacity-80 ${light ? "text-[var(--main-orange)]" : "text-[var(--main-gray)]"}`}
               key={title}
             >
               {title}
@@ -33,5 +33,5 @@ export const Breadcrumbs = ({ breadcrumbs, light = false }: IBreadProps) => {
         </>
       ))}
     </div>
-  )
-}
+  );
+};

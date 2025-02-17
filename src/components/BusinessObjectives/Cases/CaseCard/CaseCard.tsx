@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { NextLinePreposition } from '@/src/components/NextLinePreposition/NextLinePreposition';
-import { Case } from '@/src/utils/getCaseMetadata';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import styles from './CasesCard.module.css';
+import { NextLinePreposition } from "@/src/components/NextLinePreposition/NextLinePreposition";
+import { Case } from "@/src/utils/getCaseMetadata";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./CasesCard.module.css";
 
 export const CaseCard = ({ data }: { data: Case }) => {
   const [logo, setLogo] = useState(data.logo);
@@ -25,9 +25,9 @@ export const CaseCard = ({ data }: { data: Case }) => {
       className={styles.mainContainer}
       style={{
         backgroundImage: `url(${data.bannerImage})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -35,15 +35,15 @@ export const CaseCard = ({ data }: { data: Case }) => {
       <div
         className={`${styles.contentContainer} relative z-30 flex h-full w-full flex-col justify-between`}
       >
-        <div className='flex flex-col gap-[19px]'>
-          <div className='flex items-center justify-between'>
-            <div className='h-[35px] w-[auto]'>
+        <div className="flex flex-col gap-[19px]">
+          <div className="flex items-center justify-between">
+            <div className="h-[35px] w-[auto]">
               <Image
                 src={logo}
                 alt={`${data.tag} logo`}
                 height={35}
                 width={120}
-                className='h-full w-[auto]'
+                className="h-full w-[auto]"
               />
             </div>
             <span
@@ -53,16 +53,16 @@ export const CaseCard = ({ data }: { data: Case }) => {
             </span>
           </div>
           <NextLinePreposition
-            tag='h2'
+            tag="h2"
             text={data.title}
-            className='font-unbound text-[22px] font-bold uppercase leading-[1.15] text-white desktop-big:text-[38px]'
+            className="font-unbound text-[22px] font-bold uppercase leading-[1.15] text-white desktop-big:text-[38px]"
           />
         </div>
-        <div className='flex flex-col gap-[8px]'>
+        <div className="flex flex-col gap-[8px]">
           {data.industries.map((item, idx) => (
             <span
               key={idx}
-              className='w-fit rounded-sm bg-white p-2.5 font-unbound text-[16px] font-bold uppercase leading-7 text-slate-900 desktop-big:text-[24px]'
+              className="w-fit rounded-sm bg-white p-2.5 font-unbound text-[16px] font-bold uppercase leading-7 text-slate-900 desktop-big:text-[24px]"
             >
               {item}
             </span>

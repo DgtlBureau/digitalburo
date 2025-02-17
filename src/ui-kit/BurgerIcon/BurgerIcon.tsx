@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import classNames from 'classnames';
-import styles from './BurgerIcon.module.css';
+import classNames from "classnames";
+import styles from "./BurgerIcon.module.css";
 
 interface Props {
   isOpen: boolean;

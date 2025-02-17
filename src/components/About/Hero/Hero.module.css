@@ -10,7 +10,7 @@
 }
 
 .mainContainer::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -23,7 +23,7 @@
 .title {
   position: relative;
   margin-top: 21px;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
   height: 230px;
   border-radius: 5px;
   overflow: hidden;
-  background: url('/assets/images/main/hero-solutions-bg.webp');
+  background: url("/assets/images/main/hero-solutions-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,7 +51,7 @@
 }
 
 .handbookTitle {
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Unbounded", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
@@ -61,7 +61,7 @@
 .handbookDescr {
   margin-top: 12px;
   display: block;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;

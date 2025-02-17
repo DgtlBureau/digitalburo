@@ -67,7 +67,7 @@ User-agent: facebookexternalhit
 Allow: /
 
 # Host
-Host: https://thebrightbyte.com
+Host: https://digitalburo.tech
 
 # Sitemaps
-Sitemap: https://thebrightbyte.com/sitemap.xml
+Sitemap: https://digitalburo.tech/sitemap.xml

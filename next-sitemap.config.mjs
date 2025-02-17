@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 const config = {
-    siteUrl: 'https://thebrightbyte.com',
+    siteUrl: 'https://digitalburo.tech',
     generateSitemap: true,
     generateIndexSitemap: false,
     generateRobotsTxt: true,
@@ -15,14 +15,11 @@ const config = {
             '/',
             '/about',
             '/career',
-            '/comparison',
             '/playbook',
             '/playbook/expertise',
             '/playbook/insights',
-            '/solutions',
             '/policy',
             '/investments',
-            '/brief',
             '/playbook/expertise/rss.xml',
             '/playbook/insights/rss.xml',
         ]
@@ -58,14 +55,6 @@ const config = {
             return `/playbook/insights/${fileName}`
         })
 
-        const solutionsDir = path.join(process.cwd(), 'src/cases')
-        const solutionsFiles = getAllMarkdownFiles(solutionsDir)
-
-        const dynamicSolutionsPages = solutionsFiles.map((file) => {
-            const fileName = path.basename(file, '.md')
-            return `/solutions/${fileName}`
-        })
-
         const allPaths = [
             ...staticPages.map(loc => ({
                 loc,
@@ -78,11 +67,6 @@ const config = {
                 priority: 0.8,
             })),
             ...dynamicBlogPages.map(loc => ({
-                loc,
-                changefreq: 'daily',
-                priority: 0.8,
-            })),
-            ...dynamicSolutionsPages.map(loc => ({
                 loc,
                 changefreq: 'daily',
                 priority: 0.8,
@@ -161,7 +145,7 @@ const config = {
             { userAgent: 'facebookexternalhit', allow: '/' }
         ],
         additionalSitemaps: [
-            'https://thebrightbyte.com/sitemap.xml',
+            'https://digitalburo.tech/sitemap.xml',
         ],
     },
 }

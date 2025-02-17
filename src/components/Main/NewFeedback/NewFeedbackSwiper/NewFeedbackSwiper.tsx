@@ -1,6 +1,6 @@
-import { IFeedback } from '@/src/utils/types';
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
-import { NewFeedbackCard } from '../NewFeedbackCard/NewFeedbackCard';
+import { IFeedback } from "@/src/utils/types";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { NewFeedbackCard } from "../NewFeedbackCard/NewFeedbackCard";
 
 interface IFeedbackSwiper {
   feedback: IFeedback[];
@@ -26,11 +26,11 @@ const NewFeedbackSwiper = ({ feedback, setSwiper }: IFeedbackSwiper) => {
       }}
       slidesPerView={1}
       onSwiper={setSwiper}
-      className='max-w-full'
+      className="max-w-full"
     >
       {feedback.map((item, index) => (
-        <SwiperSlide key={item.id} className='!h-auto'>
-          <div className='h-full w-full tablet:pr-[20px] desktop:pr-[40px]'>
+        <SwiperSlide key={item.id} className="!h-auto">
+          <div className="h-full w-full tablet:pr-[20px] desktop:pr-[40px]">
             <NewFeedbackCard
               data={item}
               length={feedback.length}

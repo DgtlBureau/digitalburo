@@ -1,12 +1,12 @@
-import defaultImg from '@/public/assets/images/banner/default_img.webp';
-import Image from 'next/image';
+import defaultImg from "@/public/assets/images/banner/default_img.webp";
+import Image from "next/image";
 
 type PageType = { type: string | null | undefined };
 
 const POST_TYPE = {
-  MANIFESTO: 'manifesto',
-  NOTES: 'notes',
-  RESEARCH: 'research',
+  MANIFESTO: "manifesto",
+  NOTES: "notes",
+  RESEARCH: "research",
 };
 
 export const DefaultImage = ({ type }: PageType) => {
@@ -21,13 +21,13 @@ export const DefaultImage = ({ type }: PageType) => {
   } else {
     img = defaultImg;
   }
-  return type === '' || type === null || type === undefined ? (
+  return type === "" || type === null || type === undefined ? (
     <Image
       src={img}
-      alt='default logo'
+      alt="default logo"
       width={876}
       height={378}
-      className='left-0 top-0 h-full w-full object-cover'
+      className="left-0 top-0 h-full w-full object-cover"
       quality={80}
     />
   ) : (
@@ -36,7 +36,7 @@ export const DefaultImage = ({ type }: PageType) => {
       alt={`${type.toLowerCase()} image`}
       width={876}
       height={378}
-      className='left-0 top-0 h-full w-full object-cover'
+      className="left-0 top-0 h-full w-full object-cover"
       quality={80}
     />
   );

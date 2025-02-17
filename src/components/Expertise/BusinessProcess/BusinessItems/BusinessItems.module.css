@@ -21,7 +21,7 @@
 
 .item::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 8px;
   right: 8px;
   width: 67px;

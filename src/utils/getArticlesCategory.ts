@@ -1,6 +1,6 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
 export const getArticlesCategory = () => {
   const folder = `src/playbook/`;
@@ -23,10 +23,10 @@ export const getArticlesCategory = () => {
 
       return fs
         .readdirSync(subCategoryPath)
-        .filter((file) => file.endsWith('.md'))
+        .filter((file) => file.endsWith(".md"))
         .map((file) => {
           const filePath = path.join(subCategoryPath, file);
-          const fileContent = fs.readFileSync(filePath, 'utf-8');
+          const fileContent = fs.readFileSync(filePath, "utf-8");
           const { data } = matter(fileContent);
 
           return {

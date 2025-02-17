@@ -1,84 +1,81 @@
-'use client'
+"use client";
 
-import carImage from '@/public/assets/images/about/car.webp'
-import retailImage from '@/public/assets/images/about/cart.webp'
-import retailImageActive from '@/public/assets/images/about/cart_active.webp'
-import carImageActive from '@/public/assets/images/about/car_active.webp'
-import mediaImage from '@/public/assets/images/about/cup.webp'
-import mediaImageActive from '@/public/assets/images/about/cup_active.webp'
-import serviceImage from '@/public/assets/images/about/lamp.webp'
-import serviceImageActive from '@/public/assets/images/about/lamp_active.webp'
-import sportImage from '@/public/assets/images/about/sport.webp'
-import sportImageActive from '@/public/assets/images/about/sport_active.webp'
-import { StaticImageData } from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import styles from './Industries.module.css'
-import { IndustriesCard } from './IndustriesCard/IndustriesCard'
-import { Welcome } from './Welcome/Welcome'
+import carImage from "@/public/assets/images/about/car.webp";
+import retailImage from "@/public/assets/images/about/cart.webp";
+import retailImageActive from "@/public/assets/images/about/cart_active.webp";
+import carImageActive from "@/public/assets/images/about/car_active.webp";
+import mediaImage from "@/public/assets/images/about/cup.webp";
+import mediaImageActive from "@/public/assets/images/about/cup_active.webp";
+import serviceImage from "@/public/assets/images/about/lamp.webp";
+import serviceImageActive from "@/public/assets/images/about/lamp_active.webp";
+import sportImage from "@/public/assets/images/about/sport.webp";
+import sportImageActive from "@/public/assets/images/about/sport_active.webp";
+import { StaticImageData } from "next/image";
+import { useState } from "react";
+import { IndustriesCard } from "./IndustriesCard/IndustriesCard";
 
 export interface IIndustries {
-  id: number
-  title: string
-  description: string
-  link: string
-  image: StaticImageData
-  activeImage: StaticImageData
+  id: number;
+  title: string;
+  description: string;
+  link: string;
+  image: StaticImageData;
+  activeImage: StaticImageData;
 }
 
 const INDUSTRIES: IIndustries[] = [
   {
     id: 1,
-    title: 'Car',
-    description: 'digital products for Retail',
-    link: '/expertise',
+    title: "Car",
+    description: "digital products for Retail",
+    link: "/expertise",
     image: carImage,
     activeImage: carImageActive,
   },
   {
     id: 2,
-    title: 'Service',
-    description: 'digital products for Service improvement',
-    link: '/expertise',
+    title: "Service",
+    description: "digital products for Service improvement",
+    link: "/expertise",
     image: serviceImage,
     activeImage: serviceImageActive,
   },
   {
     id: 3,
-    title: 'Media',
-    description: 'digital products for Car industry',
-    link: '/expertise',
+    title: "Media",
+    description: "digital products for Car industry",
+    link: "/expertise",
     image: mediaImage,
     activeImage: mediaImageActive,
   },
   {
     id: 4,
-    title: 'Retail',
-    description: 'digital products for MEDIA & Entertainment',
-    link: '/expertise',
+    title: "Retail",
+    description: "digital products for MEDIA & Entertainment",
+    link: "/expertise",
     image: retailImage,
     activeImage: retailImageActive,
   },
   {
     id: 5,
-    title: 'Sport',
-    description: 'digital products for sports business',
-    link: '/expertise',
+    title: "Sport",
+    description: "digital products for sports business",
+    link: "/expertise",
     image: sportImage,
     activeImage: sportImageActive,
   },
-]
+];
 
 export const Industries = () => {
-  const [activeId, setActiveId] = useState<null | number>(null)
+  const [activeId, setActiveId] = useState<null | number>(null);
   return (
-    <div className='flex flex-col gap-[40px] tablet:gap-[20px]'>
-      <div className='flex flex-col desktop:flex-row desktop:items-center desktop:gap-[60px] desktop:px-[80px] desktop-hard:gap-[256px]'>
+    <div className="flex flex-col gap-[40px] tablet:gap-[20px]">
+      <div className="flex flex-col desktop:flex-row desktop:items-center desktop:gap-[60px] desktop:px-[80px] desktop-hard:gap-[256px]">
         <div>
-          <h2 className='font-unbound text-[32px] text-text-dark font-bold uppercase leading-[1] tablet:text-[50px] tablet:leading-[1.3] desktop:text-[70px]'>
+          <h2 className="font-unbound text-[32px] text-text-dark font-bold uppercase leading-[1] tablet:text-[50px] tablet:leading-[1.3] desktop:text-[70px]">
             Отрасли
           </h2>
-          <p className='mt-[12px] font-proxima text-[16px] text-text-dark leading-[1.2] tablet:text-[24px] desktop:mt-[24px] desktop:w-[532px]'>
+          <p className="mt-[12px] font-proxima text-[16px] text-text-dark leading-[1.2] tablet:text-[24px] desktop:mt-[24px] desktop:w-[532px]">
             Наш опыт охватывает все отрасли. Мы имеем наибольший опыт в спорте,
             FMCG, электронной коммерции.
           </p>
@@ -97,5 +94,5 @@ export const Industries = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

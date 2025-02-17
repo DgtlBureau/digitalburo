@@ -103,7 +103,7 @@ const config: Config = {
         'second-gray': '#494949',
         'light-gray': '#AEAEAE',
         'gray-placeholder': '#A5A5A5',
-        'ligth-bg': '#f3f3f4',
+        'ligth-gray-bg': '#f3f3f4',
       },
     },
     screens: {

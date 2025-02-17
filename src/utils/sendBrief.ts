@@ -9,10 +9,10 @@ export const sendBrief = async (
   email: string,
 ) => {
   try {
-    const response = await fetch('/api/briefsend', {
-      method: 'POST',
+    const response = await fetch("/api/briefsend", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         idea,
@@ -25,7 +25,7 @@ export const sendBrief = async (
         email,
       }),
     });
-    console.log('Email sent successfully:', await response.json());
+    console.log("Email sent successfully:", await response.json());
   } catch (error) {
     console.error(error);
   }

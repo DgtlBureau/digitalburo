@@ -1,37 +1,37 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { Autoplay } from 'swiper/modules'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import { Container } from '../../shared/Container/Container'
-import { Section } from '../../shared/Section/Section'
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { Container } from "../../shared/Container/Container";
+import { Section } from "../../shared/Section/Section";
 
 interface IHeroProp {
   slideData: {
-    title: string
-    image: string
-    link: string
-    linkName: string
-  }[]
+    title: string;
+    image: string;
+    link: string;
+    linkName: string;
+  }[];
 }
 
 export const NewHero = ({ slideData }: IHeroProp) => {
-  const [swiper, setSwiper] = useState<SwiperClass | null>(null)
-  const [slideIndex, setActiveSlideIndex] = useState<number>(0)
+  const [swiper, setSwiper] = useState<SwiperClass | null>(null);
+  const [slideIndex, setActiveSlideIndex] = useState<number>(0);
 
   useEffect(() => {
     if (swiper) {
       const handleSlideChange = () => {
-        setActiveSlideIndex(swiper.realIndex)
-      }
-      swiper.on('slideChange', handleSlideChange)
+        setActiveSlideIndex(swiper.realIndex);
+      };
+      swiper.on("slideChange", handleSlideChange);
       return () => {
-        swiper.off('slideChange', handleSlideChange)
-      }
+        swiper.off("slideChange", handleSlideChange);
+      };
     }
-  }, [swiper])
+  }, [swiper]);
 
   return (
     <Section
@@ -52,18 +52,18 @@ export const NewHero = ({ slideData }: IHeroProp) => {
         {slideData.map((item) => (
           <SwiperSlide key={item.title}>
             <div
-              className={`gradient-box h-[380px] duration-500 tablet:h-[465px] desktop:h-[589px] ${slideIndex === 0 || slideIndex % 2 === 0 ? 'after:left-0' : 'after:right-0'} after:duration-500`}
+              className={`gradient-box h-[380px] duration-500 tablet:h-[465px] desktop:h-[589px] ${slideIndex === 0 || slideIndex % 2 === 0 ? "after:left-0" : "after:right-0"} after:duration-500`}
             >
               <Image
                 src={item.image}
                 fill
-                objectFit='cover'
-                objectPosition='center'
-                alt=''
-                className='-z-10 grayscale'
+                objectFit="cover"
+                objectPosition="center"
+                alt=""
+                className="-z-10 grayscale"
               />
-              <Container className='flex h-full w-full flex-col justify-end pt-[40px] text-text-dark tablet:pt-[50px] desktop:z-50 desktop:pt-[67px]'>
-                <h2 className='z-50 font-unbound text-[28px] font-bold uppercase leading-[1.16] tablet:text-[50px] tablet:leading-[1.1] desktop-light:text-[70px]'>
+              <Container className="flex h-full w-full flex-col justify-end pt-[40px] text-text-dark tablet:pt-[50px] desktop:z-50 desktop:pt-[67px]">
+                <h2 className="z-50 font-unbound text-[28px] font-bold uppercase leading-[1.16] tablet:text-[50px] tablet:leading-[1.1] desktop-light:text-[70px]">
                   {item.title}
                 </h2>
               </Container>
@@ -71,32 +71,32 @@ export const NewHero = ({ slideData }: IHeroProp) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Container className='mt-[20px] flex flex-col items-start justify-between gap-[35px] tablet:mt-[30px] tablet:flex-row tablet:items-center desktop:mt-[40px]'>
+      <Container className="mt-[20px] flex flex-col items-start justify-between gap-[35px] tablet:mt-[30px] tablet:flex-row tablet:items-center desktop:mt-[40px]">
         <Link
           href={
-            slideData[slideIndex].link ? slideData[slideIndex].link : '#form'
+            slideData[slideIndex].link ? slideData[slideIndex].link : "#form"
           }
-          className='z-30 rounded-[6px] bg-main-orange p-[5px_31px] font-proxima text-[20px] font-bold leading-[2] text-text-dark duration-300 hover:bg-main-orange-hover'
+          className="z-30 rounded-[6px] bg-main-orange p-[5px_31px] font-proxima text-[20px] font-bold leading-[2] text-text-dark duration-300 hover:bg-main-orange-hover"
         >
           {slideData[slideIndex].link
             ? `Go to ${slideData[slideIndex].linkName}`
-            : 'Оставить заявку'}
+            : "Оставить заявку"}
         </Link>
-        <div className='z-30 flex w-full gap-[20px] tablet:max-w-[402px] desktop:max-w-[482px]'>
+        <div className="z-30 flex w-full gap-[20px] tablet:max-w-[402px] desktop:max-w-[482px]">
           {slideData.map((item, idx) => (
             <button
               key={idx}
-              type='button'
+              type="button"
               onClick={() => swiper?.slideTo(idx)}
-              className='h-[3px] w-full bg-main-silver'
+              className="h-[3px] w-full bg-main-silver"
             >
               <span
-                className={`block h-full bg-main-orange ${idx === slideIndex ? 'w-full transition-[width] duration-[3000ms] ease-linear' : 'w-0'}`}
+                className={`block h-full bg-main-orange ${idx === slideIndex ? "w-full transition-[width] duration-[3000ms] ease-linear" : "w-0"}`}
               />
             </button>
           ))}
         </div>
       </Container>
     </Section>
-  )
-}
+  );
+};
