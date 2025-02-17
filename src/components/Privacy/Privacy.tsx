@@ -1,7 +1,7 @@
-import { BASE_URL } from "@/src/utils/alias";
-import Link from "next/link";
-import { Section } from "../shared/Section/Section";
-import styles from "./Privacy.module.css";
+import { BASE_URL } from '@/src/utils/alias';
+import Link from 'next/link';
+import { Section } from '../shared/Section/Section';
+import styles from './Privacy.module.css';
 
 export const Privacy = () => {
   return (
@@ -30,11 +30,11 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   {`1.2. This Operator's policy regarding the processing of personal
                 data (hereinafter referred to as the Policy) applies to all
                 information that the Operator can receive about website visitors `}
-                  <Link className={styles.link} href={"/"}>
+                  <Link className={styles.link} href={'/'}>
                     {BASE_URL}
                   </Link>
                 </p>
@@ -47,37 +47,37 @@ export const Privacy = () => {
             </h2>
             <ul className={styles.subList}>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.1. Automated processing of personal data – processing of
                   personal data using computer technology.
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.2. Blocking of personal data – temporary termination of
                   processing of personal data (except in cases where processing
                   is necessary to clarify personal data).
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.3. Website - a set of graphic and informational materials,
                   as well as computer programs and databases that ensure their
-                  availability on the Internet at a network address{" "}
-                  <Link className={styles.link} href={"/"}>
+                  availability on the Internet at a network address{' '}
+                  <Link className={styles.link} href={'/'}>
                     {BASE_URL}
                   </Link>
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.4. Personal data information system — a set of personal data
                   contained in databases, and information technologies and
                   technical means that ensure their processing.
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.5. Depersonalization of personal data — actions as a result
                   of which it is impossible to determine, without the use of
                   additional information, the ownership of personal data to a
@@ -85,7 +85,7 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.6. Personal data processing – any action (operation) or set
                   of actions (operations) performed with or without the use of
                   automation tools with personal data, including collection,
@@ -96,7 +96,7 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.7. Operator – a state body, municipal body, legal entity or
                   individual, independently or jointly with other persons
                   organizing and (or) processing personal data, as well as
@@ -106,16 +106,16 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.8. Personal data – any information related directly or
-                  indirectly to a specific or identifiable User of the Website{" "}
-                  <Link className={styles.link} href={"/"}>
+                  indirectly to a specific or identifiable User of the Website{' '}
+                  <Link className={styles.link} href={'/'}>
                     {BASE_URL}
                   </Link>
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.9. Personal data authorized by the subject of personal data
                   for distribution - personal data to which an unlimited number
                   of persons have access by the subject of personal data by
@@ -126,23 +126,23 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
-                  2.10. User – any visitor to the website{" "}
-                  <Link className={styles.link} href={"/"}>
+                <p className='description'>
+                  2.10. User – any visitor to the website{' '}
+                  <Link className={styles.link} href={'/'}>
                     {BASE_URL}
                     {BASE_URL}
                   </Link>
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.11. Provision of personal data – actions aimed at disclosure
                   of personal data to a certain person or a certain circle of
                   persons.
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.12. Dissemination of personal data – any actions aimed at
                   disclosure of personal data to an indefinite circle of persons
                   (transfer of personal data) or familiarization with personal
@@ -153,7 +153,7 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.13. Cross–border transfer of personal data - transfer of
                   personal data to the territory of a foreign state to the
                   authority of a foreign state, a foreign individual or a
@@ -161,7 +161,7 @@ export const Privacy = () => {
                 </p>
               </li>
               <li className={styles.item}>
-                <p className="description">
+                <p className='description'>
                   2.14. Destruction of personal data – any actions as a result
                   of which personal data is permanently destroyed with the
                   impossibility of further restoration of the content of
@@ -486,7 +486,7 @@ export const Privacy = () => {
             <ul className={styles.subList}>
               <li className={styles.item}>
                 <p className={styles.deletion}>
-                  {`7.1. The purpose of processing the User's personal data:`}{" "}
+                  {`7.1. The purpose of processing the User's personal data:`}{' '}
                 </p>
                 <ul>
                   <li>– informing the User by sending emails;</li>
@@ -524,7 +524,7 @@ export const Privacy = () => {
               <li className={styles.item}>
                 <p className={styles.deletion}>
                   8.1. The legal grounds for processing personal data by the
-                  Operator are:{" "}
+                  Operator are:{' '}
                 </p>
                 <ul>
                   <li>
@@ -545,10 +545,10 @@ export const Privacy = () => {
                 <p className={styles.deletion}>
                   {`8.2. The Operator processes the User's personal data only if
                 they are filled in and/or sent by the User independently through
-                special forms located on the website`}{" "}
-                  <Link className={styles.link} href="/">
+                special forms located on the website`}{' '}
+                  <Link className={styles.link} href='/'>
                     {BASE_URL}
-                  </Link>{" "}
+                  </Link>{' '}
                   {`or
                 sent to the Operator via e-mail. By filling out the appropriate
                 forms and/or sending their personal data to the Operator, the
@@ -819,8 +819,8 @@ export const Privacy = () => {
               <li className={styles.item}>
                 <p className={styles.deletion}>
                   14.3. The current version of the Policy is freely available on
-                  the Internet at{" "}
-                  <Link className={styles.link} href="/policy">
+                  the Internet at{' '}
+                  <Link className={styles.link} href='/policy'>
                     {`${BASE_URL}/policy`}
                   </Link>
                   .

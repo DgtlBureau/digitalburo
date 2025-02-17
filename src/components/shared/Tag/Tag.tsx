@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
+import classNames from 'classnames';
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const Tag = ({
   children,
@@ -8,7 +8,7 @@ export const Tag = ({
   className,
   onClick,
   ...rest
-}: Omit<HTMLAttributes<HTMLButtonElement>, "children" | "onClick"> & {
+}: Omit<HTMLAttributes<HTMLButtonElement>, 'children' | 'onClick'> & {
   selected?: boolean;
   children: string;
   onClick?: (tag: string) => void;
@@ -18,7 +18,7 @@ export const Tag = ({
       classNames(
         `duration-250 flex h-[38px] items-center justify-center text-nowrap rounded-[2px] border border-[1px] border-solid border-white px-[10px] font-proxima font-bold uppercase opacity-80 transition-all`,
         className,
-        { "bg-white text-text-dark opacity-100": selected },
+        { 'bg-white text-text-dark opacity-100': selected },
       ),
     )}
     onClick={() => onClick && onClick(children)}

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { PropsWithChildren } from "react";
-import { TEAnimation } from "tw-elements-react";
+import { PropsWithChildren } from 'react';
+import { TEAnimation } from 'tw-elements-react';
 
 export const ScrollAnimationWrapper = ({
   children,
@@ -10,8 +10,8 @@ export const ScrollAnimationWrapper = ({
 }: PropsWithChildren<{ showOnLoad?: boolean; className?: string }>) => {
   return (
     <TEAnimation
-      animation="slide-in"
-      start={showOnLoad ? "onLoad" : "onScroll"}
+      animation='slide-in'
+      start={showOnLoad ? 'onLoad' : 'onScroll'}
       className={className}
     >
       {children}

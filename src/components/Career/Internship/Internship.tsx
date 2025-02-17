@@ -1,22 +1,22 @@
-import teamImage from "@/public/assets/images/about/card/card_remote.webp";
-import { LinkArrow } from "@/src/ui-kit/LinkArrow/LinkArrow";
-import classNames from "classnames";
-import Image from "next/image";
-import styles from "./Internship.module.css";
+import teamImage from '@/public/assets/images/about/card/card_remote.webp';
+import { LinkArrow } from '@/src/ui-kit/LinkArrow/LinkArrow';
+import classNames from 'classnames';
+import Image from 'next/image';
+import styles from './Internship.module.css';
 
 export const Internship = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.InternContainer}>
         <h3 className={styles.title}>Стажировка для студентов</h3>
-        <p className="mt-[19px] font-proxima text-[12px] tablet:text-[20px] leading-[1.2] ">
+        <p className='mt-[19px] font-proxima text-[12px] leading-[1.2] tablet:text-[20px] '>
           Мы ищем целеустремленных и амбициозных студентов или выпускников,
           которые увлечены разработкой ИТ и стремятся развивать свои навыки.
           Независимо от уровня вашего опыта, мы приветствуем всех, кто готов
           принять вызов и двигаться вперед вместе с нами.
         </p>
-        <div className="mt-[auto] w-fit">
-          <LinkArrow title="Подать заявку" link="#" />
+        <div className='mt-[auto] w-fit'>
+          <LinkArrow title='Подать заявку' link='#' />
         </div>
       </div>
       <div className={styles.listContainer}>
@@ -62,7 +62,7 @@ export const Internship = () => {
           src={teamImage}
           width={150}
           height={120}
-          alt="team"
+          alt='team'
           quality={100}
           className={styles.teamImage}
         />

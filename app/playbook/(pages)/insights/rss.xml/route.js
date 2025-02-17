@@ -1,23 +1,23 @@
-import { getInsightsMetadata } from "@/src/utils/getInsightsMetadata";
-import { DateTime } from "luxon";
-import RSS from "rss";
+import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata';
+import { DateTime } from 'luxon';
+import RSS from 'rss';
 
 const allInsights = getInsightsMetadata();
 
 export async function GET() {
   const feed = new RSS({
-    title: "Bright Byte Insights",
-    description: "Latest insights from Bright Byte",
-    site_url: "https://thebrightbyte.com",
+    title: 'Bright Byte Insights',
+    description: 'Latest insights from Bright Byte',
+    site_url: 'https://thebrightbyte.com',
     feed_url: `https://thebrightbyte.com/playbook/insights/rss.xml`,
     copyright: `${new Date().getFullYear()} Bright Byte Insights`,
-    language: "en-us",
+    language: 'en-us',
     pubDate: new Date().toUTCString(),
   });
 
   allInsights.forEach((insight) => {
     const formattedDate = insight.date
-      ? DateTime.fromFormat(insight.date, "yyyy-MM-dd").toRFC2822()
+      ? DateTime.fromFormat(insight.date, 'yyyy-MM-dd').toRFC2822()
       : null;
     feed.item({
       title: String(insight.title),
@@ -29,6 +29,6 @@ export async function GET() {
   });
 
   return new Response(feed.xml({ indent: true }), {
-    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
+    headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
   });
 }

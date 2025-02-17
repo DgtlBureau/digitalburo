@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useEffect, useState } from "react";
-import { initialFormikValue } from "../BriefClient/briefData";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { initialFormikValue } from '../BriefClient/briefData';
 
 interface IContextData {
   [key: string]: string;
@@ -32,17 +32,17 @@ export const QuestionProvider = ({
   children: React.ReactNode;
 }) => {
   const [data, setData] = useState<IContextData>(() => {
-    if (typeof window !== "undefined") {
-      const storageData = localStorage.getItem("questionInfo");
+    if (typeof window !== 'undefined') {
+      const storageData = localStorage.getItem('questionInfo');
       return storageData ? JSON.parse(storageData) : initialFormikValue;
     }
   });
   const [page, setPage] = useState(-1);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storageData = localStorage.getItem("questionInfo");
-      const storagePage = localStorage.getItem("pageInfo");
+    if (typeof window !== 'undefined') {
+      const storageData = localStorage.getItem('questionInfo');
+      const storagePage = localStorage.getItem('pageInfo');
 
       setData(storageData ? JSON.parse(storageData) : initialFormikValue);
       setPage(storagePage ? JSON.parse(storagePage) : 0);
@@ -51,8 +51,8 @@ export const QuestionProvider = ({
 
   const handleSetPage = (value: number) => {
     setPage(value);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("pageInfo", JSON.stringify(value));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('pageInfo', JSON.stringify(value));
     }
   };
 
@@ -64,15 +64,15 @@ export const QuestionProvider = ({
   };
 
   const handleClearData = () => {
-    localStorage.removeItem("questionInfo");
+    localStorage.removeItem('questionInfo');
   };
 
   const handleClearPage = () => {
-    localStorage.removeItem("pageInfo");
+    localStorage.removeItem('pageInfo');
   };
 
   useEffect(() => {
-    localStorage.setItem("questionInfo", JSON.stringify(data));
+    localStorage.setItem('questionInfo', JSON.stringify(data));
   }, [data]);
 
   return (

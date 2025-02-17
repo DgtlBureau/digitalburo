@@ -10,7 +10,7 @@
 
 .joinWrapper::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   right: 0;
   width: 80px;
@@ -42,7 +42,7 @@
 
 .imageBox::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
@@ -57,7 +57,7 @@
 
 .imageBox::after {
   position: absolute;
-  content: "";
+  content: '';
   right: 0;
   bottom: 0;
   width: 100%;

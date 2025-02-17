@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { PropsWithChildren } from "react";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { PropsWithChildren } from 'react';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 export function ParallaxWrapper({
   children,

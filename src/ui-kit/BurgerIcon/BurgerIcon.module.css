@@ -25,7 +25,7 @@
 
 .burger::after,
 .burger::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 5px;
   transition: all 0.3s ease 0s;

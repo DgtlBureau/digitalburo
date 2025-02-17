@@ -1,17 +1,17 @@
-import { CardsData } from "@/src/utils/DataLayers/CardsData";
-import classNames from "classnames";
-import Image from "next/image";
-import styles from "./Cards.module.css";
+import { CardsData } from '@/src/utils/DataLayers/CardsData';
+import classNames from 'classnames';
+import Image from 'next/image';
+import styles from './Cards.module.css';
 
 export const Cards = () => {
   return (
-    <div className="flex w-full flex-col gap-[20px] desktop:flex-row desktop:gap-[40px]">
+    <div className='flex w-full flex-col gap-[20px] desktop:flex-row desktop:gap-[40px]'>
       {CardsData.map((item) => (
         <div key={item.id} className={styles.cardWrapper}>
-          <h3 className="z-[5] w-fit rounded-[2px] bg-white tablet:text-[28px] p-[10px] font-unbound text-[16px] font-bold uppercase leading-[1] text-text-dark">
+          <h3 className='z-[5] w-fit rounded-[2px] bg-white p-[10px] font-unbound text-[16px] font-bold uppercase leading-[1] text-text-dark tablet:text-[28px]'>
             {item.tag}
           </h3>
-          <p className="z-[5] mt-[8px] font-proxima text-[12px] tablet:text-[24px] leading-[1.2]">
+          <p className='z-[5] mt-[8px] font-proxima text-[12px] leading-[1.2] tablet:text-[24px]'>
             {item.title}
           </p>
           <Image

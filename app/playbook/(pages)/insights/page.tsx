@@ -1,12 +1,12 @@
-import { PlaybookClient } from "@/src/components/PlaybookClient/PlaybookClient";
-import { BASE_URL } from "@/src/utils/alias";
-import { contentTrimming } from "@/src/utils/contentTrimming";
-import { getInsightsMetadata } from "@/src/utils/getInsightsMetadata";
-import { openGraphImage } from "@/src/utils/openGraphParams";
-import { pageMetadata } from "@/src/utils/pageMetadata";
-import { postsSorting } from "@/src/utils/postsSorting";
-import { Metadata } from "next";
-import { Suspense } from "react";
+import { PlaybookClient } from '@/src/components/PlaybookClient/PlaybookClient';
+import { BASE_URL } from '@/src/utils/alias';
+import { contentTrimming } from '@/src/utils/contentTrimming';
+import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata';
+import { openGraphImage } from '@/src/utils/openGraphParams';
+import { pageMetadata } from '@/src/utils/pageMetadata';
+import { postsSorting } from '@/src/utils/postsSorting';
+import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 const title = pageMetadata.insights.title;
 const description = contentTrimming(pageMetadata.insights.description, 155);
@@ -17,23 +17,23 @@ export const metadata: Metadata = {
   description,
   metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/assets/images/info/main_meta.png",
+    icon: '/assets/images/info/main_meta.png',
   },
   alternates: {
     canonical: new URL(`${BASE_URL}/playbook/insights`),
     types: {
-      "application/rss+xml": [
+      'application/rss+xml': [
         {
-          title: "Bright Byte Insights",
+          title: 'Bright Byte Insights',
           url: `${BASE_URL}/playbook/insights/rss`,
         },
       ],
     },
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "digitalburo.tech",
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,
@@ -47,8 +47,8 @@ const sortedInsightsArticles = postsSorting(insightsArticles);
 
 export default function InsightsPage() {
   return (
-    <div className="h-full w-full">
-      <Suspense fallback={<div className="h-screen w-full bg-white"></div>}>
+    <div className='h-full w-full'>
+      <Suspense fallback={<div className='h-screen w-full bg-white'></div>}>
         <PlaybookClient data={sortedInsightsArticles} />
       </Suspense>
     </div>

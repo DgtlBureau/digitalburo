@@ -23,21 +23,21 @@ export const ArticlesCategory = ({
   selectedSubCategory,
 }: ICategoryProps) => {
   return (
-    <div className="mt-[10px]">
+    <div className='mt-[10px]'>
       {category && category.length !== 0 && (
-        <ul className="flex flex-col gap-[4px]">
-          <li className="">
+        <ul className='flex flex-col gap-[4px]'>
+          <li className=''>
             <button
-              type="button"
-              name="all"
+              type='button'
+              name='all'
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 const target = e.target as HTMLButtonElement;
                 onClick(target.name);
-                setSelectedSubCategory("");
-                setSelectedTag("");
+                setSelectedSubCategory('');
+                setSelectedTag('');
                 setCurrentPage(1);
               }}
-              className={`font-proxima text-[16px] capitalize leading-[1.8] ${selectedCategory.trim().toLowerCase() === "all" ? "font-bold" : ""}`}
+              className={`font-proxima text-[16px] capitalize leading-[1.8] ${selectedCategory.trim().toLowerCase() === 'all' ? 'font-bold' : ''}`}
             >
               all
             </button>
@@ -45,43 +45,43 @@ export const ArticlesCategory = ({
           {category.map((item) => (
             <li
               key={item.category}
-              className="flex flex-col items-start gap-[2px]"
+              className='flex flex-col items-start gap-[2px]'
             >
               <button
-                type="button"
+                type='button'
                 name={item.category}
                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                   const target = e.target as HTMLButtonElement;
                   onClick(target.name);
-                  setSelectedSubCategory("");
-                  setSelectedTag("");
+                  setSelectedSubCategory('');
+                  setSelectedTag('');
                   setCurrentPage(1);
                 }}
-                className={`font-proxima text-[16px] capitalize duration-300 ${selectedCategory.trim().toLowerCase() === item.category.trim().toLowerCase() ? "font-bold" : ""}`}
+                className={`font-proxima text-[16px] capitalize duration-300 ${selectedCategory.trim().toLowerCase() === item.category.trim().toLowerCase() ? 'font-bold' : ''}`}
               >
                 {item.category}
               </button>
-              <ul className="ml-[10px] flex flex-col gap-[2px]">
+              <ul className='ml-[10px] flex flex-col gap-[2px]'>
                 {item.subCategory.map((el) => (
                   <li
                     key={el}
-                    className={`font-proxima text-[16px] leading-[1.8] duration-300 ${selectedSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? "font-bold" : ""}`}
+                    className={`font-proxima text-[16px] leading-[1.8] duration-300 ${selectedSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? 'font-bold' : ''}`}
                   >
                     <button
-                      type="button"
-                      name={el ? el : ""}
+                      type='button'
+                      name={el ? el : ''}
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         const target = e.target as HTMLButtonElement;
                         setSelectedSubCategory(target.name.toLowerCase());
                         onClick(item.category);
-                        setSelectedTag("");
+                        setSelectedTag('');
                         setCurrentPage(1);
                       }}
-                      className="relative"
+                      className='relative'
                     >
                       {el}
                       <span
-                        className={`absolute bottom-0 left-0 block h-[1px] w-full duration-300 ${selectedSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? "bg-main-blue" : ""}`}
+                        className={`absolute bottom-0 left-0 block h-[1px] w-full duration-300 ${selectedSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? 'bg-main-blue' : ''}`}
                       />
                     </button>
                   </li>

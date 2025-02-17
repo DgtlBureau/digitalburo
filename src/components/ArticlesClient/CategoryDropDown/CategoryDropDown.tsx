@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 interface ICategoryProps {
   categories: ICategory[];
@@ -31,8 +31,8 @@ export const CategoryDropDown = ({
 
   const handleCategoryClick = (categortName: string) => {
     onClick(categortName);
-    setSelectedSubCategory("");
-    setSelectedTag("");
+    setSelectedSubCategory('');
+    setSelectedTag('');
     setCurrentPage(1);
     setIsCategoryOpen(false);
   };
@@ -43,7 +43,7 @@ export const CategoryDropDown = ({
   ) => {
     onClick(categortName);
     setSelectedSubCategory(subCategoryName.toLowerCase());
-    setSelectedTag("");
+    setSelectedTag('');
     setCurrentPage(1);
     setIsCategoryOpen(false);
   };
@@ -58,43 +58,43 @@ export const CategoryDropDown = ({
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
   return (
     <div
       ref={categoryContainer}
-      className="relative w-full whitespace-nowrap outline-none"
+      className='relative w-full whitespace-nowrap outline-none'
     >
       <button
-        type="button"
-        name="categoriesBtn"
+        type='button'
+        name='categoriesBtn'
         onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-        className="flex appearance-none items-center gap-[8px] font-proxima text-[12px] leading-[1.6] outline-none"
+        className='flex appearance-none items-center gap-[8px] font-proxima text-[12px] leading-[1.6] outline-none'
       >
-        Categories:{" "}
+        Categories:{' '}
         {selectetCategory && !selectetSubCategory ? (
-          <span className="font-bold capitalize leading-[1.3] text-main-blue">
+          <span className='font-bold capitalize leading-[1.3] text-main-blue'>
             {selectetCategory}
           </span>
         ) : selectetCategory && selectetSubCategory ? (
-          <span className="font-bold capitalize leading-[1.3] text-main-blue">
+          <span className='font-bold capitalize leading-[1.3] text-main-blue'>
             {selectetSubCategory}
           </span>
         ) : (
-          ""
+          ''
         )}
       </button>
       <div
         className={`absolute left-[70px] z-[20] min-w-[171px] overflow-hidden rounded-[12px] bg-white transition-all duration-300 ease-in-out tablet:left-[auto] tablet:right-0`}
         style={{
-          boxShadow: "0px 11.11px 44.46px 0px rgba(12, 16, 24, 0.12)",
-          top: `${categoryContainer.current ? categoryContainer.current.offsetHeight + 11 + "px" : "0"}`,
-          maxHeight: isCategoryOpen ? "500px" : "0px",
+          boxShadow: '0px 11.11px 44.46px 0px rgba(12, 16, 24, 0.12)',
+          top: `${categoryContainer.current ? categoryContainer.current.offsetHeight + 11 + 'px' : '0'}`,
+          maxHeight: isCategoryOpen ? '500px' : '0px',
         }}
       >
         <ul
@@ -102,17 +102,17 @@ export const CategoryDropDown = ({
         >
           <li className={`relative`}>
             <button
-              name="all"
-              type="button"
+              name='all'
+              type='button'
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 const target = e.target as HTMLButtonElement;
                 handleCategoryClick(target.name);
               }}
-              className={`w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetCategory.trim().toLowerCase() === "all" ? "bg-[#f5f5f6] font-bold" : ""}`}
+              className={`w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetCategory.trim().toLowerCase() === 'all' ? 'bg-[#f5f5f6] font-bold' : ''}`}
             >
               all
             </button>
-            <span className="absolute bottom-[-5px] block h-[2px] w-full translate-y-[50%] bg-main-disabled" />
+            <span className='absolute bottom-[-5px] block h-[2px] w-full translate-y-[50%] bg-main-disabled' />
           </li>
           {categories.map((item) => (
             <li
@@ -120,13 +120,13 @@ export const CategoryDropDown = ({
               className={`relative flex flex-col gap-[4px]`}
             >
               <button
-                type="button"
+                type='button'
                 name={item.category}
                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                   const target = e.target as HTMLButtonElement;
                   handleCategoryClick(target.name);
                 }}
-                className={`relative w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetCategory.trim().toLowerCase() === item.category.trim().toLowerCase() ? "bg-[#f5f5f6] font-bold" : ""} `}
+                className={`relative w-full rounded-[8px] p-[12px_16px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetCategory.trim().toLowerCase() === item.category.trim().toLowerCase() ? 'bg-[#f5f5f6] font-bold' : ''} `}
               >
                 {item.category}
               </button>
@@ -134,20 +134,20 @@ export const CategoryDropDown = ({
                 {item.subCategory.map((el) => (
                   <li key={el} className={`flex flex-col gap-[2px]`}>
                     <button
-                      type="button"
-                      name={el ? el : ""}
+                      type='button'
+                      name={el ? el : ''}
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         const target = e.target as HTMLButtonElement;
                         handleSubCategoryClick(item.category, target.name);
                       }}
-                      className={`w-full rounded-[8px] p-[12px_26px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? "bg-[#f5f5f6] font-bold" : ""}`}
+                      className={`w-full rounded-[8px] p-[12px_26px] text-left text-[14px] capitalize leading-[1.4] text-[#525760] hover:bg-[#f5f5f6] ${selectetSubCategory.trim().toLowerCase() === el?.trim().toLowerCase() ? 'bg-[#f5f5f6] font-bold' : ''}`}
                     >
                       {el}
                     </button>
                   </li>
                 ))}
               </ul>
-              <span className="absolute bottom-[-5px] left-0 block h-[2px] w-full translate-y-[50%] bg-main-disabled" />
+              <span className='absolute bottom-[-5px] left-0 block h-[2px] w-full translate-y-[50%] bg-main-disabled' />
             </li>
           ))}
         </ul>

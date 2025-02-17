@@ -1,24 +1,24 @@
-import { Featured } from "@/src/components/Featured/Featured";
-import { SocialFollow } from "@/src/components/SocialFollow/SocialFollow";
-import { AuthorInfo } from "@/src/ui-kit/AuthorInfo/AuthorInfo";
-import { DownloadLink } from "@/src/ui-kit/DownloadLink/DownloadLink";
-import { GoBackLink } from "@/src/ui-kit/GoBackLink/GoBackLink";
-import { BASE_URL } from "@/src/utils/alias";
-import { cleanMetaTitle } from "@/src/utils/cleanMetaTitle";
-import { contentTrimming } from "@/src/utils/contentTrimming";
-import { formattedDate } from "@/src/utils/formattedDate";
-import { getInsightsMetadata } from "@/src/utils/getInsightsMetadata";
-import { ideaMarking } from "@/src/utils/IdeaMarking/ideaMarking";
-import { openGraphImage } from "@/src/utils/openGraphParams";
-import { postsSorting } from "@/src/utils/postsSorting";
-import fs from "fs";
-import matter from "gray-matter";
-import { DateTime } from "luxon";
-import Markdown from "markdown-to-jsx";
-import path from "path";
-import styles from "./Post.module.css";
+import { Featured } from '@/src/components/Featured/Featured';
+import { SocialFollow } from '@/src/components/SocialFollow/SocialFollow';
+import { AuthorInfo } from '@/src/ui-kit/AuthorInfo/AuthorInfo';
+import { DownloadLink } from '@/src/ui-kit/DownloadLink/DownloadLink';
+import { GoBackLink } from '@/src/ui-kit/GoBackLink/GoBackLink';
+import { BASE_URL } from '@/src/utils/alias';
+import { cleanMetaTitle } from '@/src/utils/cleanMetaTitle';
+import { contentTrimming } from '@/src/utils/contentTrimming';
+import { formattedDate } from '@/src/utils/formattedDate';
+import { getInsightsMetadata } from '@/src/utils/getInsightsMetadata';
+import { ideaMarking } from '@/src/utils/IdeaMarking/ideaMarking';
+import { openGraphImage } from '@/src/utils/openGraphParams';
+import { postsSorting } from '@/src/utils/postsSorting';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { DateTime } from 'luxon';
+import Markdown from 'markdown-to-jsx';
+import path from 'path';
+import styles from './Post.module.css';
 
-const URL = process.env.NODE_ENV === "production" ? BASE_URL : "";
+const URL = process.env.NODE_ENV === 'production' ? BASE_URL : '';
 
 const findMarkdownFile = (dir: string, slug: string): string | null => {
   const files = fs.readdirSync(dir);
@@ -28,7 +28,7 @@ const findMarkdownFile = (dir: string, slug: string): string | null => {
     if (stat.isDirectory()) {
       const result = findMarkdownFile(filePath, slug);
       if (result) return result;
-    } else if (file.endsWith(".md") && file.replace(".md", "") === slug) {
+    } else if (file.endsWith('.md') && file.replace('.md', '') === slug) {
       return filePath;
     }
   }
@@ -36,20 +36,20 @@ const findMarkdownFile = (dir: string, slug: string): string | null => {
 };
 
 const getPostContent = (slug: string) => {
-  const folder = "src/playbook/insights/";
+  const folder = 'src/playbook/insights/';
   const file = findMarkdownFile(folder, slug);
 
   if (file) {
     try {
-      const content = fs.readFileSync(file, "utf8");
+      const content = fs.readFileSync(file, 'utf8');
       const matterResult = matter(content);
       return matterResult;
     } catch (error) {
-      console.error("Error reading file:", error);
+      console.error('Error reading file:', error);
       return null;
     }
   } else {
-    console.error("File not found");
+    console.error('File not found');
     return null;
   }
 };
@@ -73,21 +73,21 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Post Not Found",
-      description: "This post does not exist",
+      title: 'Post Not Found',
+      description: 'This post does not exist',
     };
   }
 
   const cleanTitle = cleanMetaTitle(post.data.title);
   const { tag } = post.data;
-  const keywords = tag.split(",");
+  const keywords = tag.split(',');
 
   const title = contentTrimming(cleanTitle, 105);
   const description = contentTrimming(post.data.description, 155);
 
   const publishedDateISO = DateTime.fromFormat(
     post.data.date,
-    "dd-MM-yyyy",
+    'dd-MM-yyyy',
   ).toISO();
 
   return {
@@ -97,9 +97,9 @@ export async function generateMetadata({
       canonical: `${BASE_URL}/playbook/insights/${params.slug}`,
     },
     openGraph: {
-      type: "article",
-      locale: "en_US",
-      siteName: "digitalburo.tech",
+      type: 'article',
+      locale: 'en_US',
+      siteName: 'digitalburo.tech',
       ...openGraphImage,
       title,
       description,
@@ -128,7 +128,7 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
     post.data;
   const image = post.data.image
     ? post.data.image
-    : "/assets/images/banner/default_img.webp";
+    : '/assets/images/banner/default_img.webp';
 
   const hashtagRegex = /#[A-Za-z_]+/g;
   const regexFont = /<font color='(.+?)'>(.+?)<\/font>/g;
@@ -142,19 +142,19 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
     .replace(regexFont, () => {
       const tags = extractedHashtags
         .map((hashtag) => {
-          const tag = hashtag.split("#");
+          const tag = hashtag.split('#');
           return `<li class="${styles.tagItem}">
       <span class="${styles.tag}">${tag[1]}</span>
     </li>`;
         })
-        .join("");
+        .join('');
 
       return `<ul class="${styles.tagList}">${tags}</ul>`;
     })
 
     .replace(ideaRegx, () => {
       if (!ideaMatches) {
-        return "";
+        return '';
       }
       let matches;
       while ((matches = ideaRegx.exec(post.content)) !== null) {
@@ -162,24 +162,24 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
         return ideaMarking(content);
       }
 
-      return "";
+      return '';
     });
 
   return (
-    <div className="mainContainer w-full px-[10px] pb-[30px] tablet:px-[40px] tablet:pb-[40px] desktop:pb-[60px]">
+    <div className='mainContainer w-full px-[10px] pb-[30px] tablet:px-[40px] tablet:pb-[40px] desktop:pb-[60px]'>
       <div
-        className="absolute left-0 top-0 h-[150px] w-full bg-cover bg-center bg-no-repeat opacity-[40%] tablet:h-[302px] laptop:h-[342px]"
+        className='absolute left-0 top-0 h-[150px] w-full bg-cover bg-center bg-no-repeat opacity-[40%] tablet:h-[302px] laptop:h-[342px]'
         style={{
           backgroundImage: `url(${URL + image})`,
-          zIndex: "-1",
+          zIndex: '-1',
         }}
       ></div>
       <GoBackLink />
-      <div className="mx-[auto] max-w-[896px] pb-[30px]">
-        <div className="relative flex w-full items-center justify-center"></div>
-        <div className="mt-[60px]">
+      <div className='mx-[auto] max-w-[896px] pb-[30px]'>
+        <div className='relative flex w-full items-center justify-center'></div>
+        <div className='mt-[60px]'>
           {readingTime && (
-            <span className="mb-[10px] block font-proxima text-[16px] leading-[1.25] text-text-dark opacity-[50%]">
+            <span className='mb-[10px] block font-proxima text-[16px] leading-[1.25] text-text-dark opacity-[50%]'>
               Reading time: {readingTime}
             </span>
           )}
@@ -188,8 +188,8 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
           >
             {title}
           </h1>
-          <div className="flex flex-col tablet:flex-col-reverse">
-            {downloadLink && tag === "Research" && (
+          <div className='flex flex-col tablet:flex-col-reverse'>
+            {downloadLink && tag === 'Research' && (
               <DownloadLink link={downloadLink} />
             )}
             <div
@@ -207,7 +207,7 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
           </Markdown>
         </article>
         <SocialFollow />
-        <div className="desktop:bp-0 relative z-[5] mt-[60px] pb-[20px]">
+        <div className='desktop:bp-0 relative z-[5] mt-[60px] pb-[20px]'>
           <Featured slug={slug} posts={getAllPosts()} />
         </div>
       </div>

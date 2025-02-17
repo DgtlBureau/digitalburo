@@ -1,5 +1,5 @@
-import fs from "fs";
-import matter from "gray-matter";
+import fs from 'fs';
+import matter from 'gray-matter';
 
 export interface Product {
   name: string;
@@ -10,15 +10,15 @@ export interface Product {
   slug: string;
 }
 
-const ProductsPath = "src/products";
+const ProductsPath = 'src/products';
 
 export const getProductsMetadata = () => {
-  const folder = ProductsPath + "/";
+  const folder = ProductsPath + '/';
   const files = fs.readdirSync(folder);
-  const markdownPosts = files.filter((file) => file.endsWith(".md"));
+  const markdownPosts = files.filter((file) => file.endsWith('.md'));
 
   const posts = markdownPosts.map((filename): Product => {
-    const fileContent = fs.readFileSync(`${ProductsPath}/${filename}`, "utf8");
+    const fileContent = fs.readFileSync(`${ProductsPath}/${filename}`, 'utf8');
     const matterResult = matter(fileContent);
     return {
       name: matterResult.data.name,
@@ -26,7 +26,7 @@ export const getProductsMetadata = () => {
       link: matterResult.data.link,
       date: matterResult.data.date,
       open: matterResult.data.open,
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
     };
   });
 

@@ -1,4 +1,4 @@
-import { Vacancies } from "../../Career/Vacanices/Vacancies";
+import { Vacancies } from '../../Career/Vacanices/Vacancies';
 
 export const Vacancy = () => {
   return (

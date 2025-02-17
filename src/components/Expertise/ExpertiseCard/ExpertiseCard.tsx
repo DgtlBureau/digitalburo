@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import defaultImg from "@/public/assets/images/banner/default_insights.webp";
-import { Post } from "@/src/utils/types";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import defaultImg from '@/public/assets/images/banner/default_insights.webp';
+import { Post } from '@/src/utils/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
 interface IData {
   data: Post;
@@ -79,10 +79,10 @@ export const ExpertiseCard = ({ data }: IData) => {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -96,25 +96,25 @@ export const ExpertiseCard = ({ data }: IData) => {
   return (
     <Link
       href={`/expertise/${slug}`}
-      className="flex h-full flex-col rounded-[5px] bg-card-bg"
+      className='flex h-full flex-col rounded-[5px] bg-card-bg'
     >
-      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-tl-[5px] rounded-tr-[5px]">
+      <div className='relative aspect-[16/9] w-full overflow-hidden rounded-tl-[5px] rounded-tr-[5px]'>
         <Image
           src={image || defaultImg}
-          alt={title || "post image"}
+          alt={title || 'post image'}
           width={450}
           height={250}
-          className="h-full w-full object-cover object-center"
+          className='h-full w-full object-cover object-center'
           quality={80}
         />
       </div>
       <div
         ref={containerRef}
-        className="flex h-full max-h-[160px] min-h-[160px] w-full flex-1 flex-col overflow-hidden rounded-b-[5px] px-[10px] py-[20px] tablet:px-[20px]"
+        className='flex h-full max-h-[160px] min-h-[160px] w-full flex-1 flex-col overflow-hidden rounded-b-[5px] px-[10px] py-[20px] tablet:px-[20px]'
       >
         <h3
           ref={titleRef}
-          className="line-clamp-5 overflow-hidden font-unbound text-[18px] font-bold uppercase leading-[1.3] text-text-dark tablet:text-[18px] tablet:leading-[1.4] desktop:line-clamp-4 desktop:text-[20px]"
+          className='line-clamp-5 overflow-hidden font-unbound text-[18px] font-bold uppercase leading-[1.3] text-text-dark tablet:text-[18px] tablet:leading-[1.4] desktop:line-clamp-4 desktop:text-[20px]'
         >
           {title}
         </h3>
@@ -122,10 +122,10 @@ export const ExpertiseCard = ({ data }: IData) => {
           <p
             className={`mt-[auto] text-[16px] leading-[1.25]`}
             style={{
-              overflow: "hidden",
-              display: "-webkit-box",
+              overflow: 'hidden',
+              display: '-webkit-box',
               WebkitLineClamp: descrLine,
-              WebkitBoxOrient: "vertical",
+              WebkitBoxOrient: 'vertical',
             }}
           >
             {description}

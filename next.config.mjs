@@ -4,16 +4,16 @@ const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/i,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
     return config;
   },
   experimental: {
     turbo: {
       rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
         },
       },
     },
@@ -21,42 +21,42 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "i.imgur.com",
-        port: "",
-        pathname: "/*",
+        protocol: 'https',
+        hostname: 'i.imgur.com',
+        port: '',
+        pathname: '/*',
       },
     ],
   },
   async rewrites() {
     return [
       {
-        source: "/:path*/",
-        destination: "/:path*",
+        source: '/:path*/',
+        destination: '/:path*',
       },
     ];
   },
   async redirects() {
     return [
       {
-        source: "/(.*)",
-        destination: "https://thebrightbyte.com/:path*",
+        source: '/(.*)',
+        destination: 'https://thebrightbyte.com/:path*',
         permanent: true,
         has: [
           {
-            type: "host",
-            value: "thebrightbyte.com",
+            type: 'host',
+            value: 'thebrightbyte.com',
           },
         ],
       },
       {
-        source: "/blog",
-        destination: "/insights",
+        source: '/blog',
+        destination: '/insights',
         permanent: true,
       },
       {
-        source: "/blog/:slug",
-        destination: "/insights/:slug",
+        source: '/blog/:slug',
+        destination: '/insights/:slug',
         permanent: true,
       },
     ];

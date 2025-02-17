@@ -1,9 +1,9 @@
-import { getTeamMetadata } from "@/src/utils/getTeamMetadata";
-import { TeamClient } from "./TeamClient";
+import { getTeamMetadata } from '@/src/utils/getTeamMetadata';
+import { TeamClient } from './TeamClient';
 
 export const Team = () => {
   const getAllTeam = () => {
-    const teamMetadata = getTeamMetadata("src/team");
+    const teamMetadata = getTeamMetadata('src/team');
     return teamMetadata;
   };
 

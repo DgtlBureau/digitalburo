@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { HTMLAttributes, PropsWithChildren } from "react";
-import { twMerge } from "tailwind-merge";
+import classNames from 'classnames';
+import { HTMLAttributes, PropsWithChildren } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const Section = ({
   children,
@@ -12,10 +12,10 @@ export const Section = ({
     <section
       className={twMerge(
         classNames(
-          "relative py-[40px] tablet:py-[60px] desktop:py-[80px]",
+          'relative py-[40px] tablet:py-[60px] desktop:py-[80px]',
           className,
           {
-            "bg-white text-dark": light,
+            'bg-white text-dark': light,
           },
         ),
       )}

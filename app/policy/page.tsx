@@ -1,9 +1,9 @@
-import { Privacy } from "@/src/components/Privacy/Privacy";
-import { BASE_URL } from "@/src/utils/alias";
-import { contentTrimming } from "@/src/utils/contentTrimming";
-import { openGraphImage } from "@/src/utils/openGraphParams";
-import { pageMetadata } from "@/src/utils/pageMetadata";
-import { Metadata } from "next";
+import { Privacy } from '@/src/components/Privacy/Privacy';
+import { BASE_URL } from '@/src/utils/alias';
+import { contentTrimming } from '@/src/utils/contentTrimming';
+import { openGraphImage } from '@/src/utils/openGraphParams';
+import { pageMetadata } from '@/src/utils/pageMetadata';
+import { Metadata } from 'next';
 
 const title = pageMetadata.privacyPolicy.title;
 const description = contentTrimming(
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   description,
   metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/assets/images/info/main_meta.png",
+    icon: '/assets/images/info/main_meta.png',
   },
   alternates: {
     canonical: new URL(`${BASE_URL}/policy`),
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "digitalburo.tech",
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
     description,

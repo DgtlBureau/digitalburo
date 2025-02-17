@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import styles from "./TitleContent.module.css";
+import classNames from 'classnames';
+import styles from './TitleContent.module.css';
 
 interface Props {
   title: string;
@@ -13,7 +13,7 @@ export const TitleContent = ({ title, tags, light }: Props) => {
       <h2
         className={classNames(
           styles.title,
-          light ? "text-[var(--second-blue)]" : "text-[var(--primary)]",
+          light ? 'text-[var(--second-blue)]' : 'text-[var(--primary)]',
         )}
       >
         {title}
@@ -23,8 +23,8 @@ export const TitleContent = ({ title, tags, light }: Props) => {
           <li key={idx} className={styles.item}>
             <span
               className={classNames(
-                "inline-block p-[10px] font-proxima text-[16px] leading-[1.25] tablet:text-[24px] tablet:leading-[1.16] ",
-                light ? "bg-[var(--light-blue)]" : "bg-[var(--second-blue)]",
+                'inline-block p-[10px] font-proxima text-[16px] leading-[1.25] tablet:text-[24px] tablet:leading-[1.16] ',
+                light ? 'bg-[var(--light-blue)]' : 'bg-[var(--second-blue)]',
               )}
             >
               {tag}

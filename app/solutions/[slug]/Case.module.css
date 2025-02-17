@@ -79,7 +79,7 @@
 }
 
 .tag::before {
-  content: "#";
+  content: '#';
 }
 
 @media (min-width: 768px) {

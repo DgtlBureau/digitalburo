@@ -33,7 +33,7 @@
   position: relative;
   display: flex;
   justify-content: end;
-  background: url("/assets/images/internship/internBg.webp");
+  background: url('/assets/images/internship/internBg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,7 +42,7 @@
 
 .finalContainer::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
@@ -67,7 +67,7 @@
 
 .numList::before {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 20px;
   transform: translateX(-50%);
@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Proxima Nova";
+  font-family: 'Proxima Nova';
   font-size: 22px;
   font-weight: 700;
   line-height: 1.1;
@@ -105,7 +105,7 @@
 }
 
 .title {
-  font-family: "Unbounded";
+  font-family: 'Unbounded';
   font-size: 28px;
   font-weight: 700;
   line-height: 1.1;

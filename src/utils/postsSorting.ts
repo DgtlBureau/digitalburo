@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon';
 
 interface Post {
   title: string;
@@ -17,8 +17,8 @@ interface Post {
 
 export const postsSorting = (posts: Post[]) => {
   const sortedPosts = posts.sort((a, b) => {
-    const dateA = DateTime.fromFormat(a.date, "dd-MM-yyyy");
-    const dateB = DateTime.fromFormat(b.date, "dd-MM-yyyy");
+    const dateA = DateTime.fromFormat(a.date, 'dd-MM-yyyy');
+    const dateB = DateTime.fromFormat(b.date, 'dd-MM-yyyy');
     if (dateA > dateB) return -1;
     if (dateA < dateB) return 1;
     return 0;

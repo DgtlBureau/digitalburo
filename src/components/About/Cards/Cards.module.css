@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: end;
-  background: url("/assets/images/about/card-bg.webp");
+  background: url('/assets/images/about/card-bg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,7 +17,7 @@
 
 .cardWrapper::before {
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   bottom: 0;
   width: 100%;
@@ -32,7 +32,7 @@
 
 .cardWrapper::after {
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   bottom: 0;
   width: 100%;

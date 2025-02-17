@@ -10,12 +10,12 @@
 
 .titleWrapper::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/images/expertise/title_bg.png");
+  background-image: url('/assets/images/expertise/title_bg.png');
   background-size: cover;
   background-position: center;
   opacity: 30%;
@@ -24,7 +24,7 @@
 
 .title {
   position: relative;
-  font-family: "Unbounded";
+  font-family: 'Unbounded';
   font-size: 50px;
   font-weight: 700;
   line-height: 1.16;
