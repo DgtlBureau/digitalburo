@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         {
-          title: 'Bright Byte Insights',
+          title: 'Digital Buro Insights',
           url: `${BASE_URL}/playbook/insights/rss`,
         },
       ],

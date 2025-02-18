@@ -20,22 +20,30 @@ export const FeedbackClient = ({ feedback }: Props) => {
 
   return (
     <div className='flex flex-col gap-[30px]'>
-      <Container className='desktop-hard:px-[80px]'>
-        <div className='relative flex w-full items-center justify-between'>
-          <h2 className='font-unbound text-[45px] font-bold uppercase'>
-            Feedback
-          </h2>
+      <Container className='w-full desktop-hard:px-[80px]'>
+        <div className='relative flex w-full items-start justify-between desktop:items-center'>
+          <div className='flex flex-col gap-[16px]'>
+            <h2 className='font-unbound text-[28px] font-bold uppercase leading-[1.25] tablet:text-[40px] tablet:leading-[1.2] desktop:leading-[1.1] desktop-light:text-[50px]'>
+              О нас говорят
+            </h2>
+            <p className='font-proxima text-[18px] font-bold leading-[1.1] text-light-gray tablet:text-[20px] tablet:leading-[1.2] desktop:leading-[1]'>
+              Честные слова наших партнеров о сотрудничестве
+            </p>
+          </div>
 
-          <div className='hidden tablet:block'>
+          <div className=''>
             <NextPrevBtn
               nextPage={() => swiper?.slideNext()}
               prevPage={() => swiper?.slidePrev()}
+              bg='dark'
             />
           </div>
         </div>
       </Container>
       <Suspense fallback={<div></div>}>
-        <LazyFeedbackSwiper setSwiper={setSwiper} feedback={feedback} />
+        <Container className='overflow-visible'>
+          <LazyFeedbackSwiper setSwiper={setSwiper} feedback={feedback} />
+        </Container>
       </Suspense>
     </div>
   );

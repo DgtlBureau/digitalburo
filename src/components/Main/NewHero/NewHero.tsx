@@ -79,7 +79,7 @@ export const NewHero = ({ slideData }: IHeroProp) => {
           className='z-30 rounded-[6px] bg-main-orange p-[5px_31px] font-proxima text-[20px] font-bold leading-[2] text-text-dark duration-300 hover:bg-main-orange-hover'
         >
           {slideData[slideIndex].link
-            ? `Go to ${slideData[slideIndex].linkName}`
+            ? `${slideData[slideIndex].linkName}`
             : 'Оставить заявку'}
         </Link>
         <div className='z-30 flex w-full gap-[20px] tablet:max-w-[402px] desktop:max-w-[482px]'>

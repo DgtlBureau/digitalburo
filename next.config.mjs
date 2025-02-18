@@ -40,12 +40,12 @@ const nextConfig = {
     return [
       {
         source: '/(.*)',
-        destination: 'https://thebrightbyte.com/:path*',
+        destination: 'https://digitalburo.tech/:path*',
         permanent: true,
         has: [
           {
             type: 'host',
-            value: 'thebrightbyte.com',
+            value: 'digitalburo.tech',
           },
         ],
       },

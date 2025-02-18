@@ -1,4 +1,4 @@
 export const openGraphImage = {
   images: [{ url: '/assets/images/info/default_logo.png' }],
-  alt: 'Bright Byte - Consulting Agency',
+  alt: 'Digital Buro - Consulting Agency',
 };

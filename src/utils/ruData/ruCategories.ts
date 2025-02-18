@@ -5,6 +5,7 @@ export const titleTranslate = {
 };
 
 export const subCategoryRu = {
+  administrative: 'Управление',
   it_service: 'it Сервис',
   sport: 'спорт',
   news: 'новости',

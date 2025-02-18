@@ -178,7 +178,7 @@ export default function ExpertisePostPage(props: { params: { slug: string } }) {
         <div className='mt-[60px]'>
           {readingTime && (
             <span className='mb-[10px] block font-proxima text-[16px] leading-[1.25] text-text-dark opacity-[50%]'>
-              Reading time: {readingTime}
+              Время прочтения: {readingTime}
             </span>
           )}
           <h1
