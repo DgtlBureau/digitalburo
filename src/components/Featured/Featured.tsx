@@ -23,23 +23,23 @@ export const Featured = ({ slug, posts }: Props) => {
       <div className='relative flex items-center justify-between border-text-dark pt-[20px] before:absolute before:left-0 before:top-0 before:h-[1px] before:w-full before:bg-text-gray'>
         {slug && (
           <p className='font-unbound text-[24px] font-bold uppercase'>
-            Featured
+            Избранное
           </p>
         )}
         <div className='flex items-center gap-[16px]'>
           <button
             type='button'
-            className='flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-main-blue hover:bg-main-blue-hover'
+            className='flex h-[50px] w-[50px] items-center justify-center rounded-[6px] border-[1px] border-main-bg bg-none hover:bg-card-bg-deep'
             onClick={() => swiper?.slidePrev()}
           >
-            <Arrow className='rotate-[180deg] fill-white' />
+            <Arrow className='rotate-[180deg] fill-main-bg' />
           </button>
           <button
             type='button'
-            className='flex h-[50px] w-[50px] items-center justify-center rounded-[6px] bg-main-blue hover:bg-main-blue-hover'
+            className='flex h-[50px] w-[50px] items-center justify-center rounded-[6px] border-[1px] border-main-bg bg-none hover:bg-card-bg-deep'
             onClick={() => swiper?.slideNext()}
           >
-            <Arrow className='fill-white' />
+            <Arrow className='fill-main-bg' />
           </button>
         </div>
       </div>

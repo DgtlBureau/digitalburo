@@ -166,7 +166,7 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
     });
 
   return (
-    <div className='mainContainer w-full px-[10px] pb-[30px] tablet:px-[40px] tablet:pb-[40px] desktop:pb-[60px]'>
+    <div className='mainContainer relative w-full px-[10px] pb-[30px] tablet:px-[40px] tablet:pb-[40px] desktop:pb-[60px]'>
       <div
         className='absolute left-0 top-0 h-[150px] w-full bg-cover bg-center bg-no-repeat opacity-[40%] tablet:h-[302px] laptop:h-[342px]'
         style={{
@@ -180,7 +180,7 @@ export default function InsightsPostPage(props: { params: { slug: string } }) {
         <div className='mt-[60px]'>
           {readingTime && (
             <span className='mb-[10px] block font-proxima text-[16px] leading-[1.25] text-text-dark opacity-[50%]'>
-              Reading time: {readingTime}
+              Время прочтения: {readingTime}
             </span>
           )}
           <h1

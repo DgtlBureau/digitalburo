@@ -29,7 +29,7 @@ export const MainList = ({
       {list.map((item) => (
         <li
           onMouseEnter={
-            item.name.toLowerCase() === 'playbook'
+            item.link.toLowerCase() === '/playbook'
               ? () => onMenuItemHover(true)
               : () => onMenuItemHover(false)
           }

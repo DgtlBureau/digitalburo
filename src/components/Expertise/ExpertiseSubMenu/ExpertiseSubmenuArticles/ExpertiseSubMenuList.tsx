@@ -1,9 +1,7 @@
 import LinkArrow from '@/public/assets/images/icons/link_arrow.svg';
-import {
-    formatLink,
-    formatMenuItem,
-    formatMenuTitle
-} from '@/src/utils/formattedMenuItem';
+import { formatLink, formatMenuItem } from '@/src/utils/formattedMenuItem';
+import { underscopeFormatter } from '@/src/utils/formatter/underscopeFormatter';
+import { subCategoryRu } from '@/src/utils/ruData/ruCategories';
 import { ISubmenu } from '@/src/utils/types';
 import { DateTime } from 'luxon';
 import Link from 'next/link';
@@ -21,8 +19,12 @@ export const ExpertiseSubMenuList = ({ data, onClick }: IProps) => {
           if (item.folderItems.length === 0) return null;
           return (
             <div key={item.name} className={`flex flex-col p-[5px] text-white`}>
-              <h3 className='flex w-full flex-1 items-center justify-between text-left font-proxima text-[20px] font-bold'>
-                {formatMenuTitle(item.name)}
+              <h3 className='flex w-full flex-1 items-center justify-between text-left font-proxima text-[20px] font-bold capitalize'>
+                {subCategoryRu[
+                  underscopeFormatter(
+                    item.name?.toLowerCase(),
+                  ) as keyof typeof subCategoryRu
+                ] ?? item.name}
               </h3>
               <div
                 className={`relative mt-[10px] flex w-full transform gap-x-[20px] gap-y-[20px] overflow-hidden bg-dark-blue p-[20px] px-[20px]`}
@@ -45,7 +47,7 @@ export const ExpertiseSubMenuList = ({ data, onClick }: IProps) => {
                           onClick={onClick}
                         >
                           <Link
-                            className='relative w-full border-b-[2px] border-solid border-transparent py-[5px] font-proxima text-[16px] leading-[1.1] hover:border-main-blue'
+                            className='relative w-full border-b-[2px] border-solid border-transparent py-[5px] font-proxima text-[16px] leading-[1.1] hover:border-main-orange'
                             href={`/playbook/expertise${formatLink(el.link)}`}
                           >
                             {formatMenuItem(formatLink(el.nameItem))}
@@ -58,10 +60,17 @@ export const ExpertiseSubMenuList = ({ data, onClick }: IProps) => {
               <Link
                 href={`/playbook/expertise?sub-category=${item.name}`}
                 onClick={onClick}
-                className='group mt-[12px] flex items-center gap-[10px] whitespace-nowrap font-proxima text-[20px] font-bold leading-[1] text-main-blue hover:text-main-blue-hover laptop-big:mt-[20px]'
+                className='group mt-[12px] flex w-fit items-center gap-[10px] whitespace-nowrap font-proxima text-[20px] font-bold leading-[1] text-main-orange hover:text-main-orange-hover laptop-big:mt-[20px]'
               >
-                Go to {formatMenuTitle(item.name)}
-                <LinkArrow className='h-[auto] w-[24px] fill-main-blue group-hover:fill-main-blue-hover' />
+                Перейти к{' '}
+                <span className='capitalize'>
+                  {subCategoryRu[
+                    underscopeFormatter(
+                      item.name?.toLowerCase(),
+                    ) as keyof typeof subCategoryRu
+                  ] ?? item.name}
+                </span>
+                <LinkArrow className='h-[auto] w-[24px] fill-main-orange group-hover:fill-main-orange-hover' />
               </Link>
             </div>
           );

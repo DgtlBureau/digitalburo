@@ -28,7 +28,7 @@ export const SocialFollow = ({ isRight = false }: Props) => {
       <span
         className={`font-proxima text-[12px] leading-[1] text-text-dark ${isRight && 'text-[18px] tablet:text-end tablet:text-[20px]'} font-bold tablet:text-[16px]`}
       >
-        Did you find this post interesting? Share it!
+        Вам понравился этот пост? Поделитесь им!
       </span>
       <ul className='flex gap-[20px]'>
         <li>
