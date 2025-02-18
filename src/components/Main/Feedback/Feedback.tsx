@@ -1,6 +1,6 @@
 import { FeedbackDataMain } from '@/src/utils/DataLayers/FeedbackData';
 import { FeedbackClient } from './FeedbackClient';
 
-export const Feedback = () => {
+export const NewFeedback = () => {
   return <FeedbackClient feedback={FeedbackDataMain} />;
 };
