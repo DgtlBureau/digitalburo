@@ -48,7 +48,7 @@ export const pageMetadata = {
   },
   solutions: {
     title:
-      "Propel Your Business Forward with Bright Byte's Bespoke IT Solutions",
+      "Propel Your Business Forward with Digital Buro's Bespoke IT Solutions",
     description:
       "Elevate growth and operational efficiency with our tailored IT strategies, engineered to address your unique business challenges in today's fast-paced digital ecosystem.",
     keywords: [
@@ -91,9 +91,9 @@ export const pageMetadata = {
     ],
   },
   comparison: {
-    title: 'Bright Byte vs. The Rest: Unparalleled IT Solutions Comparison',
+    title: 'Digital Buro vs. The Rest: Unparalleled IT Solutions Comparison',
     description:
-      'Discover why industry leaders choose Bright Byte. Compare our cutting-edge IT services and witness firsthand how our expertise translates into superior business results.',
+      'Discover why industry leaders choose Digital Buro. Compare our cutting-edge IT services and witness firsthand how our expertise translates into superior business results.',
     keywords: [
       'IT compare',
       'Development Serbia',
@@ -130,7 +130,7 @@ export const pageMetadata = {
   },
   investments: {
     title:
-      'Bright Byte invests in development, we invest in products, technology and organisation.',
+      'Digital Buro invests in development, we invest in products, technology and organisation.',
     description:
       ' From Miami to Luxembourg and San Marino, our initiatives are driving progress and community growth.',
     keywords:

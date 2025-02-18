@@ -22,11 +22,11 @@ const allData = [...expertiseData, ...insightsData];
 
 export async function GET() {
   const feed = new RSS({
-    title: 'Bright Byte Expertise and Insights',
-    description: 'Latest expertise and insights from Bright Byte',
-    site_url: 'https://thebrightbyte.com/',
-    feed_url: 'https://thebrightbyte.com/rss',
-    copyright: `${new Date().getFullYear()} Bright Byte Expertise`,
+    title: 'Digital Buro Expertise and Insights',
+    description: 'Latest expertise and insights from Digital Buro',
+    site_url: 'https://digitalburo.tech/',
+    feed_url: 'https://digitalburo.tech/rss',
+    copyright: `${new Date().getFullYear()} Digital Buro Expertise`,
     language: 'en-us',
     pubDate: new Date().toUTCString(),
   });
@@ -38,8 +38,8 @@ export async function GET() {
     feed.item({
       title: item.title,
       description: item.description,
-      url: `https://thebrightbyte.com/playbook/${item.dirName}/${item.slug}`,
-      guid: `https://thebrightbyte.com/playbook/${item.dirName}/${item.slug}`,
+      url: `https://digitalburo.tech/playbook/${item.dirName}/${item.slug}`,
+      guid: `https://digitalburo.tech/playbook/${item.dirName}/${item.slug}`,
       date: formattedDate,
     });
   });
