@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'article',
-    locale: 'en_US',
+    locale: 'ru_RU',
     siteName: 'digitalburo.tech',
     ...openGraphImage,
     title,
