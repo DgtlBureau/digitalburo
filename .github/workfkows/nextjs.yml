@@ -87,6 +87,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Generate sitemap
         run: npm run generate-sitemap
+      - name: Add CNAME file
+        run: echo "digitalburo.tech" > ./out/CNAME
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
